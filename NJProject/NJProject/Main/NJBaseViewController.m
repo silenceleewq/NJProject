@@ -24,14 +24,13 @@
     
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)initRefreshTableViewController:(UITableView *)tableView headerRefreshAction:(SEL)loadNewData footerRefreshAction:(SEL)loadMoreData
+{
+    MJRefreshStateHeader *header = [MJRefreshStateHeader headerWithRefreshingTarget:self refreshingAction:loadNewData];
+    tableView.mj_header = header;
+    
+    MJRefreshAutoStateFooter *footer = [MJRefreshAutoStateFooter footerWithRefreshingTarget:self refreshingAction:loadMoreData];
+    tableView.mj_footer = footer;
 }
-*/
 
 @end

@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-
+#import "NJRefreshExampleViewController.h"
 @interface AppDelegate ()
 
 @end
@@ -16,6 +16,11 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    NJRefreshExampleViewController *refreshViewController = [[NJRefreshExampleViewController alloc] init];
+    self.window.rootViewController = refreshViewController;
+    [self.window makeKeyAndVisible];
     
     return YES;
 }

@@ -8,7 +8,13 @@
 
 #import "NJRefreshExampleViewController.h"
 
-@interface NJRefreshExampleViewController ()
+int cellRows = 50;
+#define cellID @"cellID"
+
+@interface NJRefreshExampleViewController () <UITableViewDataSource>
+
+/** 事例列表 */
+@property (nonatomic, strong) UITableView *tableView;
 
 @end
 
@@ -16,22 +22,115 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    self.view.backgroundColor = [UIColor whiteColor];
+    [self.view addSubview:self.tableView];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (UITableView *)tableView
+{
+    if (!_tableView) {
+        _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 64, KSCREENWIDTH, KSCREENHEIGHT-64) style:UITableViewStylePlain];
+        [self initRefreshTableViewController:_tableView headerRefreshAction:@selector(loadNewData) footerRefreshAction:@selector(loadMoreData)];
+        _tableView.dataSource = self;
+        [_tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:cellID];
+    }
+    return _tableView;
 }
-*/
+
+/** 刷新数据 */
+- (void)loadNewData
+{
+    cellRows = 50;
+    [self.tableView.mj_footer resetNoMoreData];
+    [self requestData];
+}
+
+/** 加载更多 */
+- (void)loadMoreData
+{
+    cellRows += 50;
+    [self requestData];
+    
+}
+
+/** 
+ * 等待1.5秒
+ */
+void doSomeWork(void)
+{
+    [NSThread sleepForTimeInterval:1.5];
+}
+
+#pragma mark - tableview datasource method
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return cellRows;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID forIndexPath:indexPath];
+    
+    cell.textLabel.text = @(indexPath.row).stringValue;
+    
+    return cell;
+}
+
+#pragma mark - 模拟网络请求
+- (void)requestData
+{
+    doSomeWork();
+    
+    [self.tableView.mj_header endRefreshing];
+    [self.tableView.mj_footer endRefreshing];
+    if (cellRows > 150) {
+        [self.tableView.mj_footer endRefreshingWithNoMoreData];
+        return;
+    }
+    [self.tableView reloadData];
+}
 
 @end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
