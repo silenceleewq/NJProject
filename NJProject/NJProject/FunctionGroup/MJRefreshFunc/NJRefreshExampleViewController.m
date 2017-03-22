@@ -26,11 +26,6 @@ int cellRows = 50;
     [self.view addSubview:self.tableView];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    
-}
-
 - (UITableView *)tableView
 {
     if (!_tableView) {
