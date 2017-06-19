@@ -22,6 +22,7 @@ int cellRows = 50;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     self.view.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:self.tableView];
 }
@@ -29,7 +30,7 @@ int cellRows = 50;
 - (UITableView *)tableView
 {
     if (!_tableView) {
-        _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 64, KSCREENWIDTH, KSCREENHEIGHT-64) style:UITableViewStylePlain];
+        _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, KSCREENWIDTH, KSCREENHEIGHT) style:UITableViewStylePlain];
         [self initRefreshTableViewController:_tableView headerRefreshAction:@selector(loadNewData) footerRefreshAction:@selector(loadMoreData)];
         _tableView.dataSource = self;
         [_tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:cellID];
@@ -84,15 +85,26 @@ void doSomeWork(void)
 #pragma mark - 模拟网络请求
 - (void)requestData
 {
-    doSomeWork();
+ 
     
-    [self.tableView.mj_header endRefreshing];
-    [self.tableView.mj_footer endRefreshing];
-    if (cellRows > 150) {
-        [self.tableView.mj_footer endRefreshingWithNoMoreData];
-        return;
-    }
-    [self.tableView reloadData];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        dispatch_async(dispatch_get_main_queue(), ^{
+            
+            [self.tableView.mj_header endRefreshing];
+            [self.tableView.mj_footer endRefreshing];
+            if (cellRows > 150) {
+                [self.tableView.mj_footer endRefreshingWithNoMoreData];
+                return;
+            }
+            [self.tableView reloadData];
+        });
+    });
+    
+    
+}
+
+- (void)dealloc {
+    NSLog(@"NJRefresh Dealloc");
 }
 
 @end

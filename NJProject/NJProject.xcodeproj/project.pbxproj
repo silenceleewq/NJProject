@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		003BBC811EF7969E00EE2869 /* NJNavigatorController.m in Sources */ = {isa = PBXBuildFile; fileRef = 003BBC801EF7969E00EE2869 /* NJNavigatorController.m */; };
+		003BBC8B1EF79D1400EE2869 /* NJPhotosController.m in Sources */ = {isa = PBXBuildFile; fileRef = 003BBC891EF79D1400EE2869 /* NJPhotosController.m */; };
+		003BBC8E1EF7A01900EE2869 /* NJPhotosController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 003BBC8D1EF7A01900EE2869 /* NJPhotosController.storyboard */; };
+		003BBC911EF7B9E800EE2869 /* NJA.m in Sources */ = {isa = PBXBuildFile; fileRef = 003BBC901EF7B9E800EE2869 /* NJA.m */; };
 		00F809E21E81246F002FC6A0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F809E11E81246F002FC6A0 /* main.m */; };
 		00F809E51E81246F002FC6A0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F809E41E81246F002FC6A0 /* AppDelegate.m */; };
 		00F809E81E81246F002FC6A0 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F809E71E81246F002FC6A0 /* ViewController.m */; };
@@ -40,6 +44,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		003BBC7F1EF7969E00EE2869 /* NJNavigatorController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJNavigatorController.h; sourceTree = "<group>"; };
+		003BBC801EF7969E00EE2869 /* NJNavigatorController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJNavigatorController.m; sourceTree = "<group>"; };
+		003BBC881EF79D1400EE2869 /* NJPhotosController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJPhotosController.h; sourceTree = "<group>"; };
+		003BBC891EF79D1400EE2869 /* NJPhotosController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJPhotosController.m; sourceTree = "<group>"; };
+		003BBC8D1EF7A01900EE2869 /* NJPhotosController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = NJPhotosController.storyboard; sourceTree = "<group>"; };
+		003BBC8F1EF7B9E800EE2869 /* NJA.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJA.h; sourceTree = "<group>"; };
+		003BBC901EF7B9E800EE2869 /* NJA.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJA.m; sourceTree = "<group>"; };
 		00F809DD1E81246F002FC6A0 /* NJProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NJProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		00F809E11E81246F002FC6A0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		00F809E31E81246F002FC6A0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -114,6 +125,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		003BBC821EF79CC800EE2869 /* NJPhotos */ = {
+			isa = PBXGroup;
+			children = (
+				003BBC881EF79D1400EE2869 /* NJPhotosController.h */,
+				003BBC891EF79D1400EE2869 /* NJPhotosController.m */,
+				003BBC8D1EF7A01900EE2869 /* NJPhotosController.storyboard */,
+			);
+			path = NJPhotos;
+			sourceTree = "<group>";
+		};
 		00F809D41E81246F002FC6A0 = {
 			isa = PBXGroup;
 			children = (
@@ -141,6 +162,8 @@
 				00F809E61E81246F002FC6A0 /* ViewController.h */,
 				00F809E71E81246F002FC6A0 /* ViewController.m */,
 				00F809E91E81246F002FC6A0 /* Main.storyboard */,
+				003BBC8F1EF7B9E800EE2869 /* NJA.h */,
+				003BBC901EF7B9E800EE2869 /* NJA.m */,
 				00F809EC1E81246F002FC6A0 /* Assets.xcassets */,
 				00F809EE1E81246F002FC6A0 /* LaunchScreen.storyboard */,
 				00F809F11E81246F002FC6A0 /* Info.plist */,
@@ -161,6 +184,7 @@
 		00F809F81E8124D8002FC6A0 /* FunctionGroup */ = {
 			isa = PBXGroup;
 			children = (
+				003BBC821EF79CC800EE2869 /* NJPhotos */,
 				00F809F91E8124EA002FC6A0 /* MJRefreshFunc */,
 			);
 			path = FunctionGroup;
@@ -180,6 +204,8 @@
 			children = (
 				00F809FE1E8126F7002FC6A0 /* NJBaseViewController.h */,
 				00F809FF1E8126F7002FC6A0 /* NJBaseViewController.m */,
+				003BBC7F1EF7969E00EE2869 /* NJNavigatorController.h */,
+				003BBC801EF7969E00EE2869 /* NJNavigatorController.m */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -361,6 +387,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				003BBC8E1EF7A01900EE2869 /* NJPhotosController.storyboard in Resources */,
 				00F809F01E81246F002FC6A0 /* LaunchScreen.storyboard in Resources */,
 				00F809ED1E81246F002FC6A0 /* Assets.xcassets in Resources */,
 				00F80A4A1E812B0E002FC6A0 /* MJRefresh.bundle in Resources */,
@@ -375,10 +402,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				003BBC911EF7B9E800EE2869 /* NJA.m in Sources */,
 				00F80A0B1E8127D0002FC6A0 /* UIView+NJView.m in Sources */,
 				00F80A3F1E812B0E002FC6A0 /* MJRefreshFooter.m in Sources */,
 				00F80A431E812B0E002FC6A0 /* MJRefreshAutoStateFooter.m in Sources */,
 				00F809E81E81246F002FC6A0 /* ViewController.m in Sources */,
+				003BBC811EF7969E00EE2869 /* NJNavigatorController.m in Sources */,
 				00F80A3E1E812B0E002FC6A0 /* MJRefreshComponent.m in Sources */,
 				00F80A411E812B0E002FC6A0 /* MJRefreshAutoGifFooter.m in Sources */,
 				00F80A481E812B0E002FC6A0 /* MJRefreshNormalHeader.m in Sources */,
@@ -398,6 +427,7 @@
 				00F80A491E812B0E002FC6A0 /* MJRefreshStateHeader.m in Sources */,
 				00F80A3D1E812B0E002FC6A0 /* MJRefreshBackFooter.m in Sources */,
 				00F80A4C1E812B0E002FC6A0 /* NSBundle+MJRefresh.m in Sources */,
+				003BBC8B1EF79D1400EE2869 /* NJPhotosController.m in Sources */,
 				00F80A3C1E812B0E002FC6A0 /* MJRefreshAutoFooter.m in Sources */,
 				00F80A0A1E8127D0002FC6A0 /* UIButton+NJButton.m in Sources */,
 				00F80A441E812B0E002FC6A0 /* MJRefreshBackGifFooter.m in Sources */,
@@ -559,6 +589,7 @@
 				00F809F61E81246F002FC6A0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

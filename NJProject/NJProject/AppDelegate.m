@@ -7,7 +7,8 @@
 //
 
 #import "AppDelegate.h"
-#import "NJRefreshExampleViewController.h"
+//#import "NJRefreshExampleViewController.h"
+#import "NJNavigatorController.h"
 @interface AppDelegate ()
 
 @end
@@ -18,8 +19,9 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    NJRefreshExampleViewController *refreshViewController = [[NJRefreshExampleViewController alloc] init];
-    self.window.rootViewController = refreshViewController;
+    NJNavigatorController *navigatorController = [[NJNavigatorController alloc] init];
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:navigatorController];
+    self.window.rootViewController = nav;
     [self.window makeKeyAndVisible];
     
     return YES;
