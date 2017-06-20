@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="dBG-lo-4ij">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Code Scan View Controller-->
+        <scene sceneID="xdt-ro-vBn">
+            <objects>
+                <viewController id="dBG-lo-4ij" customClass="QRCodeScanViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="SUf-ul-5qf"/>
+                        <viewControllerLayoutGuide type="bottom" id="V1Y-wB-4RD"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="uaN-z7-dyN">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3MV-5Y-6TE">
+                                <rect key="frame" x="16" y="28" width="89" height="45"/>
+                                <color key="backgroundColor" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="89" id="Vs3-kJ-7Y7"/>
+                                    <constraint firstAttribute="height" constant="45" id="aEH-R1-d6i"/>
+                                </constraints>
+                                <state key="normal" title="扫码">
+                                    <color key="titleColor" red="0.25173611109999999" green="0.89838324650000001" blue="0.55479600689999997" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="scanButton:" destination="dBG-lo-4ij" eventType="touchUpInside" id="8va-og-Y9f"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yLa-Z5-gFK">
+                                <rect key="frame" x="66.5" y="288" width="242" height="91"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="91" id="3Kf-dj-uE6"/>
+                                    <constraint firstAttribute="width" constant="242" id="POj-Sl-pGi"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="3MV-5Y-6TE" firstAttribute="leading" secondItem="uaN-z7-dyN" secondAttribute="leadingMargin" id="5oN-jS-iNS"/>
+                            <constraint firstItem="3MV-5Y-6TE" firstAttribute="top" secondItem="SUf-ul-5qf" secondAttribute="bottom" constant="8" id="ZkN-T0-Kzs"/>
+                            <constraint firstItem="yLa-Z5-gFK" firstAttribute="centerY" secondItem="uaN-z7-dyN" secondAttribute="centerY" id="uFE-eC-Y7q"/>
+                            <constraint firstItem="yLa-Z5-gFK" firstAttribute="centerX" secondItem="uaN-z7-dyN" secondAttribute="centerX" id="wc7-9h-aFM"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="resultLabel" destination="yLa-Z5-gFK" id="0Oc-dP-htu"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NgD-Di-vCN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1028" y="117"/>
+        </scene>
+    </scenes>
+</document>
