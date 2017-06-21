@@ -11,10 +11,27 @@
 		003BBC8B1EF79D1400EE2869 /* NJPhotosController.m in Sources */ = {isa = PBXBuildFile; fileRef = 003BBC891EF79D1400EE2869 /* NJPhotosController.m */; };
 		003BBC8E1EF7A01900EE2869 /* NJPhotosController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 003BBC8D1EF7A01900EE2869 /* NJPhotosController.storyboard */; };
 		003BBC911EF7B9E800EE2869 /* NJA.m in Sources */ = {isa = PBXBuildFile; fileRef = 003BBC901EF7B9E800EE2869 /* NJA.m */; };
-		006C36E41EF8A4FF0067667F /* QRCodeScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 006C36E31EF8A4FF0067667F /* QRCodeScanViewController.m */; };
-		006C36E91EF8A6010067667F /* NJQRCodeScanController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006C36E81EF8A6010067667F /* NJQRCodeScanController.swift */; };
-		006C37091EF8A6F70067667F /* QRCodeScanViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 006C37081EF8A6F70067667F /* QRCodeScanViewController.storyboard */; };
-		006C370F1EF917E60067667F /* NJQRCodeScanOC.m in Sources */ = {isa = PBXBuildFile; fileRef = 006C370E1EF917E60067667F /* NJQRCodeScanOC.m */; };
+		00CBBFBE1EF9EFDB00D9AEDB /* NSData+ImageContentType.m in Sources */ = {isa = PBXBuildFile; fileRef = 00CBBF9C1EF9EFDB00D9AEDB /* NSData+ImageContentType.m */; };
+		00CBBFBF1EF9EFDB00D9AEDB /* NSImage+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 00CBBF9E1EF9EFDB00D9AEDB /* NSImage+WebCache.m */; };
+		00CBBFC01EF9EFDB00D9AEDB /* SDImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 00CBBFA01EF9EFDB00D9AEDB /* SDImageCache.m */; };
+		00CBBFC11EF9EFDB00D9AEDB /* SDImageCacheConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 00CBBFA21EF9EFDB00D9AEDB /* SDImageCacheConfig.m */; };
+		00CBBFC21EF9EFDB00D9AEDB /* SDWebImageCompat.m in Sources */ = {isa = PBXBuildFile; fileRef = 00CBBFA41EF9EFDB00D9AEDB /* SDWebImageCompat.m */; };
+		00CBBFC31EF9EFDB00D9AEDB /* SDWebImageDecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 00CBBFA61EF9EFDB00D9AEDB /* SDWebImageDecoder.m */; };
+		00CBBFC41EF9EFDB00D9AEDB /* SDWebImageDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 00CBBFA81EF9EFDB00D9AEDB /* SDWebImageDownloader.m */; };
+		00CBBFC51EF9EFDB00D9AEDB /* SDWebImageDownloaderOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 00CBBFAA1EF9EFDB00D9AEDB /* SDWebImageDownloaderOperation.m */; };
+		00CBBFC61EF9EFDB00D9AEDB /* SDWebImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 00CBBFAC1EF9EFDB00D9AEDB /* SDWebImageManager.m */; };
+		00CBBFC71EF9EFDB00D9AEDB /* SDWebImagePrefetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 00CBBFAF1EF9EFDB00D9AEDB /* SDWebImagePrefetcher.m */; };
+		00CBBFC81EF9EFDB00D9AEDB /* UIButton+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 00CBBFB11EF9EFDB00D9AEDB /* UIButton+WebCache.m */; };
+		00CBBFC91EF9EFDB00D9AEDB /* UIImage+GIF.m in Sources */ = {isa = PBXBuildFile; fileRef = 00CBBFB31EF9EFDB00D9AEDB /* UIImage+GIF.m */; };
+		00CBBFCA1EF9EFDB00D9AEDB /* UIImage+MultiFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = 00CBBFB51EF9EFDB00D9AEDB /* UIImage+MultiFormat.m */; };
+		00CBBFCB1EF9EFDB00D9AEDB /* UIImageView+HighlightedWebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 00CBBFB71EF9EFDB00D9AEDB /* UIImageView+HighlightedWebCache.m */; };
+		00CBBFCC1EF9EFDB00D9AEDB /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 00CBBFB91EF9EFDB00D9AEDB /* UIImageView+WebCache.m */; };
+		00CBBFCD1EF9EFDB00D9AEDB /* UIView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 00CBBFBB1EF9EFDB00D9AEDB /* UIView+WebCache.m */; };
+		00CBBFCE1EF9EFDB00D9AEDB /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 00CBBFBD1EF9EFDB00D9AEDB /* UIView+WebCacheOperation.m */; };
+		00CBBFD71EF9EFF100D9AEDB /* NJQRCodeScanController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CBBFD11EF9EFF100D9AEDB /* NJQRCodeScanController.swift */; };
+		00CBBFD81EF9EFF100D9AEDB /* NJQRCodeScanOC.m in Sources */ = {isa = PBXBuildFile; fileRef = 00CBBFD31EF9EFF100D9AEDB /* NJQRCodeScanOC.m */; };
+		00CBBFD91EF9EFF100D9AEDB /* QRCodeScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00CBBFD51EF9EFF100D9AEDB /* QRCodeScanViewController.m */; };
+		00CBBFDA1EF9EFF100D9AEDB /* QRCodeScanViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00CBBFD61EF9EFF100D9AEDB /* QRCodeScanViewController.storyboard */; };
 		00F809E21E81246F002FC6A0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F809E11E81246F002FC6A0 /* main.m */; };
 		00F809E51E81246F002FC6A0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F809E41E81246F002FC6A0 /* AppDelegate.m */; };
 		00F809E81E81246F002FC6A0 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F809E71E81246F002FC6A0 /* ViewController.m */; };
@@ -55,13 +72,48 @@
 		003BBC8D1EF7A01900EE2869 /* NJPhotosController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = NJPhotosController.storyboard; sourceTree = "<group>"; };
 		003BBC8F1EF7B9E800EE2869 /* NJA.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJA.h; sourceTree = "<group>"; };
 		003BBC901EF7B9E800EE2869 /* NJA.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJA.m; sourceTree = "<group>"; };
-		006C36E21EF8A4FF0067667F /* QRCodeScanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRCodeScanViewController.h; sourceTree = "<group>"; };
-		006C36E31EF8A4FF0067667F /* QRCodeScanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRCodeScanViewController.m; sourceTree = "<group>"; };
-		006C36E51EF8A55D0067667F /* NJProject-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NJProject-Bridging-Header.h"; sourceTree = "<group>"; };
-		006C36E81EF8A6010067667F /* NJQRCodeScanController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NJQRCodeScanController.swift; sourceTree = "<group>"; };
-		006C37081EF8A6F70067667F /* QRCodeScanViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = QRCodeScanViewController.storyboard; sourceTree = "<group>"; };
-		006C370D1EF917E60067667F /* NJQRCodeScanOC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJQRCodeScanOC.h; sourceTree = "<group>"; };
-		006C370E1EF917E60067667F /* NJQRCodeScanOC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJQRCodeScanOC.m; sourceTree = "<group>"; };
+		00CBBF9B1EF9EFDB00D9AEDB /* NSData+ImageContentType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+ImageContentType.h"; sourceTree = "<group>"; };
+		00CBBF9C1EF9EFDB00D9AEDB /* NSData+ImageContentType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+ImageContentType.m"; sourceTree = "<group>"; };
+		00CBBF9D1EF9EFDB00D9AEDB /* NSImage+WebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSImage+WebCache.h"; sourceTree = "<group>"; };
+		00CBBF9E1EF9EFDB00D9AEDB /* NSImage+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSImage+WebCache.m"; sourceTree = "<group>"; };
+		00CBBF9F1EF9EFDB00D9AEDB /* SDImageCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDImageCache.h; sourceTree = "<group>"; };
+		00CBBFA01EF9EFDB00D9AEDB /* SDImageCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDImageCache.m; sourceTree = "<group>"; };
+		00CBBFA11EF9EFDB00D9AEDB /* SDImageCacheConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDImageCacheConfig.h; sourceTree = "<group>"; };
+		00CBBFA21EF9EFDB00D9AEDB /* SDImageCacheConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDImageCacheConfig.m; sourceTree = "<group>"; };
+		00CBBFA31EF9EFDB00D9AEDB /* SDWebImageCompat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDWebImageCompat.h; sourceTree = "<group>"; };
+		00CBBFA41EF9EFDB00D9AEDB /* SDWebImageCompat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDWebImageCompat.m; sourceTree = "<group>"; };
+		00CBBFA51EF9EFDB00D9AEDB /* SDWebImageDecoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDWebImageDecoder.h; sourceTree = "<group>"; };
+		00CBBFA61EF9EFDB00D9AEDB /* SDWebImageDecoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDWebImageDecoder.m; sourceTree = "<group>"; };
+		00CBBFA71EF9EFDB00D9AEDB /* SDWebImageDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDWebImageDownloader.h; sourceTree = "<group>"; };
+		00CBBFA81EF9EFDB00D9AEDB /* SDWebImageDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDWebImageDownloader.m; sourceTree = "<group>"; };
+		00CBBFA91EF9EFDB00D9AEDB /* SDWebImageDownloaderOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDWebImageDownloaderOperation.h; sourceTree = "<group>"; };
+		00CBBFAA1EF9EFDB00D9AEDB /* SDWebImageDownloaderOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDWebImageDownloaderOperation.m; sourceTree = "<group>"; };
+		00CBBFAB1EF9EFDB00D9AEDB /* SDWebImageManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDWebImageManager.h; sourceTree = "<group>"; };
+		00CBBFAC1EF9EFDB00D9AEDB /* SDWebImageManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDWebImageManager.m; sourceTree = "<group>"; };
+		00CBBFAD1EF9EFDB00D9AEDB /* SDWebImageOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDWebImageOperation.h; sourceTree = "<group>"; };
+		00CBBFAE1EF9EFDB00D9AEDB /* SDWebImagePrefetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDWebImagePrefetcher.h; sourceTree = "<group>"; };
+		00CBBFAF1EF9EFDB00D9AEDB /* SDWebImagePrefetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDWebImagePrefetcher.m; sourceTree = "<group>"; };
+		00CBBFB01EF9EFDB00D9AEDB /* UIButton+WebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+WebCache.h"; sourceTree = "<group>"; };
+		00CBBFB11EF9EFDB00D9AEDB /* UIButton+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+WebCache.m"; sourceTree = "<group>"; };
+		00CBBFB21EF9EFDB00D9AEDB /* UIImage+GIF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+GIF.h"; sourceTree = "<group>"; };
+		00CBBFB31EF9EFDB00D9AEDB /* UIImage+GIF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+GIF.m"; sourceTree = "<group>"; };
+		00CBBFB41EF9EFDB00D9AEDB /* UIImage+MultiFormat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+MultiFormat.h"; sourceTree = "<group>"; };
+		00CBBFB51EF9EFDB00D9AEDB /* UIImage+MultiFormat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+MultiFormat.m"; sourceTree = "<group>"; };
+		00CBBFB61EF9EFDB00D9AEDB /* UIImageView+HighlightedWebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+HighlightedWebCache.h"; sourceTree = "<group>"; };
+		00CBBFB71EF9EFDB00D9AEDB /* UIImageView+HighlightedWebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+HighlightedWebCache.m"; sourceTree = "<group>"; };
+		00CBBFB81EF9EFDB00D9AEDB /* UIImageView+WebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+WebCache.h"; sourceTree = "<group>"; };
+		00CBBFB91EF9EFDB00D9AEDB /* UIImageView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+WebCache.m"; sourceTree = "<group>"; };
+		00CBBFBA1EF9EFDB00D9AEDB /* UIView+WebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+WebCache.h"; sourceTree = "<group>"; };
+		00CBBFBB1EF9EFDB00D9AEDB /* UIView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WebCache.m"; sourceTree = "<group>"; };
+		00CBBFBC1EF9EFDB00D9AEDB /* UIView+WebCacheOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+WebCacheOperation.h"; sourceTree = "<group>"; };
+		00CBBFBD1EF9EFDB00D9AEDB /* UIView+WebCacheOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WebCacheOperation.m"; sourceTree = "<group>"; };
+		00CBBFD01EF9EFF100D9AEDB /* NJProject-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NJProject-Bridging-Header.h"; sourceTree = "<group>"; };
+		00CBBFD11EF9EFF100D9AEDB /* NJQRCodeScanController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NJQRCodeScanController.swift; sourceTree = "<group>"; };
+		00CBBFD21EF9EFF100D9AEDB /* NJQRCodeScanOC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJQRCodeScanOC.h; sourceTree = "<group>"; };
+		00CBBFD31EF9EFF100D9AEDB /* NJQRCodeScanOC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJQRCodeScanOC.m; sourceTree = "<group>"; };
+		00CBBFD41EF9EFF100D9AEDB /* QRCodeScanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRCodeScanViewController.h; sourceTree = "<group>"; };
+		00CBBFD51EF9EFF100D9AEDB /* QRCodeScanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRCodeScanViewController.m; sourceTree = "<group>"; };
+		00CBBFD61EF9EFF100D9AEDB /* QRCodeScanViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = QRCodeScanViewController.storyboard; sourceTree = "<group>"; };
 		00F809DD1E81246F002FC6A0 /* NJProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NJProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		00F809E11E81246F002FC6A0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		00F809E31E81246F002FC6A0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -146,16 +198,58 @@
 			path = NJPhotos;
 			sourceTree = "<group>";
 		};
-		006C36E11EF8A4CE0067667F /* QRCodeScan */ = {
+		00CBBF9A1EF9EFDB00D9AEDB /* SDWebImage */ = {
 			isa = PBXGroup;
 			children = (
-				006C36E21EF8A4FF0067667F /* QRCodeScanViewController.h */,
-				006C36E31EF8A4FF0067667F /* QRCodeScanViewController.m */,
-				006C37081EF8A6F70067667F /* QRCodeScanViewController.storyboard */,
-				006C370D1EF917E60067667F /* NJQRCodeScanOC.h */,
-				006C370E1EF917E60067667F /* NJQRCodeScanOC.m */,
-				006C36E81EF8A6010067667F /* NJQRCodeScanController.swift */,
-				006C36E51EF8A55D0067667F /* NJProject-Bridging-Header.h */,
+				00CBBF9B1EF9EFDB00D9AEDB /* NSData+ImageContentType.h */,
+				00CBBF9C1EF9EFDB00D9AEDB /* NSData+ImageContentType.m */,
+				00CBBF9D1EF9EFDB00D9AEDB /* NSImage+WebCache.h */,
+				00CBBF9E1EF9EFDB00D9AEDB /* NSImage+WebCache.m */,
+				00CBBF9F1EF9EFDB00D9AEDB /* SDImageCache.h */,
+				00CBBFA01EF9EFDB00D9AEDB /* SDImageCache.m */,
+				00CBBFA11EF9EFDB00D9AEDB /* SDImageCacheConfig.h */,
+				00CBBFA21EF9EFDB00D9AEDB /* SDImageCacheConfig.m */,
+				00CBBFA31EF9EFDB00D9AEDB /* SDWebImageCompat.h */,
+				00CBBFA41EF9EFDB00D9AEDB /* SDWebImageCompat.m */,
+				00CBBFA51EF9EFDB00D9AEDB /* SDWebImageDecoder.h */,
+				00CBBFA61EF9EFDB00D9AEDB /* SDWebImageDecoder.m */,
+				00CBBFA71EF9EFDB00D9AEDB /* SDWebImageDownloader.h */,
+				00CBBFA81EF9EFDB00D9AEDB /* SDWebImageDownloader.m */,
+				00CBBFA91EF9EFDB00D9AEDB /* SDWebImageDownloaderOperation.h */,
+				00CBBFAA1EF9EFDB00D9AEDB /* SDWebImageDownloaderOperation.m */,
+				00CBBFAB1EF9EFDB00D9AEDB /* SDWebImageManager.h */,
+				00CBBFAC1EF9EFDB00D9AEDB /* SDWebImageManager.m */,
+				00CBBFAD1EF9EFDB00D9AEDB /* SDWebImageOperation.h */,
+				00CBBFAE1EF9EFDB00D9AEDB /* SDWebImagePrefetcher.h */,
+				00CBBFAF1EF9EFDB00D9AEDB /* SDWebImagePrefetcher.m */,
+				00CBBFB01EF9EFDB00D9AEDB /* UIButton+WebCache.h */,
+				00CBBFB11EF9EFDB00D9AEDB /* UIButton+WebCache.m */,
+				00CBBFB21EF9EFDB00D9AEDB /* UIImage+GIF.h */,
+				00CBBFB31EF9EFDB00D9AEDB /* UIImage+GIF.m */,
+				00CBBFB41EF9EFDB00D9AEDB /* UIImage+MultiFormat.h */,
+				00CBBFB51EF9EFDB00D9AEDB /* UIImage+MultiFormat.m */,
+				00CBBFB61EF9EFDB00D9AEDB /* UIImageView+HighlightedWebCache.h */,
+				00CBBFB71EF9EFDB00D9AEDB /* UIImageView+HighlightedWebCache.m */,
+				00CBBFB81EF9EFDB00D9AEDB /* UIImageView+WebCache.h */,
+				00CBBFB91EF9EFDB00D9AEDB /* UIImageView+WebCache.m */,
+				00CBBFBA1EF9EFDB00D9AEDB /* UIView+WebCache.h */,
+				00CBBFBB1EF9EFDB00D9AEDB /* UIView+WebCache.m */,
+				00CBBFBC1EF9EFDB00D9AEDB /* UIView+WebCacheOperation.h */,
+				00CBBFBD1EF9EFDB00D9AEDB /* UIView+WebCacheOperation.m */,
+			);
+			path = SDWebImage;
+			sourceTree = "<group>";
+		};
+		00CBBFCF1EF9EFF100D9AEDB /* QRCodeScan */ = {
+			isa = PBXGroup;
+			children = (
+				00CBBFD01EF9EFF100D9AEDB /* NJProject-Bridging-Header.h */,
+				00CBBFD11EF9EFF100D9AEDB /* NJQRCodeScanController.swift */,
+				00CBBFD21EF9EFF100D9AEDB /* NJQRCodeScanOC.h */,
+				00CBBFD31EF9EFF100D9AEDB /* NJQRCodeScanOC.m */,
+				00CBBFD41EF9EFF100D9AEDB /* QRCodeScanViewController.h */,
+				00CBBFD51EF9EFF100D9AEDB /* QRCodeScanViewController.m */,
+				00CBBFD61EF9EFF100D9AEDB /* QRCodeScanViewController.storyboard */,
 			);
 			path = QRCodeScan;
 			sourceTree = "<group>";
@@ -179,7 +273,6 @@
 		00F809DF1E81246F002FC6A0 /* NJProject */ = {
 			isa = PBXGroup;
 			children = (
-				006C36E11EF8A4CE0067667F /* QRCodeScan */,
 				00F80A021E81275D002FC6A0 /* Tools */,
 				00F809FD1E8126C2002FC6A0 /* Main */,
 				00F809F81E8124D8002FC6A0 /* FunctionGroup */,
@@ -210,6 +303,7 @@
 		00F809F81E8124D8002FC6A0 /* FunctionGroup */ = {
 			isa = PBXGroup;
 			children = (
+				00CBBFCF1EF9EFF100D9AEDB /* QRCodeScan */,
 				003BBC821EF79CC800EE2869 /* NJPhotos */,
 				00F809F91E8124EA002FC6A0 /* MJRefreshFunc */,
 			);
@@ -239,6 +333,7 @@
 		00F80A021E81275D002FC6A0 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				00CBBF9A1EF9EFDB00D9AEDB /* SDWebImage */,
 				00F80A0D1E812B0E002FC6A0 /* MJRefresh */,
 				00F80A041E8127D0002FC6A0 /* NJViewEx */,
 			);
@@ -414,7 +509,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				006C37091EF8A6F70067667F /* QRCodeScanViewController.storyboard in Resources */,
+				00CBBFDA1EF9EFF100D9AEDB /* QRCodeScanViewController.storyboard in Resources */,
 				003BBC8E1EF7A01900EE2869 /* NJPhotosController.storyboard in Resources */,
 				00F809F01E81246F002FC6A0 /* LaunchScreen.storyboard in Resources */,
 				00F809ED1E81246F002FC6A0 /* Assets.xcassets in Resources */,
@@ -430,38 +525,55 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00CBBFCB1EF9EFDB00D9AEDB /* UIImageView+HighlightedWebCache.m in Sources */,
 				003BBC911EF7B9E800EE2869 /* NJA.m in Sources */,
+				00CBBFCD1EF9EFDB00D9AEDB /* UIView+WebCache.m in Sources */,
 				00F80A0B1E8127D0002FC6A0 /* UIView+NJView.m in Sources */,
 				00F80A3F1E812B0E002FC6A0 /* MJRefreshFooter.m in Sources */,
+				00CBBFC61EF9EFDB00D9AEDB /* SDWebImageManager.m in Sources */,
 				00F80A431E812B0E002FC6A0 /* MJRefreshAutoStateFooter.m in Sources */,
+				00CBBFCC1EF9EFDB00D9AEDB /* UIImageView+WebCache.m in Sources */,
+				00CBBFD81EF9EFF100D9AEDB /* NJQRCodeScanOC.m in Sources */,
 				00F809E81E81246F002FC6A0 /* ViewController.m in Sources */,
 				003BBC811EF7969E00EE2869 /* NJNavigatorController.m in Sources */,
+				00CBBFCA1EF9EFDB00D9AEDB /* UIImage+MultiFormat.m in Sources */,
 				00F80A3E1E812B0E002FC6A0 /* MJRefreshComponent.m in Sources */,
+				00CBBFC41EF9EFDB00D9AEDB /* SDWebImageDownloader.m in Sources */,
 				00F80A411E812B0E002FC6A0 /* MJRefreshAutoGifFooter.m in Sources */,
+				00CBBFBF1EF9EFDB00D9AEDB /* NSImage+WebCache.m in Sources */,
 				00F80A481E812B0E002FC6A0 /* MJRefreshNormalHeader.m in Sources */,
 				00F80A451E812B0E002FC6A0 /* MJRefreshBackNormalFooter.m in Sources */,
+				00CBBFBE1EF9EFDB00D9AEDB /* NSData+ImageContentType.m in Sources */,
+				00CBBFC31EF9EFDB00D9AEDB /* SDWebImageDecoder.m in Sources */,
+				00CBBFC71EF9EFDB00D9AEDB /* SDWebImagePrefetcher.m in Sources */,
 				00F80A4B1E812B0E002FC6A0 /* MJRefreshConst.m in Sources */,
 				00F80A4F1E812B0E002FC6A0 /* UIView+MJExtension.m in Sources */,
 				00F80A421E812B0E002FC6A0 /* MJRefreshAutoNormalFooter.m in Sources */,
 				00F80A461E812B0E002FC6A0 /* MJRefreshBackStateFooter.m in Sources */,
 				00F809E51E81246F002FC6A0 /* AppDelegate.m in Sources */,
 				00F80A4D1E812B0E002FC6A0 /* UIScrollView+MJExtension.m in Sources */,
+				00CBBFC91EF9EFDB00D9AEDB /* UIImage+GIF.m in Sources */,
 				00F80A4E1E812B0E002FC6A0 /* UIScrollView+MJRefresh.m in Sources */,
+				00CBBFC11EF9EFDB00D9AEDB /* SDImageCacheConfig.m in Sources */,
 				00F809FC1E8126BC002FC6A0 /* NJRefreshExampleViewController.m in Sources */,
-				006C36E41EF8A4FF0067667F /* QRCodeScanViewController.m in Sources */,
 				00F80A471E812B0E002FC6A0 /* MJRefreshGifHeader.m in Sources */,
 				00F809E21E81246F002FC6A0 /* main.m in Sources */,
+				00CBBFC51EF9EFDB00D9AEDB /* SDWebImageDownloaderOperation.m in Sources */,
 				00F80A401E812B0E002FC6A0 /* MJRefreshHeader.m in Sources */,
 				00F80A001E8126F7002FC6A0 /* NJBaseViewController.m in Sources */,
+				00CBBFC21EF9EFDB00D9AEDB /* SDWebImageCompat.m in Sources */,
 				00F80A491E812B0E002FC6A0 /* MJRefreshStateHeader.m in Sources */,
-				006C370F1EF917E60067667F /* NJQRCodeScanOC.m in Sources */,
-				006C36E91EF8A6010067667F /* NJQRCodeScanController.swift in Sources */,
 				00F80A3D1E812B0E002FC6A0 /* MJRefreshBackFooter.m in Sources */,
+				00CBBFD71EF9EFF100D9AEDB /* NJQRCodeScanController.swift in Sources */,
+				00CBBFC81EF9EFDB00D9AEDB /* UIButton+WebCache.m in Sources */,
 				00F80A4C1E812B0E002FC6A0 /* NSBundle+MJRefresh.m in Sources */,
 				003BBC8B1EF79D1400EE2869 /* NJPhotosController.m in Sources */,
 				00F80A3C1E812B0E002FC6A0 /* MJRefreshAutoFooter.m in Sources */,
+				00CBBFD91EF9EFF100D9AEDB /* QRCodeScanViewController.m in Sources */,
+				00CBBFCE1EF9EFDB00D9AEDB /* UIView+WebCacheOperation.m in Sources */,
 				00F80A0A1E8127D0002FC6A0 /* UIButton+NJButton.m in Sources */,
 				00F80A441E812B0E002FC6A0 /* MJRefreshBackGifFooter.m in Sources */,
+				00CBBFC01EF9EFDB00D9AEDB /* SDImageCache.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
