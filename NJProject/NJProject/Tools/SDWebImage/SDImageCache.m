@@ -384,12 +384,14 @@ FOUNDATION_STATIC_INLINE NSUInteger SDCacheCostForImage(UIImage *image) {
 
     NSOperation *operation = [NSOperation new];
     dispatch_async(self.ioQueue, ^{
+        //如果operation被取消了(cancel),那么就直接返回.不再去进行请求.
         if (operation.isCancelled) {
             // do not call the completion if cancelled
             return;
         }
 
         @autoreleasepool {
+            //根据key去磁盘搜索imageData.
             NSData *diskData = [self diskImageDataBySearchingAllPathsForKey:key];
             UIImage *diskImage = [self diskImageForKey:key];
             if (diskImage && self.config.shouldCacheImagesInMemory) {

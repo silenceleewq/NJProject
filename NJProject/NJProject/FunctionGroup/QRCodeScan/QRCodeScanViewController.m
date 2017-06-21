@@ -7,7 +7,6 @@
 //
 
 #import "QRCodeScanViewController.h"
-#import "NJProject-Swift.h"
 #import "NJQRCodeScanOC.h"
 
 

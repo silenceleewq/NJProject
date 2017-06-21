@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="9YO-cn-8AJ">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Web Image Test-->
+        <scene sceneID="ao7-Ha-UkM">
+            <objects>
+                <viewController id="9YO-cn-8AJ" customClass="NJSDWebImageTest" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Dwf-Dg-bbS"/>
+                        <viewControllerLayoutGuide type="bottom" id="Lmo-1A-qgB"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="6xI-r8-fei">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gG3-P2-KDG">
+                                <rect key="frame" x="87.5" y="233.5" width="200" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="Rd4-rD-fLq"/>
+                                    <constraint firstAttribute="height" constant="200" id="n29-Vh-aMF"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="gG3-P2-KDG" firstAttribute="centerY" secondItem="6xI-r8-fei" secondAttribute="centerY" id="qXV-4r-bbc"/>
+                            <constraint firstItem="gG3-P2-KDG" firstAttribute="centerX" secondItem="6xI-r8-fei" secondAttribute="centerX" id="uC5-U9-cHZ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imgView" destination="gG3-P2-KDG" id="2wr-ZD-PEB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mdK-QO-NCD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="538" y="-25"/>
+        </scene>
+    </scenes>
+</document>

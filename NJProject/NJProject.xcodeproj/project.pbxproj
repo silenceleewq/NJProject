@@ -32,6 +32,8 @@
 		00CBBFD81EF9EFF100D9AEDB /* NJQRCodeScanOC.m in Sources */ = {isa = PBXBuildFile; fileRef = 00CBBFD31EF9EFF100D9AEDB /* NJQRCodeScanOC.m */; };
 		00CBBFD91EF9EFF100D9AEDB /* QRCodeScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00CBBFD51EF9EFF100D9AEDB /* QRCodeScanViewController.m */; };
 		00CBBFDA1EF9EFF100D9AEDB /* QRCodeScanViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00CBBFD61EF9EFF100D9AEDB /* QRCodeScanViewController.storyboard */; };
+		00CBBFDE1EF9F33400D9AEDB /* NJSDWebImageTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 00CBBFDD1EF9F33400D9AEDB /* NJSDWebImageTest.m */; };
+		00CBBFE01EF9F33C00D9AEDB /* NJSDWebImageTest.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00CBBFDF1EF9F33C00D9AEDB /* NJSDWebImageTest.storyboard */; };
 		00F809E21E81246F002FC6A0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F809E11E81246F002FC6A0 /* main.m */; };
 		00F809E51E81246F002FC6A0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F809E41E81246F002FC6A0 /* AppDelegate.m */; };
 		00F809E81E81246F002FC6A0 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F809E71E81246F002FC6A0 /* ViewController.m */; };
@@ -114,6 +116,9 @@
 		00CBBFD41EF9EFF100D9AEDB /* QRCodeScanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRCodeScanViewController.h; sourceTree = "<group>"; };
 		00CBBFD51EF9EFF100D9AEDB /* QRCodeScanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRCodeScanViewController.m; sourceTree = "<group>"; };
 		00CBBFD61EF9EFF100D9AEDB /* QRCodeScanViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = QRCodeScanViewController.storyboard; sourceTree = "<group>"; };
+		00CBBFDC1EF9F33400D9AEDB /* NJSDWebImageTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJSDWebImageTest.h; sourceTree = "<group>"; };
+		00CBBFDD1EF9F33400D9AEDB /* NJSDWebImageTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJSDWebImageTest.m; sourceTree = "<group>"; };
+		00CBBFDF1EF9F33C00D9AEDB /* NJSDWebImageTest.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = NJSDWebImageTest.storyboard; sourceTree = "<group>"; };
 		00F809DD1E81246F002FC6A0 /* NJProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NJProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		00F809E11E81246F002FC6A0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		00F809E31E81246F002FC6A0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -254,6 +259,16 @@
 			path = QRCodeScan;
 			sourceTree = "<group>";
 		};
+		00CBBFDB1EF9F30B00D9AEDB /* SDWebImageTest */ = {
+			isa = PBXGroup;
+			children = (
+				00CBBFDC1EF9F33400D9AEDB /* NJSDWebImageTest.h */,
+				00CBBFDD1EF9F33400D9AEDB /* NJSDWebImageTest.m */,
+				00CBBFDF1EF9F33C00D9AEDB /* NJSDWebImageTest.storyboard */,
+			);
+			path = SDWebImageTest;
+			sourceTree = "<group>";
+		};
 		00F809D41E81246F002FC6A0 = {
 			isa = PBXGroup;
 			children = (
@@ -303,6 +318,7 @@
 		00F809F81E8124D8002FC6A0 /* FunctionGroup */ = {
 			isa = PBXGroup;
 			children = (
+				00CBBFDB1EF9F30B00D9AEDB /* SDWebImageTest */,
 				00CBBFCF1EF9EFF100D9AEDB /* QRCodeScan */,
 				003BBC821EF79CC800EE2869 /* NJPhotos */,
 				00F809F91E8124EA002FC6A0 /* MJRefreshFunc */,
@@ -510,6 +526,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				00CBBFDA1EF9EFF100D9AEDB /* QRCodeScanViewController.storyboard in Resources */,
+				00CBBFE01EF9F33C00D9AEDB /* NJSDWebImageTest.storyboard in Resources */,
 				003BBC8E1EF7A01900EE2869 /* NJPhotosController.storyboard in Resources */,
 				00F809F01E81246F002FC6A0 /* LaunchScreen.storyboard in Resources */,
 				00F809ED1E81246F002FC6A0 /* Assets.xcassets in Resources */,
@@ -528,6 +545,7 @@
 				00CBBFCB1EF9EFDB00D9AEDB /* UIImageView+HighlightedWebCache.m in Sources */,
 				003BBC911EF7B9E800EE2869 /* NJA.m in Sources */,
 				00CBBFCD1EF9EFDB00D9AEDB /* UIView+WebCache.m in Sources */,
+				00CBBFDE1EF9F33400D9AEDB /* NJSDWebImageTest.m in Sources */,
 				00F80A0B1E8127D0002FC6A0 /* UIView+NJView.m in Sources */,
 				00F80A3F1E812B0E002FC6A0 /* MJRefreshFooter.m in Sources */,
 				00CBBFC61EF9EFDB00D9AEDB /* SDWebImageManager.m in Sources */,
@@ -692,7 +710,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				DEFINES_MODULE = YES;
+				DEFINES_MODULE = NO;
 				DEVELOPMENT_TEAM = C9LH35JAFL;
 				GCC_PREFIX_HEADER = ./NJProject/PrefixHeader.pch;
 				INFOPLIST_FILE = NJProject/Info.plist;
@@ -700,7 +718,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.own.NJProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "NJProject/QRCodeScan/NJProject-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "NJProject/FunctionGroup/QRCodeScan/NJProject-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
@@ -711,7 +729,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				DEFINES_MODULE = YES;
+				DEFINES_MODULE = NO;
 				DEVELOPMENT_TEAM = C9LH35JAFL;
 				GCC_PREFIX_HEADER = ./NJProject/PrefixHeader.pch;
 				INFOPLIST_FILE = NJProject/Info.plist;
@@ -719,7 +737,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.own.NJProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "NJProject/QRCodeScan/NJProject-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "NJProject/FunctionGroup/QRCodeScan/NJProject-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

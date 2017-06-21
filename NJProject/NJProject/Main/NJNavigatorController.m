@@ -11,6 +11,7 @@
 #import "NJRefreshExampleViewController.h"
 #import "NJQRCodeScanOC.h"
 #import "QRCodeScanViewController.h"
+#import "NJSDWebImageTest.h"
 
 @interface NJExample : NSObject
 
@@ -50,7 +51,8 @@
     self.vcArray = @[
                      [NJExample exampleWithTitle:@"NJRefreshExample" controllerName:@"NJRefreshExampleViewController"],
                      [NJExample exampleWithTitle:@"NJPhotos" controllerName:@"NJPhotosController"],
-                     [NJExample exampleWithTitle:@"二维码扫描" controllerName:@"QRCodeScanViewController"]
+                     [NJExample exampleWithTitle:@"二维码扫描" controllerName:@"QRCodeScanViewController"],
+                     [NJExample exampleWithTitle:@"NJSDWebImageTest" controllerName:@"NJSDWebImageTest"]
                      ];
     
 }
