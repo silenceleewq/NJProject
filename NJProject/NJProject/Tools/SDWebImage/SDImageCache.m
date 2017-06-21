@@ -392,6 +392,7 @@ FOUNDATION_STATIC_INLINE NSUInteger SDCacheCostForImage(UIImage *image) {
 
         @autoreleasepool {
             //根据key去磁盘搜索imageData.
+            
             NSData *diskData = [self diskImageDataBySearchingAllPathsForKey:key];
             UIImage *diskImage = [self diskImageForKey:key];
             if (diskImage && self.config.shouldCacheImagesInMemory) {
