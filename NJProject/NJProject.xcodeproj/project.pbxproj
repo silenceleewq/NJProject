@@ -64,6 +64,9 @@
 		00F80A4D1E812B0E002FC6A0 /* UIScrollView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F80A371E812B0E002FC6A0 /* UIScrollView+MJExtension.m */; };
 		00F80A4E1E812B0E002FC6A0 /* UIScrollView+MJRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F80A391E812B0E002FC6A0 /* UIScrollView+MJRefresh.m */; };
 		00F80A4F1E812B0E002FC6A0 /* UIView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F80A3B1E812B0E002FC6A0 /* UIView+MJExtension.m */; };
+		1F37327F1F0E631D00D01F53 /* NJMessageForwardController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F37327E1F0E631D00D01F53 /* NJMessageForwardController.m */; };
+		1FACB5191F0FD0D9008A3DFC /* NJCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FACB5181F0FD0D9008A3DFC /* NJCell.m */; };
+		1FACB51D1F10C544008A3DFC /* NJCameraController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FACB51C1F10C544008A3DFC /* NJCameraController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -180,6 +183,12 @@
 		00F80A391E812B0E002FC6A0 /* UIScrollView+MJRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+MJRefresh.m"; sourceTree = "<group>"; };
 		00F80A3A1E812B0E002FC6A0 /* UIView+MJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+MJExtension.h"; sourceTree = "<group>"; };
 		00F80A3B1E812B0E002FC6A0 /* UIView+MJExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+MJExtension.m"; sourceTree = "<group>"; };
+		1F37327D1F0E631D00D01F53 /* NJMessageForwardController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJMessageForwardController.h; sourceTree = "<group>"; };
+		1F37327E1F0E631D00D01F53 /* NJMessageForwardController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJMessageForwardController.m; sourceTree = "<group>"; };
+		1FACB5171F0FD0D9008A3DFC /* NJCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJCell.h; sourceTree = "<group>"; };
+		1FACB5181F0FD0D9008A3DFC /* NJCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJCell.m; sourceTree = "<group>"; };
+		1FACB51B1F10C544008A3DFC /* NJCameraController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJCameraController.h; sourceTree = "<group>"; };
+		1FACB51C1F10C544008A3DFC /* NJCameraController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJCameraController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -318,6 +327,8 @@
 		00F809F81E8124D8002FC6A0 /* FunctionGroup */ = {
 			isa = PBXGroup;
 			children = (
+				1FACB51A1F10C503008A3DFC /* CameraModel */,
+				1F37327C1F0E629200D01F53 /* MessageForwarding */,
 				00CBBFDB1EF9F30B00D9AEDB /* SDWebImageTest */,
 				00CBBFCF1EF9EFF100D9AEDB /* QRCodeScan */,
 				003BBC821EF79CC800EE2869 /* NJPhotos */,
@@ -331,6 +342,8 @@
 			children = (
 				00F809FA1E8126BC002FC6A0 /* NJRefreshExampleViewController.h */,
 				00F809FB1E8126BC002FC6A0 /* NJRefreshExampleViewController.m */,
+				1FACB5171F0FD0D9008A3DFC /* NJCell.h */,
+				1FACB5181F0FD0D9008A3DFC /* NJCell.m */,
 			);
 			path = MJRefreshFunc;
 			sourceTree = "<group>";
@@ -464,6 +477,24 @@
 			path = Header;
 			sourceTree = "<group>";
 		};
+		1F37327C1F0E629200D01F53 /* MessageForwarding */ = {
+			isa = PBXGroup;
+			children = (
+				1F37327D1F0E631D00D01F53 /* NJMessageForwardController.h */,
+				1F37327E1F0E631D00D01F53 /* NJMessageForwardController.m */,
+			);
+			path = MessageForwarding;
+			sourceTree = "<group>";
+		};
+		1FACB51A1F10C503008A3DFC /* CameraModel */ = {
+			isa = PBXGroup;
+			children = (
+				1FACB51B1F10C544008A3DFC /* NJCameraController.h */,
+				1FACB51C1F10C544008A3DFC /* NJCameraController.m */,
+			);
+			path = CameraModel;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -546,6 +577,7 @@
 				003BBC911EF7B9E800EE2869 /* NJA.m in Sources */,
 				00CBBFCD1EF9EFDB00D9AEDB /* UIView+WebCache.m in Sources */,
 				00CBBFDE1EF9F33400D9AEDB /* NJSDWebImageTest.m in Sources */,
+				1F37327F1F0E631D00D01F53 /* NJMessageForwardController.m in Sources */,
 				00F80A0B1E8127D0002FC6A0 /* UIView+NJView.m in Sources */,
 				00F80A3F1E812B0E002FC6A0 /* MJRefreshFooter.m in Sources */,
 				00CBBFC61EF9EFDB00D9AEDB /* SDWebImageManager.m in Sources */,
@@ -562,6 +594,7 @@
 				00F80A481E812B0E002FC6A0 /* MJRefreshNormalHeader.m in Sources */,
 				00F80A451E812B0E002FC6A0 /* MJRefreshBackNormalFooter.m in Sources */,
 				00CBBFBE1EF9EFDB00D9AEDB /* NSData+ImageContentType.m in Sources */,
+				1FACB51D1F10C544008A3DFC /* NJCameraController.m in Sources */,
 				00CBBFC31EF9EFDB00D9AEDB /* SDWebImageDecoder.m in Sources */,
 				00CBBFC71EF9EFDB00D9AEDB /* SDWebImagePrefetcher.m in Sources */,
 				00F80A4B1E812B0E002FC6A0 /* MJRefreshConst.m in Sources */,
@@ -584,6 +617,7 @@
 				00F80A3D1E812B0E002FC6A0 /* MJRefreshBackFooter.m in Sources */,
 				00CBBFD71EF9EFF100D9AEDB /* NJQRCodeScanController.swift in Sources */,
 				00CBBFC81EF9EFDB00D9AEDB /* UIButton+WebCache.m in Sources */,
+				1FACB5191F0FD0D9008A3DFC /* NJCell.m in Sources */,
 				00F80A4C1E812B0E002FC6A0 /* NSBundle+MJRefresh.m in Sources */,
 				003BBC8B1EF79D1400EE2869 /* NJPhotosController.m in Sources */,
 				00F80A3C1E812B0E002FC6A0 /* MJRefreshAutoFooter.m in Sources */,

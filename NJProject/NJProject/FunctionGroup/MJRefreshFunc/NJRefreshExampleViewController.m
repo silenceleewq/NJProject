@@ -7,11 +7,12 @@
 //
 
 #import "NJRefreshExampleViewController.h"
+#import "NJCell.h"
 
 int cellRows = 50;
 #define cellID @"cellID"
 
-@interface NJRefreshExampleViewController () <UITableViewDataSource>
+@interface NJRefreshExampleViewController () <UITableViewDataSource, UITableViewDelegate>
 
 /** 事例列表 */
 @property (nonatomic, strong) UITableView *tableView;
@@ -33,7 +34,8 @@ int cellRows = 50;
         _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, KSCREENWIDTH, KSCREENHEIGHT) style:UITableViewStylePlain];
         [self initRefreshTableViewController:_tableView headerRefreshAction:@selector(loadNewData) footerRefreshAction:@selector(loadMoreData)];
         _tableView.dataSource = self;
-        [_tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:cellID];
+        _tableView.delegate = self;
+        [_tableView registerClass:[NJCell class] forCellReuseIdentifier:cellID];
     }
     return _tableView;
 }
@@ -75,11 +77,22 @@ void doSomeWork(void)
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID forIndexPath:indexPath];
+    NJCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID forIndexPath:indexPath];
     
-    cell.textLabel.text = @(indexPath.row).stringValue;
+//    cell.textLabel.text = @(indexPath.row).stringValue;
     
     return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 100;
+}
+
+#pragma mark - tableview delegate
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSLog(@"hello");
 }
 
 #pragma mark - 模拟网络请求
@@ -104,6 +117,20 @@ void doSomeWork(void)
 }
 
 - (void)dealloc {
+    
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            NSArray *arr = @[@1, @2, @3, @4, @5, @6, @7, @8];
+            NSString *path = NSSearchPathForDirectoriesInDomains(NSPicturesDirectory, NSUserDomainMask, YES).lastObject;
+            for (NSInteger i = 0; i < arr.count; i++) {
+                NSString *finalPath = [NSString stringWithFormat:@"%@%zd", path, i];
+                [arr writeToFile:finalPath atomically:YES];
+                NSLog(@"%@", finalPath);
+            }
+            NSLog(@"写操作完毕");
+        });
+    });
+    
     NSLog(@"NJRefresh Dealloc");
 }
 

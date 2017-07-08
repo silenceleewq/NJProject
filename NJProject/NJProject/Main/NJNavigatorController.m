@@ -12,6 +12,8 @@
 #import "NJQRCodeScanOC.h"
 #import "QRCodeScanViewController.h"
 #import "NJSDWebImageTest.h"
+#import "NJMessageForwardController.h"
+#import "NJCameraController.h"
 
 @interface NJExample : NSObject
 
@@ -52,9 +54,10 @@
                      [NJExample exampleWithTitle:@"NJRefreshExample" controllerName:@"NJRefreshExampleViewController"],
                      [NJExample exampleWithTitle:@"NJPhotos" controllerName:@"NJPhotosController"],
                      [NJExample exampleWithTitle:@"二维码扫描" controllerName:@"QRCodeScanViewController"],
-                     [NJExample exampleWithTitle:@"NJSDWebImageTest" controllerName:@"NJSDWebImageTest"]
+                     [NJExample exampleWithTitle:@"NJSDWebImageTest" controllerName:@"NJSDWebImageTest"],
+                     [NJExample exampleWithTitle:@"消息转发" controllerName:@"NJMessageForwardController"],
+                     [NJExample exampleWithTitle:@"相机模块" controllerName:@"NJCameraController"]
                      ];
-    
 }
 
 - (void)didReceiveMemoryWarning {
