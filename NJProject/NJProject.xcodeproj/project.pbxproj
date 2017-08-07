@@ -64,6 +64,7 @@
 		00F80A4D1E812B0E002FC6A0 /* UIScrollView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F80A371E812B0E002FC6A0 /* UIScrollView+MJExtension.m */; };
 		00F80A4E1E812B0E002FC6A0 /* UIScrollView+MJRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F80A391E812B0E002FC6A0 /* UIScrollView+MJRefresh.m */; };
 		00F80A4F1E812B0E002FC6A0 /* UIView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F80A3B1E812B0E002FC6A0 /* UIView+MJExtension.m */; };
+		1F2F95CD1F37FCBE00BAD1E1 /* NJUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F2F95CC1F37FCBE00BAD1E1 /* NJUtility.m */; };
 		1F37327F1F0E631D00D01F53 /* NJMessageForwardController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F37327E1F0E631D00D01F53 /* NJMessageForwardController.m */; };
 		1FACB5191F0FD0D9008A3DFC /* NJCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FACB5181F0FD0D9008A3DFC /* NJCell.m */; };
 		1FACB51D1F10C544008A3DFC /* NJCameraController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FACB51C1F10C544008A3DFC /* NJCameraController.m */; };
@@ -183,6 +184,8 @@
 		00F80A391E812B0E002FC6A0 /* UIScrollView+MJRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+MJRefresh.m"; sourceTree = "<group>"; };
 		00F80A3A1E812B0E002FC6A0 /* UIView+MJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+MJExtension.h"; sourceTree = "<group>"; };
 		00F80A3B1E812B0E002FC6A0 /* UIView+MJExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+MJExtension.m"; sourceTree = "<group>"; };
+		1F2F95CB1F37FCBE00BAD1E1 /* NJUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJUtility.h; sourceTree = "<group>"; };
+		1F2F95CC1F37FCBE00BAD1E1 /* NJUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJUtility.m; sourceTree = "<group>"; };
 		1F37327D1F0E631D00D01F53 /* NJMessageForwardController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJMessageForwardController.h; sourceTree = "<group>"; };
 		1F37327E1F0E631D00D01F53 /* NJMessageForwardController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJMessageForwardController.m; sourceTree = "<group>"; };
 		1FACB5171F0FD0D9008A3DFC /* NJCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJCell.h; sourceTree = "<group>"; };
@@ -362,6 +365,7 @@
 		00F80A021E81275D002FC6A0 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				1F2F95CA1F37FC7500BAD1E1 /* NJUtility */,
 				00CBBF9A1EF9EFDB00D9AEDB /* SDWebImage */,
 				00F80A0D1E812B0E002FC6A0 /* MJRefresh */,
 				00F80A041E8127D0002FC6A0 /* NJViewEx */,
@@ -477,6 +481,15 @@
 			path = Header;
 			sourceTree = "<group>";
 		};
+		1F2F95CA1F37FC7500BAD1E1 /* NJUtility */ = {
+			isa = PBXGroup;
+			children = (
+				1F2F95CB1F37FCBE00BAD1E1 /* NJUtility.h */,
+				1F2F95CC1F37FCBE00BAD1E1 /* NJUtility.m */,
+			);
+			path = NJUtility;
+			sourceTree = "<group>";
+		};
 		1F37327C1F0E629200D01F53 /* MessageForwarding */ = {
 			isa = PBXGroup;
 			children = (
@@ -587,6 +600,7 @@
 				00F809E81E81246F002FC6A0 /* ViewController.m in Sources */,
 				003BBC811EF7969E00EE2869 /* NJNavigatorController.m in Sources */,
 				00CBBFCA1EF9EFDB00D9AEDB /* UIImage+MultiFormat.m in Sources */,
+				1F2F95CD1F37FCBE00BAD1E1 /* NJUtility.m in Sources */,
 				00F80A3E1E812B0E002FC6A0 /* MJRefreshComponent.m in Sources */,
 				00CBBFC41EF9EFDB00D9AEDB /* SDWebImageDownloader.m in Sources */,
 				00F80A411E812B0E002FC6A0 /* MJRefreshAutoGifFooter.m in Sources */,
