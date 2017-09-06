@@ -32,7 +32,7 @@ class NJQRCodeScanController: UIViewController {
             if !auth {
                 //如果不可用,那么提示用户去设置打开相机权限.
                 let alertC = UIAlertController(title: "提示", message: "没有访问相机权限,\n请到设置中打开权限", preferredStyle: .alert)
-                let confirm = UIAlertAction(title: "立即开启", style: .default, handler: { (action) in
+                let _ = UIAlertAction(title: "立即开启", style: .default, handler: { (action) in
 
                     if #available(iOS 10.0, *) {
                         UIApplication.shared.open(URL(string: UIApplicationOpenSettingsURLString)!, options: ["":""], completionHandler: nil)

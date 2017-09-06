@@ -30,7 +30,7 @@
     NSString *urlString = @"http://pic.58pic.com/58pic/14/27/45/71r58PICmDM_1024.jpg";
     NSURL *url = [NSURL URLWithString:urlString];
     
-    [self.imgView sd_setImageWithURL:urlString placeholderImage:nil options:0];
+    [self.imgView sd_setImageWithURL:url placeholderImage:nil options:0];
     
 }
 

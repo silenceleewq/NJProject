@@ -1,15 +1,13 @@
 //
-//  NJUtility.h
+//  NJUtilityTestViewController.h
 //  NJProject
 //
 //  Created by lirenqiang on 2017/8/7.
 //  Copyright © 2017年 Ninja. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
-@interface NJUtility : NSObject
-
-+ (UIViewController *)getCurrentVC;
+@interface NJUtilityTestViewController : UIViewController
 
 @end

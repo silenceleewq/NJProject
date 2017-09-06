@@ -14,6 +14,7 @@
 #import "NJSDWebImageTest.h"
 #import "NJMessageForwardController.h"
 #import "NJCameraController.h"
+#import "NJUtilityTestViewController.h"
 
 @interface NJExample : NSObject
 
@@ -56,7 +57,8 @@
                      [NJExample exampleWithTitle:@"二维码扫描" controllerName:@"QRCodeScanViewController"],
                      [NJExample exampleWithTitle:@"NJSDWebImageTest" controllerName:@"NJSDWebImageTest"],
                      [NJExample exampleWithTitle:@"消息转发" controllerName:@"NJMessageForwardController"],
-                     [NJExample exampleWithTitle:@"相机模块" controllerName:@"NJCameraController"]
+                     [NJExample exampleWithTitle:@"相机模块" controllerName:@"NJCameraController"],
+                     [NJExample exampleWithTitle:@"工具类测试" controllerName:@"NJUtilityTestViewController"]
                      ];
 }
 

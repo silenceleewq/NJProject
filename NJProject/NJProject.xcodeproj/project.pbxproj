@@ -65,6 +65,7 @@
 		00F80A4E1E812B0E002FC6A0 /* UIScrollView+MJRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F80A391E812B0E002FC6A0 /* UIScrollView+MJRefresh.m */; };
 		00F80A4F1E812B0E002FC6A0 /* UIView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F80A3B1E812B0E002FC6A0 /* UIView+MJExtension.m */; };
 		1F2F95CD1F37FCBE00BAD1E1 /* NJUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F2F95CC1F37FCBE00BAD1E1 /* NJUtility.m */; };
+		1F2F95D11F3802BE00BAD1E1 /* NJUtilityTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F2F95D01F3802BE00BAD1E1 /* NJUtilityTestViewController.m */; };
 		1F37327F1F0E631D00D01F53 /* NJMessageForwardController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F37327E1F0E631D00D01F53 /* NJMessageForwardController.m */; };
 		1FACB5191F0FD0D9008A3DFC /* NJCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FACB5181F0FD0D9008A3DFC /* NJCell.m */; };
 		1FACB51D1F10C544008A3DFC /* NJCameraController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FACB51C1F10C544008A3DFC /* NJCameraController.m */; };
@@ -186,6 +187,8 @@
 		00F80A3B1E812B0E002FC6A0 /* UIView+MJExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+MJExtension.m"; sourceTree = "<group>"; };
 		1F2F95CB1F37FCBE00BAD1E1 /* NJUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJUtility.h; sourceTree = "<group>"; };
 		1F2F95CC1F37FCBE00BAD1E1 /* NJUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJUtility.m; sourceTree = "<group>"; };
+		1F2F95CF1F3802BE00BAD1E1 /* NJUtilityTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJUtilityTestViewController.h; sourceTree = "<group>"; };
+		1F2F95D01F3802BE00BAD1E1 /* NJUtilityTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJUtilityTestViewController.m; sourceTree = "<group>"; };
 		1F37327D1F0E631D00D01F53 /* NJMessageForwardController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJMessageForwardController.h; sourceTree = "<group>"; };
 		1F37327E1F0E631D00D01F53 /* NJMessageForwardController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJMessageForwardController.m; sourceTree = "<group>"; };
 		1FACB5171F0FD0D9008A3DFC /* NJCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJCell.h; sourceTree = "<group>"; };
@@ -330,6 +333,7 @@
 		00F809F81E8124D8002FC6A0 /* FunctionGroup */ = {
 			isa = PBXGroup;
 			children = (
+				1F2F95CE1F38029300BAD1E1 /* NJUtilityTest */,
 				1FACB51A1F10C503008A3DFC /* CameraModel */,
 				1F37327C1F0E629200D01F53 /* MessageForwarding */,
 				00CBBFDB1EF9F30B00D9AEDB /* SDWebImageTest */,
@@ -490,6 +494,15 @@
 			path = NJUtility;
 			sourceTree = "<group>";
 		};
+		1F2F95CE1F38029300BAD1E1 /* NJUtilityTest */ = {
+			isa = PBXGroup;
+			children = (
+				1F2F95CF1F3802BE00BAD1E1 /* NJUtilityTestViewController.h */,
+				1F2F95D01F3802BE00BAD1E1 /* NJUtilityTestViewController.m */,
+			);
+			path = NJUtilityTest;
+			sourceTree = "<group>";
+		};
 		1F37327C1F0E629200D01F53 /* MessageForwarding */ = {
 			isa = PBXGroup;
 			children = (
@@ -624,6 +637,7 @@
 				00F80A471E812B0E002FC6A0 /* MJRefreshGifHeader.m in Sources */,
 				00F809E21E81246F002FC6A0 /* main.m in Sources */,
 				00CBBFC51EF9EFDB00D9AEDB /* SDWebImageDownloaderOperation.m in Sources */,
+				1F2F95D11F3802BE00BAD1E1 /* NJUtilityTestViewController.m in Sources */,
 				00F80A401E812B0E002FC6A0 /* MJRefreshHeader.m in Sources */,
 				00F80A001E8126F7002FC6A0 /* NJBaseViewController.m in Sources */,
 				00CBBFC21EF9EFDB00D9AEDB /* SDWebImageCompat.m in Sources */,
