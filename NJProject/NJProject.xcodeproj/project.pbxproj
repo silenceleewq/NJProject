@@ -64,6 +64,7 @@
 		00F80A4D1E812B0E002FC6A0 /* UIScrollView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F80A371E812B0E002FC6A0 /* UIScrollView+MJExtension.m */; };
 		00F80A4E1E812B0E002FC6A0 /* UIScrollView+MJRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F80A391E812B0E002FC6A0 /* UIScrollView+MJRefresh.m */; };
 		00F80A4F1E812B0E002FC6A0 /* UIView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F80A3B1E812B0E002FC6A0 /* UIView+MJExtension.m */; };
+		1F2A788E1F676B9100728902 /* NJQRCodeScanShadowLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F2A788D1F676B9100728902 /* NJQRCodeScanShadowLayer.m */; };
 		1F2F95CD1F37FCBE00BAD1E1 /* NJUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F2F95CC1F37FCBE00BAD1E1 /* NJUtility.m */; };
 		1F2F95D11F3802BE00BAD1E1 /* NJUtilityTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F2F95D01F3802BE00BAD1E1 /* NJUtilityTestViewController.m */; };
 		1F37327F1F0E631D00D01F53 /* NJMessageForwardController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F37327E1F0E631D00D01F53 /* NJMessageForwardController.m */; };
@@ -185,6 +186,8 @@
 		00F80A391E812B0E002FC6A0 /* UIScrollView+MJRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+MJRefresh.m"; sourceTree = "<group>"; };
 		00F80A3A1E812B0E002FC6A0 /* UIView+MJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+MJExtension.h"; sourceTree = "<group>"; };
 		00F80A3B1E812B0E002FC6A0 /* UIView+MJExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+MJExtension.m"; sourceTree = "<group>"; };
+		1F2A788C1F676B9100728902 /* NJQRCodeScanShadowLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJQRCodeScanShadowLayer.h; sourceTree = "<group>"; };
+		1F2A788D1F676B9100728902 /* NJQRCodeScanShadowLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJQRCodeScanShadowLayer.m; sourceTree = "<group>"; };
 		1F2F95CB1F37FCBE00BAD1E1 /* NJUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJUtility.h; sourceTree = "<group>"; };
 		1F2F95CC1F37FCBE00BAD1E1 /* NJUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJUtility.m; sourceTree = "<group>"; };
 		1F2F95CF1F3802BE00BAD1E1 /* NJUtilityTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJUtilityTestViewController.h; sourceTree = "<group>"; };
@@ -270,6 +273,8 @@
 				00CBBFD41EF9EFF100D9AEDB /* QRCodeScanViewController.h */,
 				00CBBFD51EF9EFF100D9AEDB /* QRCodeScanViewController.m */,
 				00CBBFD61EF9EFF100D9AEDB /* QRCodeScanViewController.storyboard */,
+				1F2A788C1F676B9100728902 /* NJQRCodeScanShadowLayer.h */,
+				1F2A788D1F676B9100728902 /* NJQRCodeScanShadowLayer.m */,
 			);
 			path = QRCodeScan;
 			sourceTree = "<group>";
@@ -609,6 +614,7 @@
 				00CBBFC61EF9EFDB00D9AEDB /* SDWebImageManager.m in Sources */,
 				00F80A431E812B0E002FC6A0 /* MJRefreshAutoStateFooter.m in Sources */,
 				00CBBFCC1EF9EFDB00D9AEDB /* UIImageView+WebCache.m in Sources */,
+				1F2A788E1F676B9100728902 /* NJQRCodeScanShadowLayer.m in Sources */,
 				00CBBFD81EF9EFF100D9AEDB /* NJQRCodeScanOC.m in Sources */,
 				00F809E81E81246F002FC6A0 /* ViewController.m in Sources */,
 				003BBC811EF7969E00EE2869 /* NJNavigatorController.m in Sources */,
