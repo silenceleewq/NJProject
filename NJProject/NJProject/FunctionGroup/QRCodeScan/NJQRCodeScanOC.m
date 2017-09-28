@@ -74,6 +74,12 @@
     }
 }
 
+- (void)captureOutput:(AVCaptureOutput *)captureOutput didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer fromConnection:(AVCaptureConnection *)connection {
+    NSLog(@"sample Buffer%@", sampleBuffer);
+}
+
+
+
 // 检查相机权限
 - (void)checkCameraAvailability:(void (^)(BOOL auth))block {
     BOOL status = NO;
@@ -172,12 +178,13 @@
     self.output = [[AVCaptureMetadataOutput alloc]init];
     [self.output setMetadataObjectsDelegate:self queue:dispatch_get_main_queue()];// 使用主线程队列，相应比较同步，使用其他队列，相应不同步，容易让用户产生不好的体验
     
+    
     if ([self.session canAddOutput:self.output])
     {
         [self.session addOutput:self.output];
     }
     
-    self.output.metadataObjectTypes = @[AVMetadataObjectTypeEAN13Code, AVMetadataObjectTypeEAN8Code, AVMetadataObjectTypeCode128Code, AVMetadataObjectTypeQRCode];
+//    self.output.metadataObjectTypes = @[AVMetadataObjectTypeEAN13Code, AVMetadataObjectTypeEAN8Code, AVMetadataObjectTypeCode128Code, AVMetadataObjectTypeQRCode];
     
     // 设置展示层(预览层)
     self.preview = [AVCaptureVideoPreviewLayer layerWithSession:self.session];
@@ -223,21 +230,21 @@
     _IDCardScanningWindowLayer.borderWidth = 1.5;
     [self.view.layer addSublayer:_IDCardScanningWindowLayer];
     
-    // 最里层镂空
-    UIBezierPath *transparentRoundedRectPath = [UIBezierPath bezierPathWithRoundedRect:_IDCardScanningWindowLayer.frame cornerRadius:_IDCardScanningWindowLayer.cornerRadius];
+//    // 最里层镂空
+//    UIBezierPath *transparentRoundedRectPath = [UIBezierPath bezierPathWithRoundedRect:_IDCardScanningWindowLayer.frame cornerRadius:_IDCardScanningWindowLayer.cornerRadius];
+//    
+//    // 最外层背景
+//    UIBezierPath *path = [UIBezierPath bezierPathWithRect:self.view.frame];
+//    [path appendPath:transparentRoundedRectPath];
+//    [path setUsesEvenOddFillRule:YES];
+//    
+//    CAShapeLayer *fillLayer = [CAShapeLayer layer];
+//    fillLayer.path = path.CGPath;
+//    fillLayer.fillRule = kCAFillRuleEvenOdd;
+//    fillLayer.fillColor = [UIColor blackColor].CGColor;
+//    fillLayer.opacity = 0.6;
     
-    // 最外层背景
-    UIBezierPath *path = [UIBezierPath bezierPathWithRect:self.view.frame];
-    [path appendPath:transparentRoundedRectPath];
-    [path setUsesEvenOddFillRule:YES];
-    
-    CAShapeLayer *fillLayer = [CAShapeLayer layer];
-    fillLayer.path = path.CGPath;
-    fillLayer.fillRule = kCAFillRuleEvenOdd;
-    fillLayer.fillColor = [UIColor blackColor].CGColor;
-    fillLayer.opacity = 0.6;
-    
-    [self.view.layer addSublayer:fillLayer];
+//    [self.view.layer addSublayer:fillLayer];
 }
 
 @end

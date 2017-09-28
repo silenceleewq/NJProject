@@ -15,7 +15,9 @@
 #import "NJMessageForwardController.h"
 #import "NJCameraController.h"
 #import "NJUtilityTestViewController.h"
-
+#import "NJCameraViewController.h"
+#import "NJPortraitCameraViewController.h"
+#import "NJHIstogramViewController.h"
 @interface NJExample : NSObject
 
 @property (nonatomic, copy) NSString *title;
@@ -58,8 +60,10 @@
                      [NJExample exampleWithTitle:@"NJSDWebImageTest" controllerName:@"NJSDWebImageTest"],
                      [NJExample exampleWithTitle:@"消息转发" controllerName:@"NJMessageForwardController"],
                      [NJExample exampleWithTitle:@"相机模块" controllerName:@"NJCameraController"],
-                     [NJExample exampleWithTitle:@"工具类测试" controllerName:@"NJUtilityTestViewController"]
-                     ];
+                     [NJExample exampleWithTitle:@"工具类测试" controllerName:@"NJUtilityTestViewController"],
+                     [NJExample exampleWithTitle:@"自定义相机" controllerName:@"NJCameraViewController"],
+                     [NJExample exampleWithTitle:@"垂直方向相机" controllerName:@"NJPortraitCameraViewController"]
+                     ,[NJExample exampleWithTitle:@"一維直方圖" controllerName:@"NJHIstogramViewController"]];
 }
 
 - (void)didReceiveMemoryWarning {

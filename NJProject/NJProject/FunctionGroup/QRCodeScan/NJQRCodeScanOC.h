@@ -17,7 +17,7 @@
 
 @end
 
-@interface NJQRCodeScanOC : UIViewController <AVCaptureMetadataOutputObjectsDelegate>
+@interface NJQRCodeScanOC : UIViewController <AVCaptureMetadataOutputObjectsDelegate, AVCaptureVideoDataOutputSampleBufferDelegate>
 
 @property (weak  ,nonatomic)id<NJQRCodeScanOCDelegate> delegate;
 

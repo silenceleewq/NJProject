@@ -64,10 +64,31 @@
 		00F80A4D1E812B0E002FC6A0 /* UIScrollView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F80A371E812B0E002FC6A0 /* UIScrollView+MJExtension.m */; };
 		00F80A4E1E812B0E002FC6A0 /* UIScrollView+MJRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F80A391E812B0E002FC6A0 /* UIScrollView+MJRefresh.m */; };
 		00F80A4F1E812B0E002FC6A0 /* UIView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F80A3B1E812B0E002FC6A0 /* UIView+MJExtension.m */; };
+		1F12C51C1F6A500E003C6565 /* NJPortraitCameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F12C51B1F6A500E003C6565 /* NJPortraitCameraViewController.m */; };
+		1F12C51E1F6A501E003C6565 /* NJPortraitCameraViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F12C51D1F6A501E003C6565 /* NJPortraitCameraViewController.storyboard */; };
+		1F12C5211F6A503D003C6565 /* NJCustomPortaitCameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F12C5201F6A503D003C6565 /* NJCustomPortaitCameraViewController.m */; };
 		1F2A788E1F676B9100728902 /* NJQRCodeScanShadowLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F2A788D1F676B9100728902 /* NJQRCodeScanShadowLayer.m */; };
 		1F2F95CD1F37FCBE00BAD1E1 /* NJUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F2F95CC1F37FCBE00BAD1E1 /* NJUtility.m */; };
 		1F2F95D11F3802BE00BAD1E1 /* NJUtilityTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F2F95D01F3802BE00BAD1E1 /* NJUtilityTestViewController.m */; };
 		1F37327F1F0E631D00D01F53 /* NJMessageForwardController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F37327E1F0E631D00D01F53 /* NJMessageForwardController.m */; };
+		1F3DE3D71F698DCD0079216C /* NJCameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F3DE3D61F698DCD0079216C /* NJCameraViewController.m */; };
+		1F3DE3DA1F698E030079216C /* NJCustomCameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F3DE3D91F698E030079216C /* NJCustomCameraViewController.m */; };
+		1F3DE3DC1F6990D30079216C /* NJCameraViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F3DE3DB1F6990D30079216C /* NJCameraViewController.storyboard */; };
+		1F4E64351F7BF5B6007D01EC /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F4E64341F7BF5B6007D01EC /* opencv2.framework */; };
+		1F4E64371F7BF5BB007D01EC /* libjpeg.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F4E64361F7BF5BB007D01EC /* libjpeg.a */; };
+		1F4E643B1F7BF5F3007D01EC /* NJHIstogramViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F4E643A1F7BF5F3007D01EC /* NJHIstogramViewController.m */; };
+		1F4E643F1F7BF710007D01EC /* NJOpenCVUtils.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1F4E643E1F7BF710007D01EC /* NJOpenCVUtils.mm */; };
+		1F4E64421F7BF9A4007D01EC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F4E64411F7BF9A4007D01EC /* CoreGraphics.framework */; };
+		1F4E64441F7BF9A9007D01EC /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F4E64431F7BF9A9007D01EC /* CoreImage.framework */; };
+		1F4E64461F7BF9B0007D01EC /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F4E64451F7BF9B0007D01EC /* CoreVideo.framework */; };
+		1F4E64481F7BF9B8007D01EC /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F4E64471F7BF9B8007D01EC /* QuartzCore.framework */; };
+		1F4E644A1F7BF9BD007D01EC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F4E64491F7BF9BD007D01EC /* Foundation.framework */; };
+		1F4E644C1F7BF9C3007D01EC /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F4E644B1F7BF9C3007D01EC /* Accelerate.framework */; };
+		1F4E644E1F7BF9C8007D01EC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F4E644D1F7BF9C8007D01EC /* UIKit.framework */; };
+		1F4E64501F7BF9CE007D01EC /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F4E644F1F7BF9CE007D01EC /* libc++.tbd */; };
+		1F4E64521F7BF9D6007D01EC /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F4E64511F7BF9D6007D01EC /* CoreMedia.framework */; };
+		1F4E64541F7BF9DE007D01EC /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F4E64531F7BF9DE007D01EC /* AssetsLibrary.framework */; };
+		1F4E64561F7BF9E3007D01EC /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F4E64551F7BF9E3007D01EC /* AVFoundation.framework */; };
 		1FACB5191F0FD0D9008A3DFC /* NJCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FACB5181F0FD0D9008A3DFC /* NJCell.m */; };
 		1FACB51D1F10C544008A3DFC /* NJCameraController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FACB51C1F10C544008A3DFC /* NJCameraController.m */; };
 /* End PBXBuildFile section */
@@ -186,6 +207,11 @@
 		00F80A391E812B0E002FC6A0 /* UIScrollView+MJRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+MJRefresh.m"; sourceTree = "<group>"; };
 		00F80A3A1E812B0E002FC6A0 /* UIView+MJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+MJExtension.h"; sourceTree = "<group>"; };
 		00F80A3B1E812B0E002FC6A0 /* UIView+MJExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+MJExtension.m"; sourceTree = "<group>"; };
+		1F12C51A1F6A500E003C6565 /* NJPortraitCameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJPortraitCameraViewController.h; sourceTree = "<group>"; };
+		1F12C51B1F6A500E003C6565 /* NJPortraitCameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJPortraitCameraViewController.m; sourceTree = "<group>"; };
+		1F12C51D1F6A501E003C6565 /* NJPortraitCameraViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = NJPortraitCameraViewController.storyboard; sourceTree = "<group>"; };
+		1F12C51F1F6A503D003C6565 /* NJCustomPortaitCameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJCustomPortaitCameraViewController.h; sourceTree = "<group>"; };
+		1F12C5201F6A503D003C6565 /* NJCustomPortaitCameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJCustomPortaitCameraViewController.m; sourceTree = "<group>"; };
 		1F2A788C1F676B9100728902 /* NJQRCodeScanShadowLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJQRCodeScanShadowLayer.h; sourceTree = "<group>"; };
 		1F2A788D1F676B9100728902 /* NJQRCodeScanShadowLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJQRCodeScanShadowLayer.m; sourceTree = "<group>"; };
 		1F2F95CB1F37FCBE00BAD1E1 /* NJUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJUtility.h; sourceTree = "<group>"; };
@@ -194,6 +220,28 @@
 		1F2F95D01F3802BE00BAD1E1 /* NJUtilityTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJUtilityTestViewController.m; sourceTree = "<group>"; };
 		1F37327D1F0E631D00D01F53 /* NJMessageForwardController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJMessageForwardController.h; sourceTree = "<group>"; };
 		1F37327E1F0E631D00D01F53 /* NJMessageForwardController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJMessageForwardController.m; sourceTree = "<group>"; };
+		1F3DE3D51F698DCD0079216C /* NJCameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJCameraViewController.h; sourceTree = "<group>"; };
+		1F3DE3D61F698DCD0079216C /* NJCameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJCameraViewController.m; sourceTree = "<group>"; };
+		1F3DE3D81F698E030079216C /* NJCustomCameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJCustomCameraViewController.h; sourceTree = "<group>"; };
+		1F3DE3D91F698E030079216C /* NJCustomCameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJCustomCameraViewController.m; sourceTree = "<group>"; };
+		1F3DE3DB1F6990D30079216C /* NJCameraViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = NJCameraViewController.storyboard; sourceTree = "<group>"; };
+		1F4E64341F7BF5B6007D01EC /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = opencv2.framework; sourceTree = "<group>"; };
+		1F4E64361F7BF5BB007D01EC /* libjpeg.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libjpeg.a; sourceTree = "<group>"; };
+		1F4E64391F7BF5F3007D01EC /* NJHIstogramViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJHIstogramViewController.h; sourceTree = "<group>"; };
+		1F4E643A1F7BF5F3007D01EC /* NJHIstogramViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJHIstogramViewController.m; sourceTree = "<group>"; };
+		1F4E643D1F7BF710007D01EC /* NJOpenCVUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOpenCVUtils.h; sourceTree = "<group>"; };
+		1F4E643E1F7BF710007D01EC /* NJOpenCVUtils.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = NJOpenCVUtils.mm; sourceTree = "<group>"; };
+		1F4E64411F7BF9A4007D01EC /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		1F4E64431F7BF9A9007D01EC /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
+		1F4E64451F7BF9B0007D01EC /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		1F4E64471F7BF9B8007D01EC /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		1F4E64491F7BF9BD007D01EC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		1F4E644B1F7BF9C3007D01EC /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		1F4E644D1F7BF9C8007D01EC /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		1F4E644F1F7BF9CE007D01EC /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		1F4E64511F7BF9D6007D01EC /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		1F4E64531F7BF9DE007D01EC /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		1F4E64551F7BF9E3007D01EC /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		1FACB5171F0FD0D9008A3DFC /* NJCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJCell.h; sourceTree = "<group>"; };
 		1FACB5181F0FD0D9008A3DFC /* NJCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJCell.m; sourceTree = "<group>"; };
 		1FACB51B1F10C544008A3DFC /* NJCameraController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJCameraController.h; sourceTree = "<group>"; };
@@ -205,6 +253,19 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F4E64561F7BF9E3007D01EC /* AVFoundation.framework in Frameworks */,
+				1F4E64541F7BF9DE007D01EC /* AssetsLibrary.framework in Frameworks */,
+				1F4E64521F7BF9D6007D01EC /* CoreMedia.framework in Frameworks */,
+				1F4E64501F7BF9CE007D01EC /* libc++.tbd in Frameworks */,
+				1F4E644E1F7BF9C8007D01EC /* UIKit.framework in Frameworks */,
+				1F4E644C1F7BF9C3007D01EC /* Accelerate.framework in Frameworks */,
+				1F4E644A1F7BF9BD007D01EC /* Foundation.framework in Frameworks */,
+				1F4E64481F7BF9B8007D01EC /* QuartzCore.framework in Frameworks */,
+				1F4E64461F7BF9B0007D01EC /* CoreVideo.framework in Frameworks */,
+				1F4E64441F7BF9A9007D01EC /* CoreImage.framework in Frameworks */,
+				1F4E64421F7BF9A4007D01EC /* CoreGraphics.framework in Frameworks */,
+				1F4E64351F7BF5B6007D01EC /* opencv2.framework in Frameworks */,
+				1F4E64371F7BF5BB007D01EC /* libjpeg.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,6 +355,7 @@
 			children = (
 				00F809DF1E81246F002FC6A0 /* NJProject */,
 				00F809DE1E81246F002FC6A0 /* Products */,
+				1F4E64401F7BF9A4007D01EC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -338,6 +400,9 @@
 		00F809F81E8124D8002FC6A0 /* FunctionGroup */ = {
 			isa = PBXGroup;
 			children = (
+				1F4E64381F7BF5C2007D01EC /* OpenCVController */,
+				1F12C5191F6A4FEC003C6565 /* PortraitCamera */,
+				1F3DE3D41F698B380079216C /* CustomCamera */,
 				1F2F95CE1F38029300BAD1E1 /* NJUtilityTest */,
 				1FACB51A1F10C503008A3DFC /* CameraModel */,
 				1F37327C1F0E629200D01F53 /* MessageForwarding */,
@@ -374,6 +439,7 @@
 		00F80A021E81275D002FC6A0 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				1F4E64331F7BF57E007D01EC /* OpenCV */,
 				1F2F95CA1F37FC7500BAD1E1 /* NJUtility */,
 				00CBBF9A1EF9EFDB00D9AEDB /* SDWebImage */,
 				00F80A0D1E812B0E002FC6A0 /* MJRefresh */,
@@ -490,6 +556,18 @@
 			path = Header;
 			sourceTree = "<group>";
 		};
+		1F12C5191F6A4FEC003C6565 /* PortraitCamera */ = {
+			isa = PBXGroup;
+			children = (
+				1F12C51A1F6A500E003C6565 /* NJPortraitCameraViewController.h */,
+				1F12C51B1F6A500E003C6565 /* NJPortraitCameraViewController.m */,
+				1F12C51D1F6A501E003C6565 /* NJPortraitCameraViewController.storyboard */,
+				1F12C51F1F6A503D003C6565 /* NJCustomPortaitCameraViewController.h */,
+				1F12C5201F6A503D003C6565 /* NJCustomPortaitCameraViewController.m */,
+			);
+			path = PortraitCamera;
+			sourceTree = "<group>";
+		};
 		1F2F95CA1F37FC7500BAD1E1 /* NJUtility */ = {
 			isa = PBXGroup;
 			children = (
@@ -515,6 +593,64 @@
 				1F37327E1F0E631D00D01F53 /* NJMessageForwardController.m */,
 			);
 			path = MessageForwarding;
+			sourceTree = "<group>";
+		};
+		1F3DE3D41F698B380079216C /* CustomCamera */ = {
+			isa = PBXGroup;
+			children = (
+				1F3DE3D51F698DCD0079216C /* NJCameraViewController.h */,
+				1F3DE3D61F698DCD0079216C /* NJCameraViewController.m */,
+				1F3DE3DB1F6990D30079216C /* NJCameraViewController.storyboard */,
+				1F3DE3D81F698E030079216C /* NJCustomCameraViewController.h */,
+				1F3DE3D91F698E030079216C /* NJCustomCameraViewController.m */,
+			);
+			path = CustomCamera;
+			sourceTree = "<group>";
+		};
+		1F4E64331F7BF57E007D01EC /* OpenCV */ = {
+			isa = PBXGroup;
+			children = (
+				1F4E64361F7BF5BB007D01EC /* libjpeg.a */,
+				1F4E64341F7BF5B6007D01EC /* opencv2.framework */,
+			);
+			path = OpenCV;
+			sourceTree = "<group>";
+		};
+		1F4E64381F7BF5C2007D01EC /* OpenCVController */ = {
+			isa = PBXGroup;
+			children = (
+				1F4E643C1F7BF5FD007D01EC /* OpenCVUtils */,
+				1F4E64391F7BF5F3007D01EC /* NJHIstogramViewController.h */,
+				1F4E643A1F7BF5F3007D01EC /* NJHIstogramViewController.m */,
+			);
+			path = OpenCVController;
+			sourceTree = "<group>";
+		};
+		1F4E643C1F7BF5FD007D01EC /* OpenCVUtils */ = {
+			isa = PBXGroup;
+			children = (
+				1F4E643D1F7BF710007D01EC /* NJOpenCVUtils.h */,
+				1F4E643E1F7BF710007D01EC /* NJOpenCVUtils.mm */,
+			);
+			path = OpenCVUtils;
+			sourceTree = "<group>";
+		};
+		1F4E64401F7BF9A4007D01EC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1F4E64551F7BF9E3007D01EC /* AVFoundation.framework */,
+				1F4E64531F7BF9DE007D01EC /* AssetsLibrary.framework */,
+				1F4E64511F7BF9D6007D01EC /* CoreMedia.framework */,
+				1F4E644F1F7BF9CE007D01EC /* libc++.tbd */,
+				1F4E644D1F7BF9C8007D01EC /* UIKit.framework */,
+				1F4E644B1F7BF9C3007D01EC /* Accelerate.framework */,
+				1F4E64491F7BF9BD007D01EC /* Foundation.framework */,
+				1F4E64471F7BF9B8007D01EC /* QuartzCore.framework */,
+				1F4E64451F7BF9B0007D01EC /* CoreVideo.framework */,
+				1F4E64431F7BF9A9007D01EC /* CoreImage.framework */,
+				1F4E64411F7BF9A4007D01EC /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		1FACB51A1F10C503008A3DFC /* CameraModel */ = {
@@ -587,6 +723,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F12C51E1F6A501E003C6565 /* NJPortraitCameraViewController.storyboard in Resources */,
+				1F3DE3DC1F6990D30079216C /* NJCameraViewController.storyboard in Resources */,
 				00CBBFDA1EF9EFF100D9AEDB /* QRCodeScanViewController.storyboard in Resources */,
 				00CBBFE01EF9F33C00D9AEDB /* NJSDWebImageTest.storyboard in Resources */,
 				003BBC8E1EF7A01900EE2869 /* NJPhotosController.storyboard in Resources */,
@@ -616,13 +754,16 @@
 				00CBBFCC1EF9EFDB00D9AEDB /* UIImageView+WebCache.m in Sources */,
 				1F2A788E1F676B9100728902 /* NJQRCodeScanShadowLayer.m in Sources */,
 				00CBBFD81EF9EFF100D9AEDB /* NJQRCodeScanOC.m in Sources */,
+				1F12C51C1F6A500E003C6565 /* NJPortraitCameraViewController.m in Sources */,
 				00F809E81E81246F002FC6A0 /* ViewController.m in Sources */,
+				1F12C5211F6A503D003C6565 /* NJCustomPortaitCameraViewController.m in Sources */,
 				003BBC811EF7969E00EE2869 /* NJNavigatorController.m in Sources */,
 				00CBBFCA1EF9EFDB00D9AEDB /* UIImage+MultiFormat.m in Sources */,
 				1F2F95CD1F37FCBE00BAD1E1 /* NJUtility.m in Sources */,
 				00F80A3E1E812B0E002FC6A0 /* MJRefreshComponent.m in Sources */,
 				00CBBFC41EF9EFDB00D9AEDB /* SDWebImageDownloader.m in Sources */,
 				00F80A411E812B0E002FC6A0 /* MJRefreshAutoGifFooter.m in Sources */,
+				1F3DE3D71F698DCD0079216C /* NJCameraViewController.m in Sources */,
 				00CBBFBF1EF9EFDB00D9AEDB /* NSImage+WebCache.m in Sources */,
 				00F80A481E812B0E002FC6A0 /* MJRefreshNormalHeader.m in Sources */,
 				00F80A451E812B0E002FC6A0 /* MJRefreshBackNormalFooter.m in Sources */,
@@ -647,6 +788,8 @@
 				00F80A401E812B0E002FC6A0 /* MJRefreshHeader.m in Sources */,
 				00F80A001E8126F7002FC6A0 /* NJBaseViewController.m in Sources */,
 				00CBBFC21EF9EFDB00D9AEDB /* SDWebImageCompat.m in Sources */,
+				1F4E643F1F7BF710007D01EC /* NJOpenCVUtils.mm in Sources */,
+				1F4E643B1F7BF5F3007D01EC /* NJHIstogramViewController.m in Sources */,
 				00F80A491E812B0E002FC6A0 /* MJRefreshStateHeader.m in Sources */,
 				00F80A3D1E812B0E002FC6A0 /* MJRefreshBackFooter.m in Sources */,
 				00CBBFD71EF9EFF100D9AEDB /* NJQRCodeScanController.swift in Sources */,
@@ -657,6 +800,7 @@
 				00F80A3C1E812B0E002FC6A0 /* MJRefreshAutoFooter.m in Sources */,
 				00CBBFD91EF9EFF100D9AEDB /* QRCodeScanViewController.m in Sources */,
 				00CBBFCE1EF9EFDB00D9AEDB /* UIView+WebCacheOperation.m in Sources */,
+				1F3DE3DA1F698E030079216C /* NJCustomCameraViewController.m in Sources */,
 				00F80A0A1E8127D0002FC6A0 /* UIButton+NJButton.m in Sources */,
 				00F80A441E812B0E002FC6A0 /* MJRefreshBackGifFooter.m in Sources */,
 				00CBBFC01EF9EFDB00D9AEDB /* SDImageCache.m in Sources */,
@@ -780,10 +924,19 @@
 				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = NO;
 				DEVELOPMENT_TEAM = C9LH35JAFL;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/NJProject/Tools/OpenCV",
+				);
 				GCC_PREFIX_HEADER = ./NJProject/PrefixHeader.pch;
 				INFOPLIST_FILE = NJProject/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/NJProject/Tools/OpenCV",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.own.NJProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "NJProject/FunctionGroup/QRCodeScan/NJProject-Bridging-Header.h";
@@ -799,10 +952,19 @@
 				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = NO;
 				DEVELOPMENT_TEAM = C9LH35JAFL;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/NJProject/Tools/OpenCV",
+				);
 				GCC_PREFIX_HEADER = ./NJProject/PrefixHeader.pch;
 				INFOPLIST_FILE = NJProject/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/NJProject/Tools/OpenCV",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.own.NJProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "NJProject/FunctionGroup/QRCodeScan/NJProject-Bridging-Header.h";

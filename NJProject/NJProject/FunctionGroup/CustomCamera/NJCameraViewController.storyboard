@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="URo-2h-uai">
+    <device id="retina5_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Camera View Controller-->
+        <scene sceneID="Owb-gq-rpq">
+            <objects>
+                <viewController id="URo-2h-uai" customClass="NJCameraViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="PqG-28-31y"/>
+                        <viewControllerLayoutGuide type="bottom" id="IfC-3J-9k2"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8Mm-Bh-Rno">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u8K-Q5-jp0">
+                                <rect key="frame" x="16" y="144" width="31" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="相机"/>
+                                <connections>
+                                    <action selector="JumpToCamera:" destination="URo-2h-uai" eventType="touchUpInside" id="Fdw-SK-9Fh"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ijB-qo-y6n">
+                                <rect key="frame" x="0.0" y="414" width="414" height="232"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="237" id="l47-HN-yzY"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ijB-qo-y6n" firstAttribute="leading" secondItem="8Mm-Bh-Rno" secondAttribute="leading" id="Awp-lk-0mt"/>
+                            <constraint firstItem="IfC-3J-9k2" firstAttribute="top" secondItem="ijB-qo-y6n" secondAttribute="bottom" constant="85" id="UbE-1D-f2S"/>
+                            <constraint firstAttribute="trailing" secondItem="ijB-qo-y6n" secondAttribute="trailing" id="pN2-CE-l3q"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="ijB-qo-y6n" id="rCK-Oa-xpZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mMk-TL-WlU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-37.600000000000001" y="-756.07196401799104"/>
+        </scene>
+    </scenes>
+</document>
