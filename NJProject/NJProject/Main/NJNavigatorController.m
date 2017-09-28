@@ -18,6 +18,7 @@
 #import "NJCameraViewController.h"
 #import "NJPortraitCameraViewController.h"
 #import "NJHIstogramViewController.h"
+#import "NJFindContoursViewController.h"
 @interface NJExample : NSObject
 
 @property (nonatomic, copy) NSString *title;
@@ -63,7 +64,8 @@
                      [NJExample exampleWithTitle:@"工具类测试" controllerName:@"NJUtilityTestViewController"],
                      [NJExample exampleWithTitle:@"自定义相机" controllerName:@"NJCameraViewController"],
                      [NJExample exampleWithTitle:@"垂直方向相机" controllerName:@"NJPortraitCameraViewController"]
-                     ,[NJExample exampleWithTitle:@"一維直方圖" controllerName:@"NJHIstogramViewController"]];
+                     ,[NJExample exampleWithTitle:@"一維直方圖" controllerName:@"NJHIstogramViewController"],
+                     [NJExample exampleWithTitle:@"图片轮廓提取" controllerName:@"NJFindContoursViewController"]];
 }
 
 - (void)didReceiveMemoryWarning {

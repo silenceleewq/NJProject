@@ -67,6 +67,8 @@
 		1F12C51C1F6A500E003C6565 /* NJPortraitCameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F12C51B1F6A500E003C6565 /* NJPortraitCameraViewController.m */; };
 		1F12C51E1F6A501E003C6565 /* NJPortraitCameraViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F12C51D1F6A501E003C6565 /* NJPortraitCameraViewController.storyboard */; };
 		1F12C5211F6A503D003C6565 /* NJCustomPortaitCameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F12C5201F6A503D003C6565 /* NJCustomPortaitCameraViewController.m */; };
+		1F2275F21F7C994100ACE1BF /* NJFindContoursViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F2275F11F7C994100ACE1BF /* NJFindContoursViewController.m */; };
+		1F2275F51F7C99F700ACE1BF /* NJOpenCVBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F2275F41F7C99F700ACE1BF /* NJOpenCVBaseViewController.m */; };
 		1F2A788E1F676B9100728902 /* NJQRCodeScanShadowLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F2A788D1F676B9100728902 /* NJQRCodeScanShadowLayer.m */; };
 		1F2F95CD1F37FCBE00BAD1E1 /* NJUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F2F95CC1F37FCBE00BAD1E1 /* NJUtility.m */; };
 		1F2F95D11F3802BE00BAD1E1 /* NJUtilityTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F2F95D01F3802BE00BAD1E1 /* NJUtilityTestViewController.m */; };
@@ -212,6 +214,10 @@
 		1F12C51D1F6A501E003C6565 /* NJPortraitCameraViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = NJPortraitCameraViewController.storyboard; sourceTree = "<group>"; };
 		1F12C51F1F6A503D003C6565 /* NJCustomPortaitCameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJCustomPortaitCameraViewController.h; sourceTree = "<group>"; };
 		1F12C5201F6A503D003C6565 /* NJCustomPortaitCameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJCustomPortaitCameraViewController.m; sourceTree = "<group>"; };
+		1F2275F01F7C994100ACE1BF /* NJFindContoursViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NJFindContoursViewController.h; sourceTree = "<group>"; };
+		1F2275F11F7C994100ACE1BF /* NJFindContoursViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NJFindContoursViewController.m; sourceTree = "<group>"; };
+		1F2275F31F7C99F700ACE1BF /* NJOpenCVBaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NJOpenCVBaseViewController.h; sourceTree = "<group>"; };
+		1F2275F41F7C99F700ACE1BF /* NJOpenCVBaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NJOpenCVBaseViewController.m; sourceTree = "<group>"; };
 		1F2A788C1F676B9100728902 /* NJQRCodeScanShadowLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJQRCodeScanShadowLayer.h; sourceTree = "<group>"; };
 		1F2A788D1F676B9100728902 /* NJQRCodeScanShadowLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJQRCodeScanShadowLayer.m; sourceTree = "<group>"; };
 		1F2F95CB1F37FCBE00BAD1E1 /* NJUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJUtility.h; sourceTree = "<group>"; };
@@ -620,8 +626,12 @@
 			isa = PBXGroup;
 			children = (
 				1F4E643C1F7BF5FD007D01EC /* OpenCVUtils */,
+				1F2275F31F7C99F700ACE1BF /* NJOpenCVBaseViewController.h */,
+				1F2275F41F7C99F700ACE1BF /* NJOpenCVBaseViewController.m */,
 				1F4E64391F7BF5F3007D01EC /* NJHIstogramViewController.h */,
 				1F4E643A1F7BF5F3007D01EC /* NJHIstogramViewController.m */,
+				1F2275F01F7C994100ACE1BF /* NJFindContoursViewController.h */,
+				1F2275F11F7C994100ACE1BF /* NJFindContoursViewController.m */,
 			);
 			path = OpenCVController;
 			sourceTree = "<group>";
@@ -764,6 +774,7 @@
 				00CBBFC41EF9EFDB00D9AEDB /* SDWebImageDownloader.m in Sources */,
 				00F80A411E812B0E002FC6A0 /* MJRefreshAutoGifFooter.m in Sources */,
 				1F3DE3D71F698DCD0079216C /* NJCameraViewController.m in Sources */,
+				1F2275F21F7C994100ACE1BF /* NJFindContoursViewController.m in Sources */,
 				00CBBFBF1EF9EFDB00D9AEDB /* NSImage+WebCache.m in Sources */,
 				00F80A481E812B0E002FC6A0 /* MJRefreshNormalHeader.m in Sources */,
 				00F80A451E812B0E002FC6A0 /* MJRefreshBackNormalFooter.m in Sources */,
@@ -793,6 +804,7 @@
 				00F80A491E812B0E002FC6A0 /* MJRefreshStateHeader.m in Sources */,
 				00F80A3D1E812B0E002FC6A0 /* MJRefreshBackFooter.m in Sources */,
 				00CBBFD71EF9EFF100D9AEDB /* NJQRCodeScanController.swift in Sources */,
+				1F2275F51F7C99F700ACE1BF /* NJOpenCVBaseViewController.m in Sources */,
 				00CBBFC81EF9EFDB00D9AEDB /* UIButton+WebCache.m in Sources */,
 				1FACB5191F0FD0D9008A3DFC /* NJCell.m in Sources */,
 				00F80A4C1E812B0E002FC6A0 /* NSBundle+MJRefresh.m in Sources */,
