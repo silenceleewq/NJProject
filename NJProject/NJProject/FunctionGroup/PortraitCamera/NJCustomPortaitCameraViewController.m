@@ -8,6 +8,10 @@
 
 #import "NJCustomPortaitCameraViewController.h"
 #import <ImageIO/ImageIO.h>
+#import "UIImage+NJOrientation.h"
+static CGFloat shadowWidth;
+static CGFloat shadowHeight;
+static CGFloat shadowMarginY;
 
 // used for KVO observation of the @"capturingStillImage" property to perform flash bulb animation
 static const NSString *AVCaptureStillImageIsCapturingStillImageContext = @"AVCaptureStillImageIsCapturingStillImageContext";
@@ -25,6 +29,39 @@ static const NSString *AVCaptureStillImageIsCapturingStillImageContext = @"AVCap
 
 @implementation NJCustomPortaitCameraViewController
 
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    // Do any additional setup after loading the view.
+    self.navigationItem.title = @"二维码扫描";
+    self.view.autoresizingMask = YES;
+    self.navigationController.navigationBarHidden = NO;
+    [self.navigationController.navigationBar setBarStyle:UIBarStyleBlack];
+    self.hidesBottomBarWhenPushed = YES;
+    self.edgesForExtendedLayout = UIRectEdgeLeft | UIRectEdgeRight | UIRectEdgeBottom;
+    self.view.backgroundColor = [UIColor whiteColor];
+    
+    //判断是否可以使用相机.
+    [self checkCameraAvailability:^(BOOL auth) {
+        if (!auth) {
+            UIAlertController *alertCtr = [UIAlertController alertControllerWithTitle:@"提示" message:@"没有访问相机权限,\n请到设置中打开权限" preferredStyle:UIAlertControllerStyleAlert];
+            [alertCtr addAction:[UIAlertAction actionWithTitle:@"立即开启" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                [[UIApplication sharedApplication]openURL:[NSURL URLWithString:UIApplicationOpenSettingsURLString]];
+            }]];
+            [alertCtr addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil]];
+            [self presentViewController:alertCtr animated:YES completion:nil];
+        }
+    }];
+    
+//    [self initUI:CGRectMake(0, -64, self.view.bounds.size.width, self.view.bounds.size.height)];
+    [self initUI:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.width*1.777)];
+    [self addShadowLayer];
+    
+//    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithTitle:@"SNIP" style:UIBarButtonItemStylePlain target:self action:@selector(takePhoto)];
+//    self.navigationItem.rightBarButtonItem = item;
+    [self.view addSubview:self.snipBtn];
+}
+
+
 -(void)viewDidDisappear:(BOOL)animated
 {
     [super viewDidDisappear:animated];
@@ -37,7 +74,7 @@ static const NSString *AVCaptureStillImageIsCapturingStillImageContext = @"AVCap
     effectiveScale = 1.0;
     // 摄像头设备
     self.device = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
-    
+    [self.device addObserver:self forKeyPath:@"adjustingFocus" options:NSKeyValueObservingOptionNew context:nil];
     NSError *error = nil;
     
     // 设置输入口
@@ -51,14 +88,16 @@ static const NSString *AVCaptureStillImageIsCapturingStillImageContext = @"AVCap
     
     // 会话session, 把输入口加入会话
     self.session = [[AVCaptureSession alloc]init];
-    if ([UIScreen mainScreen].bounds.size.height == 480)
-    {
-        [self.session setSessionPreset:AVCaptureSessionPreset640x480];
-    }
-    else
-    {
-        [self.session setSessionPreset:AVCaptureSessionPresetPhoto];
-    }
+//    if ([UIScreen mainScreen].bounds.size.height == 480)
+//    {
+//        [self.session setSessionPreset:AVCaptureSessionPreset640x480];
+//    }
+//    else
+//    {
+//        [self.session setSessionPreset:AVCaptureSessionPresetPhoto];
+//    }
+    
+    [self.session setSessionPreset:AVCaptureSessionPreset1920x1080];
     
     if ([self.session canAddInput:self.input])
     {
@@ -87,12 +126,10 @@ static const NSString *AVCaptureStillImageIsCapturingStillImageContext = @"AVCap
     
     // 设置展示层(预览层)
     self.preview = [AVCaptureVideoPreviewLayer layerWithSession:self.session];
-    self.preview.backgroundColor = [[UIColor redColor] CGColor];
+    self.preview.backgroundColor = [[UIColor clearColor] CGColor];
     self.preview.videoGravity = AVLayerVideoGravityResizeAspect;
     self.preview.frame = previewFrame;
     [self.view.layer addSublayer:self.preview];
-    
-
     
     //设置扫码范围
     
@@ -120,81 +157,18 @@ static const NSString *AVCaptureStillImageIsCapturingStillImageContext = @"AVCap
                                                           //                                                          [self displayErrorOnMainQueue:error withMessage:@"Take picture failed"];
                                                       }
                                                       else {
-                                                          /*
-                                                           if (doingFaceDetection) {
-                                                           // Got an image.
-                                                           CVPixelBufferRef pixelBuffer = CMSampleBufferGetImageBuffer(imageDataSampleBuffer);
-                                                           CFDictionaryRef attachments = CMCopyDictionaryOfAttachments(kCFAllocatorDefault, imageDataSampleBuffer, kCMAttachmentMode_ShouldPropagate);
-                                                           CIImage *ciImage = [[CIImage alloc] initWithCVPixelBuffer:pixelBuffer options:(__bridge NSDictionary *)attachments];
-                                                           if (attachments)
-                                                           CFRelease(attachments);
-                                                           
-                                                           NSDictionary *imageOptions = nil;
-                                                           NSNumber *orientation = CMGetAttachment(imageDataSampleBuffer, kCGImagePropertyOrientation, NULL);
-                                                           if (orientation) {
-                                                           imageOptions = [NSDictionary dictionaryWithObject:orientation forKey:CIDetectorImageOrientation];
-                                                           }
-                                                           
-                                                           // when processing an existing frame we want any new frames to be automatically dropped
-                                                           // queueing this block to execute on the videoDataOutputQueue serial queue ensures this
-                                                           // see the header doc for setSampleBufferDelegate:queue: for more information
-                                                           dispatch_sync(videoDataOutputQueue, ^(void) {
-                                                           
-                                                           // get the array of CIFeature instances in the given image with a orientation passed in
-                                                           // the detection will be done based on the orientation but the coordinates in the returned features will
-                                                           // still be based on those of the image.
-                                                           NSArray *features = [faceDetector featuresInImage:ciImage options:imageOptions];
-                                                           CGImageRef srcImage = NULL;
-                                                           OSStatus err = CreateCGImageFromCVPixelBuffer(CMSampleBufferGetImageBuffer(imageDataSampleBuffer), &srcImage);
-                                                           check(!err);
-                                                           
-                                                           CGImageRef cgImageResult = [self newSquareOverlayedImageForFeatures:features
-                                                           inCGImage:srcImage
-                                                           withOrientation:curDeviceOrientation
-                                                           frontFacing:isUsingFrontFacingCamera];
-                                                           if (srcImage)
-                                                           CFRelease(srcImage);
-                                                           
-                                                           CFDictionaryRef attachments = CMCopyDictionaryOfAttachments(kCFAllocatorDefault,
-                                                           imageDataSampleBuffer,
-                                                           kCMAttachmentMode_ShouldPropagate);
-                                                           [self writeCGImageToCameraRoll:cgImageResult withMetadata:(id)attachments];
-                                                           if (attachments)
-                                                           CFRelease(attachments);
-                                                           if (cgImageResult)
-                                                           CFRelease(cgImageResult);
-                                                           
-                                                           });
-                                                           
-                                                           [ciImage release];
-                                                           }
-                                                           else {*/
-                                                          // trivial simple JPEG case
-                                                          
                                                           
                                                           NSData *jpegData = [AVCaptureStillImageOutput jpegStillImageNSDataRepresentation:imageDataSampleBuffer];
                                                           UIImage *img = [UIImage imageWithData:jpegData];
                                                           NSLog(@"%@", img);
+                                                          NSLog(@"img.Orientation = %zd", img.imageOrientation);
                                                           if (self.finishedSnip) {
-//                                                              img = [UIImage imageWithCGImage:img.CGImage scale:[UIScreen mainScreen].scale orientation:UIImageOrientationUp];
+                                                              img = [self imageFromImage:img inRect:CGRectMake(0, 0, 0, 0)];
+                                                              img = [img normalizedImage];
+                                                              UIImageWriteToSavedPhotosAlbum(img, nil, nil, nil);
                                                               self.finishedSnip(img);
                                                               [self.navigationController popViewControllerAnimated:YES];
-                                                              //                                                              [self dismissViewControllerAnimated:YES completion:nil];
                                                           }
-                                                          //                                                              CFDictionaryRef attachments = CMCopyDictionaryOfAttachments(kCFAllocatorDefault,
-                                                          //                                                                                                                          imageDataSampleBuffer,
-                                                          //                                                                                                                          kCMAttachmentMode_ShouldPropagate);
-                                                          //                                                              ALAssetsLibrary *library = [[ALAssetsLibrary alloc] init];
-                                                          //                                                              [library writeImageDataToSavedPhotosAlbum:jpegData metadata:(id)attachments completionBlock:^(NSURL *assetURL, NSError *error) {
-                                                          //                                                                  if (error) {
-                                                          //                                                                      [self displayErrorOnMainQueue:error withMessage:@"Save to camera roll failed"];
-                                                          //                                                                  }
-                                                          //                                                              }];
-                                                          //
-                                                          //                                                              if (attachments)
-                                                          //                                                                  CFRelease(attachments);
-                                                          //                                                              [library release];
-                                                          /*}*/
                                                       }
                                                   }
      ];
@@ -233,38 +207,11 @@ static const NSString *AVCaptureStillImageIsCapturingStillImageContext = @"AVCap
         }
     }
     
+    if ([keyPath isEqualToString:@"adjustingFocus"]) {
+        NSLog(@"%@", change);
+    }
 }
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    self.navigationItem.title = @"二维码扫描";
-    self.view.autoresizingMask = YES;
-    self.navigationController.navigationBarHidden = NO;
-    [self.navigationController.navigationBar setBarStyle:UIBarStyleBlack];
-    self.hidesBottomBarWhenPushed = YES;
-    self.edgesForExtendedLayout = UIRectEdgeLeft | UIRectEdgeRight | UIRectEdgeBottom;
-    self.view.backgroundColor = [UIColor whiteColor];
-    
-    //判断是否可以使用相机.
-    [self checkCameraAvailability:^(BOOL auth) {
-        if (!auth) {
-            UIAlertController *alertCtr = [UIAlertController alertControllerWithTitle:@"提示" message:@"没有访问相机权限,\n请到设置中打开权限" preferredStyle:UIAlertControllerStyleAlert];
-            [alertCtr addAction:[UIAlertAction actionWithTitle:@"立即开启" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-                [[UIApplication sharedApplication]openURL:[NSURL URLWithString:UIApplicationOpenSettingsURLString]];
-            }]];
-            [alertCtr addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil]];
-            [self presentViewController:alertCtr animated:YES completion:nil];
-        }
-    }];
-    
-    [self initUI:CGRectMake(0, 0, KSCREENWIDTH, KSCREENWIDTH/1.578)];
-//    [self addShadowLayer];
-    
-    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithTitle:@"SNIP" style:UIBarButtonItemStylePlain target:self action:@selector(takePhoto)];
-    self.navigationItem.rightBarButtonItem = item;
-    //    [self.view addSubview:self.snipBtn];
-}
 
 - (void)captureOutput:(AVCaptureOutput *)captureOutput didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer fromConnection:(AVCaptureConnection *)connection {
     
@@ -273,19 +220,12 @@ static const NSString *AVCaptureStillImageIsCapturingStillImageContext = @"AVCap
 - (void)addShadowLayer {
     
     self.shadowLayer = [CAShapeLayer layer];
-    self.shadowLayer.bounds = CGRectMake(0, 0, 240, 240*1.578);
-    self.shadowLayer.position = self.view.layer.position;
+    shadowMarginY = 100;
+    self.shadowLayer.frame = CGRectMake(5, shadowMarginY, KSCREENWIDTH-10, (KSCREENWIDTH-10)/1.578);
     self.shadowLayer.borderColor = [UIColor redColor].CGColor;
     self.shadowLayer.borderWidth = 1.5;
     self.shadowLayer.cornerRadius = 15;
     [self.view.layer addSublayer:self.shadowLayer];
-    
-    
-    //    CGRect limitRect = CGRectMake(0, 0, 240, 240*1.578);
-    //    UIBezierPath *path = [UIBezierPath bezierPathWithRoundedRect:limitRect cornerRadius:15];
-    
-    
-    
 }
 
 
@@ -300,7 +240,7 @@ static const NSString *AVCaptureStillImageIsCapturingStillImageContext = @"AVCap
     [[NSNotificationCenter defaultCenter] removeObserver:self];
     [self.session stopRunning];
     self.session = nil;
-    
+    [self.device removeObserver:self forKeyPath:@"adjustingFocus"];
     
 }
 
@@ -308,6 +248,8 @@ static const NSString *AVCaptureStillImageIsCapturingStillImageContext = @"AVCap
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    shadowWidth = self.shadowLayer.bounds.size.width;
+    shadowHeight = (self.shadowLayer.bounds.size.width)/1.578;
 }
 
 -(void)viewWillDisappear:(BOOL)animated {
@@ -320,8 +262,8 @@ static const NSString *AVCaptureStillImageIsCapturingStillImageContext = @"AVCap
 - (UIButton *)snipBtn
 {
     if (!_snipBtn) {
-        CGFloat w = 60, h = 30;
-        CGFloat x = (KSCREENWIDTH - w) / 2, y = (KSCREENHEIGHT - h - 20);
+        CGFloat w = KSCREENWIDTH, h = 30;
+        CGFloat x = (KSCREENWIDTH - w) / 2, y = (KSCREENHEIGHT - h - 84);
         _snipBtn = [[UIButton alloc] initWithFrame:CGRectMake(x, y, w, h)];
         [_snipBtn setTitle:@"SNIP" forState:UIControlStateNormal];
         [_snipBtn setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
@@ -370,6 +312,64 @@ static const NSString *AVCaptureStillImageIsCapturingStillImageContext = @"AVCap
     if (block) {
         block(status);
     }
+}
+
+//切图
+- (UIImage *)imageFromImage:(UIImage *)image inRect:(CGRect)rect {
+    
+    CGFloat wScale = shadowWidth / KSCREENWIDTH;
+    CGFloat hScale = shadowHeight / KSCREENHEIGHT;
+    
+    CGImageRef sourceImageRef = [image CGImage];
+    size_t sourceImageWidth = CGImageGetWidth(sourceImageRef);
+    size_t sourceImageHeight = CGImageGetHeight(sourceImageRef);
+    CGFloat newW = hScale * sourceImageWidth;
+    CGFloat newH = wScale * sourceImageHeight;
+    CGFloat newX = shadowMarginY/(KSCREENWIDTH*1.777) * 1920;
+    CGFloat newY = (sourceImageHeight - newH) / 2;
+    
+    CGImageRef newImageRef = CGImageCreateWithImageInRect(sourceImageRef, CGRectMake(newX, newY, newW, newH));
+    UIImage *newImage = [UIImage imageWithCGImage:newImageRef scale:0.0 orientation:UIImageOrientationRight];
+//    UIImage *newImage = [UIImage imageWithCGImage:newImageRef];
+    CGImageRelease(newImageRef);
+    return newImage;
+}
+
+#pragma mark - 手势方法
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+{
+    UITouch *touch = touches.anyObject;
+    CGPoint touchPoint = [touch locationInView:self.view];
+    [self focusAtPoint:touchPoint];
+}
+
+- (void)focusAtPoint:(CGPoint)point {
+    AVCaptureDevice *device = self.device;
+    //聚焦
+    if ([device isFocusModeSupported:AVCaptureFocusModeAutoFocus]) {
+        NSError *error;
+        if ([device lockForConfiguration:&error]) {
+            //focus Point of Interest
+            // (0,0) top left, (1,1)bottom right.
+            //convert point into camera device coordinate system.
+            CGFloat x = point.x / self.preview.bounds.size.width;
+            CGFloat y = point.y / self.preview.bounds.size.height;
+            device.focusPointOfInterest = CGPointMake(x, y);
+            device.focusMode = AVCaptureFocusModeAutoFocus;
+            [device unlockForConfiguration];
+        }
+        else{
+            NSLog(@"%@", error.description);
+        }
+    }
+    //曝光
+//    if ([device isExposureModeSupported:AVCaptureExposureModeContinuousAutoExposure])
+//    {
+//        NSError *error;
+//        if ([device lockForConfiguration:&error]) {
+//
+//        }
+//    }
 }
 
 

@@ -7,18 +7,8 @@
 //
 
 #import "NJNavigatorController.h"
-#import "NJPhotosController.h"
-#import "NJRefreshExampleViewController.h"
-#import "NJQRCodeScanOC.h"
-#import "QRCodeScanViewController.h"
-#import "NJSDWebImageTest.h"
-#import "NJMessageForwardController.h"
-#import "NJCameraController.h"
-#import "NJUtilityTestViewController.h"
-#import "NJCameraViewController.h"
-#import "NJPortraitCameraViewController.h"
-#import "NJHIstogramViewController.h"
-#import "NJFindContoursViewController.h"
+#import "NJNavigatorHeader.h"
+
 @interface NJExample : NSObject
 
 @property (nonatomic, copy) NSString *title;
@@ -65,7 +55,8 @@
                      [NJExample exampleWithTitle:@"自定义相机" controllerName:@"NJCameraViewController"],
                      [NJExample exampleWithTitle:@"垂直方向相机" controllerName:@"NJPortraitCameraViewController"]
                      ,[NJExample exampleWithTitle:@"一維直方圖" controllerName:@"NJHIstogramViewController"],
-                     [NJExample exampleWithTitle:@"图片轮廓提取" controllerName:@"NJFindContoursViewController"]];
+                     [NJExample exampleWithTitle:@"图片轮廓提取" controllerName:@"NJFindContoursViewController"],
+                     [NJExample exampleWithTitle:@"模板匹配" controllerName:@"NJTemplateMatchingViewController"]];
 }
 
 - (void)didReceiveMemoryWarning {

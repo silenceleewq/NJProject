@@ -38,6 +38,11 @@
     UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
 
     UIImage *newImage = [self.utilManager drawGrayScaleHistogram:image];
+    if ([self.utilManager checkForBurryImage:image]){
+        NSLog(@"模糊");
+    } else {
+        NSLog(@"不模糊");
+    }
     self.originalImgView.image = image;
     self.changedImgView.image = newImage;
     

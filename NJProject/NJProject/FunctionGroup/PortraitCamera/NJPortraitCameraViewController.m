@@ -6,8 +6,15 @@
 //  Copyright © 2017年 Ninja. All rights reserved.
 //
 
+
+#define USE_TEMPLATE 1
 #import "NJPortraitCameraViewController.h"
 #import "NJCustomPortaitCameraViewController.h"
+
+#if USE_TEMPLATE
+#import "NJTemplateMatchingViewController.h"
+#else
+#endif
 
 @interface NJPortraitCameraViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *imgView;
@@ -45,6 +52,11 @@
     };
     //    [self presentViewController:camera animated:YES completion:nil];
     [self.navigationController pushViewController:camera animated:YES];
+}
+- (IBAction)matchAction:(id)sender {
+    NJTemplateMatchingViewController *match = [[NJTemplateMatchingViewController alloc] init];
+    match.srcImage = self.imgView.image;
+    [self.navigationController pushViewController:match animated:YES];
 }
 
 

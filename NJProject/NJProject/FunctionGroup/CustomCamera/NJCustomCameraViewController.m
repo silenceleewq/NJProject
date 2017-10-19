@@ -9,7 +9,7 @@
 #import "NJCustomCameraViewController.h"
 #import <ImageIO/ImageIO.h>
 #import <AssetsLibrary/AssetsLibrary.h>
-
+#import "NJOpenCVUtils.h"
 // iPhone5/5c/5s/SE 4英寸 屏幕宽高：320*568点 屏幕模式：2x 分辨率：1136*640像素
 #define iPhone5or5cor5sorSE ([UIScreen mainScreen].bounds.size.height == 568.0)
 
@@ -46,6 +46,8 @@ CGFloat shadowHeight;
 @property (nonatomic, strong) NSNumber *outPutSetting;
 @property (nonatomic, strong) UIImageView *headImageView;
 @property (nonatomic, assign) CGRect faceDetectionFrame;
+
+@property (nonatomic, strong) NJOpenCVUtils *utilManager;
 @end
 
 @implementation NJCustomCameraViewController
@@ -133,6 +135,10 @@ CGFloat shadowHeight;
     self.device = device;
     AVCaptureDeviceInput *deviceInput = [AVCaptureDeviceInput deviceInputWithDevice:device error:&error];
 
+    //添加KVO进行监听聚焦
+    [self.device addObserver:self forKeyPath:@"adjustingFocus" options:NSKeyValueObservingOptionNew context:nil];
+    
+    
     if ([session canAddInput:deviceInput]) [session addInput:deviceInput];
     
     //静态图片输出
@@ -271,6 +277,7 @@ CGFloat shadowHeight;
     return CGRectMake(subX, subY, subW, subH);
 }
 
+#pragma mark - KVO监听
 // 执行一个闪烁
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
 {
@@ -304,6 +311,10 @@ CGFloat shadowHeight;
         }
     }
 
+    if ([keyPath isEqualToString:@"adjustingFocus"]) {
+        NSLog(@"");
+    }
+    
 }
 
 - (void)captureOutput:(AVCaptureOutput *)captureOutput didOutputMetadataObjects:(NSArray *)metadataObjects fromConnection:(AVCaptureConnection *)connection
@@ -335,6 +346,7 @@ CGFloat shadowHeight;
 {
 
     [stillImageOutput removeObserver:self forKeyPath:@"capturingStillImage"];
+    [self.device removeObserver:self forKeyPath:@"adjustingFocus"];
 }
 
 
