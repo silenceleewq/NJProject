@@ -56,7 +56,8 @@
                      [NJExample exampleWithTitle:@"垂直方向相机" controllerName:@"NJPortraitCameraViewController"]
                      ,[NJExample exampleWithTitle:@"一維直方圖" controllerName:@"NJHIstogramViewController"],
                      [NJExample exampleWithTitle:@"图片轮廓提取" controllerName:@"NJFindContoursViewController"],
-                     [NJExample exampleWithTitle:@"模板匹配" controllerName:@"NJTemplateMatchingViewController"]];
+                     [NJExample exampleWithTitle:@"模板匹配" controllerName:@"NJTemplateMatchingViewController"],
+                     [NJExample exampleWithTitle:@"IQKeyBoard" controllerName:@"NJIQKeyboardViewController"]];
 }
 
 - (void)didReceiveMemoryWarning {

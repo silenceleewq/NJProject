@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-//#import "NJRefreshExampleViewController.h"
+#import "IQKeyboardManager.h"
 #import "NJNavigatorController.h"
 @interface AppDelegate ()
 
@@ -17,6 +17,9 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+    //IQKeyboard turn on
+    IQKeyboardManager.sharedManager.enable = YES;
     
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     NJNavigatorController *navigatorController = [[NJNavigatorController alloc] init];

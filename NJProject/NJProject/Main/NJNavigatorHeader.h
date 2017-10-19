@@ -23,5 +23,6 @@
 #import "NJFindContoursViewController.h"
 #import "NJTemplateMatchingViewController.h"
 #import "NJHoughLineViewController.h"
+#import "NJIQKeyboardViewController.h"
 
 #endif /* NJNavigatorHeader_h */
