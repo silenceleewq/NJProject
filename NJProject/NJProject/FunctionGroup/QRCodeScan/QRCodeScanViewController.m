@@ -11,7 +11,8 @@
 
 
 @interface QRCodeScanViewController () <NJQRCodeScanOCDelegate>
-@property (weak, nonatomic) IBOutlet UILabel *resultLabel;
+
+
 @end
 
 @implementation QRCodeScanViewController
@@ -43,7 +44,7 @@
 }
 
 - (void)qrCodeComplete:(NSString *)codeString {
-    self.resultLabel.text = codeString;
+    
 }
 
 

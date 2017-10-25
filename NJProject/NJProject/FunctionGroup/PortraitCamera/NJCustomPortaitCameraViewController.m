@@ -226,6 +226,21 @@ static const NSString *AVCaptureStillImageIsCapturingStillImageContext = @"AVCap
     self.shadowLayer.borderWidth = 1.5;
     self.shadowLayer.cornerRadius = 15;
     [self.view.layer addSublayer:self.shadowLayer];
+    
+    UIBezierPath *transparentRoundedRectPath = [UIBezierPath bezierPathWithRoundedRect:self.shadowLayer.frame cornerRadius:self.shadowLayer.cornerRadius];
+    
+    
+    UIBezierPath *path = [UIBezierPath bezierPathWithRect:self.view.frame];
+    [path appendPath:transparentRoundedRectPath];
+    [path setUsesEvenOddFillRule:YES];
+    
+    CAShapeLayer *fillLayer = [CAShapeLayer layer];
+    fillLayer.path = path.CGPath;
+    fillLayer.fillRule = kCAFillRuleEvenOdd;
+    fillLayer.fillColor = [UIColor blackColor].CGColor;
+    fillLayer.opacity = 0.6;
+    
+    [self.view.layer addSublayer:fillLayer];
 }
 
 

@@ -231,20 +231,20 @@
     [self.view.layer addSublayer:_IDCardScanningWindowLayer];
     
 //    // 最里层镂空
-//    UIBezierPath *transparentRoundedRectPath = [UIBezierPath bezierPathWithRoundedRect:_IDCardScanningWindowLayer.frame cornerRadius:_IDCardScanningWindowLayer.cornerRadius];
-//    
-//    // 最外层背景
-//    UIBezierPath *path = [UIBezierPath bezierPathWithRect:self.view.frame];
-//    [path appendPath:transparentRoundedRectPath];
-//    [path setUsesEvenOddFillRule:YES];
-//    
-//    CAShapeLayer *fillLayer = [CAShapeLayer layer];
-//    fillLayer.path = path.CGPath;
-//    fillLayer.fillRule = kCAFillRuleEvenOdd;
-//    fillLayer.fillColor = [UIColor blackColor].CGColor;
-//    fillLayer.opacity = 0.6;
+    UIBezierPath *transparentRoundedRectPath = [UIBezierPath bezierPathWithRoundedRect:_IDCardScanningWindowLayer.frame cornerRadius:_IDCardScanningWindowLayer.cornerRadius];
     
-//    [self.view.layer addSublayer:fillLayer];
+    // 最外层背景
+    UIBezierPath *path = [UIBezierPath bezierPathWithRect:self.view.frame];
+    [path appendPath:transparentRoundedRectPath];
+    [path setUsesEvenOddFillRule:YES];
+    
+    CAShapeLayer *fillLayer = [CAShapeLayer layer];
+    fillLayer.path = path.CGPath;
+    fillLayer.fillRule = kCAFillRuleEvenOdd;
+    fillLayer.fillColor = [UIColor blackColor].CGColor;
+    fillLayer.opacity = 0.6;
+    
+    [self.view.layer addSublayer:fillLayer];
 }
 
 @end
