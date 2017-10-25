@@ -537,6 +537,7 @@
 		00F80A021E81275D002FC6A0 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				1F4E643C1F7BF5FD007D01EC /* OpenCVUtils */,
 				1F0BBBF61F9F1BCF00BB688E /* NJImageCache */,
 				1F82ED671F98523C00145FF5 /* IQKeyboardManager */,
 				1F25C7481F8F3F9000D2F9D8 /* UIImageEx */,
@@ -759,7 +760,6 @@
 		1F4E64381F7BF5C2007D01EC /* OpenCVController */ = {
 			isa = PBXGroup;
 			children = (
-				1F4E643C1F7BF5FD007D01EC /* OpenCVUtils */,
 				1F2275F31F7C99F700ACE1BF /* NJOpenCVBaseViewController.h */,
 				1F2275F41F7C99F700ACE1BF /* NJOpenCVBaseViewController.m */,
 				1F4E64391F7BF5F3007D01EC /* NJHIstogramViewController.h */,
