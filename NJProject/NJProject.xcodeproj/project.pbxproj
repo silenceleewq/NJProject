@@ -64,6 +64,7 @@
 		00F80A4D1E812B0E002FC6A0 /* UIScrollView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F80A371E812B0E002FC6A0 /* UIScrollView+MJExtension.m */; };
 		00F80A4E1E812B0E002FC6A0 /* UIScrollView+MJRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F80A391E812B0E002FC6A0 /* UIScrollView+MJRefresh.m */; };
 		00F80A4F1E812B0E002FC6A0 /* UIView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F80A3B1E812B0E002FC6A0 /* UIView+MJExtension.m */; };
+		1F0BBBF91F9F1C6E00BB688E /* NJImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F0BBBF81F9F1C6E00BB688E /* NJImageCache.m */; };
 		1F12C51C1F6A500E003C6565 /* NJPortraitCameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F12C51B1F6A500E003C6565 /* NJPortraitCameraViewController.m */; };
 		1F12C51E1F6A501E003C6565 /* NJPortraitCameraViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F12C51D1F6A501E003C6565 /* NJPortraitCameraViewController.storyboard */; };
 		1F12C5211F6A503D003C6565 /* NJCustomPortaitCameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F12C5201F6A503D003C6565 /* NJCustomPortaitCameraViewController.m */; };
@@ -241,6 +242,8 @@
 		00F80A391E812B0E002FC6A0 /* UIScrollView+MJRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+MJRefresh.m"; sourceTree = "<group>"; };
 		00F80A3A1E812B0E002FC6A0 /* UIView+MJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+MJExtension.h"; sourceTree = "<group>"; };
 		00F80A3B1E812B0E002FC6A0 /* UIView+MJExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+MJExtension.m"; sourceTree = "<group>"; };
+		1F0BBBF71F9F1C6E00BB688E /* NJImageCache.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NJImageCache.h; sourceTree = "<group>"; };
+		1F0BBBF81F9F1C6E00BB688E /* NJImageCache.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NJImageCache.m; sourceTree = "<group>"; };
 		1F12C51A1F6A500E003C6565 /* NJPortraitCameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJPortraitCameraViewController.h; sourceTree = "<group>"; };
 		1F12C51B1F6A500E003C6565 /* NJPortraitCameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJPortraitCameraViewController.m; sourceTree = "<group>"; };
 		1F12C51D1F6A501E003C6565 /* NJPortraitCameraViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = NJPortraitCameraViewController.storyboard; sourceTree = "<group>"; };
@@ -534,6 +537,7 @@
 		00F80A021E81275D002FC6A0 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				1F0BBBF61F9F1BCF00BB688E /* NJImageCache */,
 				1F82ED671F98523C00145FF5 /* IQKeyboardManager */,
 				1F25C7481F8F3F9000D2F9D8 /* UIImageEx */,
 				1F4E64331F7BF57E007D01EC /* OpenCV */,
@@ -651,6 +655,15 @@
 				00F80A2F1E812B0E002FC6A0 /* MJRefreshStateHeader.m */,
 			);
 			path = Header;
+			sourceTree = "<group>";
+		};
+		1F0BBBF61F9F1BCF00BB688E /* NJImageCache */ = {
+			isa = PBXGroup;
+			children = (
+				1F0BBBF71F9F1C6E00BB688E /* NJImageCache.h */,
+				1F0BBBF81F9F1C6E00BB688E /* NJImageCache.m */,
+			);
+			path = NJImageCache;
 			sourceTree = "<group>";
 		};
 		1F12C5191F6A4FEC003C6565 /* PortraitCamera */ = {
@@ -1038,6 +1051,7 @@
 				00CBBFC51EF9EFDB00D9AEDB /* SDWebImageDownloaderOperation.m in Sources */,
 				1F2F95D11F3802BE00BAD1E1 /* NJUtilityTestViewController.m in Sources */,
 				00F80A401E812B0E002FC6A0 /* MJRefreshHeader.m in Sources */,
+				1F0BBBF91F9F1C6E00BB688E /* NJImageCache.m in Sources */,
 				00F80A001E8126F7002FC6A0 /* NJBaseViewController.m in Sources */,
 				00CBBFC21EF9EFDB00D9AEDB /* SDWebImageCompat.m in Sources */,
 				1F25C7331F8EF53000D2F9D8 /* NJTemplateMatchingViewController.mm in Sources */,
