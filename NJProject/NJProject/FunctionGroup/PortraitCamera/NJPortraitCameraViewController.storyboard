@@ -42,6 +42,15 @@
                                     <action selector="matchAction:" destination="mWu-2h-BiU" eventType="touchUpInside" id="D1P-AN-GLx"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nxP-Ff-bTl">
+                                <rect key="frame" x="0.0" y="562" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.85977323660000005" green="1" blue="0.45141981380000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="检测亮度"/>
+                                <connections>
+                                    <action selector="detectLight" destination="mWu-2h-BiU" eventType="touchUpInside" id="12O-GR-7aw"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.56574294419040028" blue="0.54994091536057799" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>

@@ -9,6 +9,7 @@
 #import "NJCustomPortaitCameraViewController.h"
 #import <ImageIO/ImageIO.h>
 #import "UIImage+NJOrientation.h"
+#import "NJOpenCVUtils.h"
 static CGFloat shadowWidth;
 static CGFloat shadowHeight;
 static CGFloat shadowMarginY;
@@ -29,6 +30,9 @@ static const NSString *AVCaptureStillImageIsCapturingStillImageContext = @"AVCap
 @property (nonatomic, strong) AVCaptureMetadataOutput *metaDataOutput;
 @property (nonatomic, assign) CGRect headImageRect;
 @property (nonatomic, strong) UIView *rectangleView;
+
+@property (nonatomic, strong) NJOpenCVUtils *openCVUtil;
+@property (nonatomic, strong) UILabel *tipLabel;
 @end
 
 @implementation NJCustomPortaitCameraViewController
@@ -61,6 +65,9 @@ static const NSString *AVCaptureStillImageIsCapturingStillImageContext = @"AVCap
     [self addShadowLayer];
 
     [self.view addSubview:self.snipBtn];
+    
+    self.openCVUtil = [NJOpenCVUtils sharedManager];
+    [self.view addSubview:self.tipLabel];
 }
 
 
@@ -214,22 +221,35 @@ static const NSString *AVCaptureStillImageIsCapturingStillImageContext = @"AVCap
         AVMetadataMachineReadableCodeObject *metadataObject = metadataObjects.firstObject;
         AVMetadataObject *transformedMetadataObject = [self.preview transformedMetadataObjectForMetadataObject:metadataObject];
         CGRect faceRegion = transformedMetadataObject.bounds;
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+          self.rectangleView.frame = faceRegion;
+        });
+        
         if (metadataObject.type == AVMetadataObjectTypeFace) {
-            
+            NSLog(@"%d", CGRectContainsRect(self.headImageRect, faceRegion));
             NSLog(@"faceRegion = %@", NSStringFromCGRect(faceRegion));
             NSLog(@"headImageFrame = %@", NSStringFromCGRect(self.headImageRect));
-//            NSLog(@": %d, facePathRect: %@, faceRegion: %@", CGRectContainsRect(self.faceDetectionFrame, faceRegion), NSStringFromCGRect(self.faceDetectionFrame), NSStringFromCGRect(faceRegion));
-//            if (CGRectContainsRect(self.faceDetectionFrame, faceRegion)) {
-//                //只有人臉區域的確在小框內時,才再去捕獲此時的這一幀圖像.
-//                NSLog(@"-------------可以捕獲此時的這一幀圖像了-----------");
-//            }
+
+            if (CGRectContainsRect(self.headImageRect, faceRegion)) {
+                //只有人臉區域的確在小框內時,才再去捕獲此時的這一幀圖像.
+                if (!self.output.sampleBufferDelegate) {
+                    [self.output setSampleBufferDelegate:self queue:videoDataOutputQueue];
+                }
+            }
         }
     }
     
 }
 
 - (void)captureOutput:(AVCaptureOutput *)captureOutput didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer fromConnection:(AVCaptureConnection *)connection {
+
+    [self dealWithCMSampleBufferRef:sampleBuffer];
     
+    
+    if (self.output.sampleBufferDelegate) {
+        [self.output setSampleBufferDelegate:nil queue:videoDataOutputQueue];
+    }
 }
 
 - (void)addShadowLayer {
@@ -395,7 +415,7 @@ static const NSString *AVCaptureStillImageIsCapturingStillImageContext = @"AVCap
 //        }
 //    }
 }
-
+#pragma mark - 懒加载
 - (CAShapeLayer *)shadowLayer
 {
     if (!_shadowLayer) {
@@ -416,12 +436,21 @@ static const NSString *AVCaptureStillImageIsCapturingStillImageContext = @"AVCap
         UIImage *headImage = [UIImage imageNamed:@"idcard_front_head"];
         _headImageView.image = headImage;
         
-        
         _headImageView.frame = self.headImageRect;
         NSLog(@"%@", NSStringFromCGRect(_headImageView.frame));
         
     }
     return _headImageView;
+}
+
+- (UILabel *)tipLabel
+{
+    if (!_tipLabel) {
+        _tipLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 5, 150, 40)];
+        _tipLabel.textColor = [UIColor redColor];
+        _tipLabel.font = [UIFont systemFontOfSize:17];
+    }
+    return _tipLabel;
 }
 
 - (CGRect)headImageRect {
@@ -448,8 +477,65 @@ static const NSString *AVCaptureStillImageIsCapturingStillImageContext = @"AVCap
         _rectangleView.layer.borderColor = UIColor.redColor.CGColor;
         _rectangleView.layer.borderWidth = 2;
         _rectangleView.backgroundColor = [UIColor clearColor];
+        [self.view addSubview:_rectangleView];
     }
     return _rectangleView;
 }
 
+- (UIImage *)imageFromCMSampleBuffer:(CMSampleBufferRef)sampleBuffer
+{
+    CVImageBufferRef imageBuffer = CMSampleBufferGetImageBuffer(sampleBuffer);
+    CVPixelBufferLockBaseAddress(imageBuffer,0);        // Lock the image buffer
+    
+    uint8_t *baseAddress = (uint8_t *)CVPixelBufferGetBaseAddressOfPlane(imageBuffer, 0);   // Get information of the image
+    size_t bytesPerRow = CVPixelBufferGetBytesPerRow(imageBuffer);
+    size_t width = CVPixelBufferGetWidth(imageBuffer);
+    size_t height = CVPixelBufferGetHeight(imageBuffer);
+    CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
+    
+    CGContextRef newContext = CGBitmapContextCreate(baseAddress, width, height, 8, bytesPerRow, colorSpace, kCGBitmapByteOrder32Little | kCGImageAlphaPremultipliedFirst);
+    CGImageRef newImage = CGBitmapContextCreateImage(newContext);
+    CGContextRelease(newContext);
+    
+    CGColorSpaceRelease(colorSpace);
+    CVPixelBufferUnlockBaseAddress(imageBuffer,0);
+    UIImage * uiimage = [UIImage imageWithCGImage:newImage];
+    return uiimage;
+}
+
+- (UIImage *)getImageStream:(CVImageBufferRef)imageBuffer {
+    CIImage *ciImage = [CIImage imageWithCVPixelBuffer:imageBuffer];
+    CIContext *temporaryContext = [CIContext contextWithOptions:nil];
+    CGImageRef videoImage = [temporaryContext createCGImage:ciImage fromRect:CGRectMake(0, 0, CVPixelBufferGetWidth(imageBuffer), CVPixelBufferGetHeight(imageBuffer))];
+    
+    UIImage *image = [[UIImage alloc] initWithCGImage:videoImage];
+    
+    CGImageRelease(videoImage);
+    return image;
+}
+
+#pragma mark - 图片处理
+- (void)dealWithCMSampleBufferRef:(CMSampleBufferRef)sampleBuffer
+{
+    CVImageBufferRef imageBuffer = CMSampleBufferGetImageBuffer(sampleBuffer);
+    
+    UIImage *image = [self getImageStream:imageBuffer];
+    
+    BOOL blur = [self.openCVUtil checkForBurryImage:image];
+    //模糊检测
+    if (blur) {
+        self.tipLabel.text = @"图像模糊,请尝试调整角度";
+        return;
+    }
+    
+    //亮暗检测.
+    
+    
+}
+
+#pragma mark - 更新红色矩形
+- (void)updateRectangleView
+{
+    
+}
 @end

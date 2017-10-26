@@ -15,10 +15,11 @@
 #import "NJTemplateMatchingViewController.h"
 #else
 #endif
+#import "NJOpenCVUtils.h"
 
 @interface NJPortraitCameraViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *imgView;
-
+@property (nonatomic, strong) NJOpenCVUtils *utilManager;
 @end
 
 @implementation NJPortraitCameraViewController
@@ -57,6 +58,14 @@
     NJTemplateMatchingViewController *match = [[NJTemplateMatchingViewController alloc] init];
     match.srcImage = self.imgView.image;
     [self.navigationController pushViewController:match animated:YES];
+}
+
+- (IBAction)detectLight {
+    
+    UIImage *srcImage = self.imgView.image;
+    
+    
+    
 }
 
 

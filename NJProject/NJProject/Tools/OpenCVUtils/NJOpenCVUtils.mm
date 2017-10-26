@@ -138,6 +138,43 @@ IplImage *DrawHistogram(CvHistogram *hist, float scaleX = 1, float scaleY = 1)
     return imgHist;
 }
 
+- (void)detectImageLight:(UIImage *)image done:(void(^)(float light, float black))doneBlock
+{
+    cv::Mat matImageGray = [self convertToGrayScale:image];
+    IplImage src = IplImage(matImageGray);
+    int dims = 1;
+    int size = 256;
+    float range[] = {0, 255};
+    float *ranges[] = {range};
+    CvHistogram *hist = cvCreateHist(dims, &size, CV_HIST_ARRAY, ranges, 1);
+    cvClearHist(hist);
+    
+    IplImage *imgGray = cvCreateImage(cvGetSize(&src), 8, 1);
+    cvSplit(&src, imgGray, NULL, NULL, NULL);
+    cvCalcHist(&imgGray, hist, 0, 0);
+    
+    //画柱条
+    double histSum = 0.0;
+    double histGreaterThan200 = 0.0;
+    double histLessThan200 = 0.0;
+    for (int i = 0; i < 255; i++)
+    {
+        //获取了两个bin的值
+        float histValue = cvQueryHistValue_1D(hist, i);
+        float nextValue = cvQueryHistValue_1D(hist, i+1);//该值的数值不知道到底有多大,所以需要进行归一化.
+        
+        histSum += histValue;
+        NSLog(@"i: %zd --- histValue: %f", i, histValue);
+        if (i > 230) {
+            histGreaterThan200 += histValue;
+        }
+        if (i < 20) {
+            histLessThan200 += histValue;
+        }
+    }
+    NSLog(@"histSum = %f, histMoreThan200 = %f ratio = %f", histSum, histGreaterThan200, histGreaterThan200 / histSum);
+    doneBlock(histGreaterThan200 / histSum, histLessThan200 / histSum);
+}
 
 /**
  UIImage 轉換為 灰度圖

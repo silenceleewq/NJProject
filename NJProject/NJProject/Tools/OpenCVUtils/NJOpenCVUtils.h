@@ -42,4 +42,6 @@ typedef void(^NJTemplateMatchingCompleteBlock)(UIImage *resultImage, UIImage *te
  */
 - (void)templateMatching:(UIImage *)srcImage complete:(NJTemplateMatchingCompleteBlock)completeBlock;
 
+- (void)detectImageLight:(UIImage *)image done:(void(^)(float light, float black))doneBlock;
+
 @end
