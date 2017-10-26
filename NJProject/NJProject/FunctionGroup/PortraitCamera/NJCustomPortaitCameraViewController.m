@@ -24,7 +24,11 @@ static const NSString *AVCaptureStillImageIsCapturingStillImageContext = @"AVCap
 }
 @property (nonatomic, strong) CAShapeLayer *shadowLayer;
 @property (nonatomic, strong) UIButton *snipBtn;
-
+@property (nonatomic, strong) UIImageView *headImageView;
+//检测人脸
+@property (nonatomic, strong) AVCaptureMetadataOutput *metaDataOutput;
+@property (nonatomic, assign) CGRect headImageRect;
+@property (nonatomic, strong) UIView *rectangleView;
 @end
 
 @implementation NJCustomPortaitCameraViewController
@@ -55,9 +59,7 @@ static const NSString *AVCaptureStillImageIsCapturingStillImageContext = @"AVCap
 //    [self initUI:CGRectMake(0, -64, self.view.bounds.size.width, self.view.bounds.size.height)];
     [self initUI:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.width*1.777)];
     [self addShadowLayer];
-    
-//    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithTitle:@"SNIP" style:UIBarButtonItemStylePlain target:self action:@selector(takePhoto)];
-//    self.navigationItem.rightBarButtonItem = item;
+
     [self.view addSubview:self.snipBtn];
 }
 
@@ -71,6 +73,7 @@ static const NSString *AVCaptureStillImageIsCapturingStillImageContext = @"AVCap
 
 - (void)initUI:(CGRect)previewFrame
 {
+    
     effectiveScale = 1.0;
     // 摄像头设备
     self.device = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
@@ -81,21 +84,12 @@ static const NSString *AVCaptureStillImageIsCapturingStillImageContext = @"AVCap
     self.input = [AVCaptureDeviceInput deviceInputWithDevice:self.device error:&error];
     
     if (error|| !self.input) {
-        
         //NSLog(@"手机不支持二维码扫描!");
         return;
     }
     
     // 会话session, 把输入口加入会话
     self.session = [[AVCaptureSession alloc]init];
-//    if ([UIScreen mainScreen].bounds.size.height == 480)
-//    {
-//        [self.session setSessionPreset:AVCaptureSessionPreset640x480];
-//    }
-//    else
-//    {
-//        [self.session setSessionPreset:AVCaptureSessionPresetPhoto];
-//    }
     
     [self.session setSessionPreset:AVCaptureSessionPreset1920x1080];
     
@@ -116,6 +110,12 @@ static const NSString *AVCaptureStillImageIsCapturingStillImageContext = @"AVCap
         [self.session addOutput:self.output];
     }
     
+    //添加人脸识别output
+    if ([self.session canAddOutput:self.metaDataOutput]) {
+        [self.session addOutput:self.metaDataOutput];
+    }
+    self.metaDataOutput.metadataObjectTypes = @[AVMetadataObjectTypeFace];
+    
     //添加still image output
     stillImageOutput = [AVCaptureStillImageOutput new];
     //    [stillImageOutput addObserver:self forKeyPath:@"capturingStillImage" options:NSKeyValueObservingOptionNew context:AVCaptureStillImageIsCapturingStillImageContext];
@@ -132,45 +132,40 @@ static const NSString *AVCaptureStillImageIsCapturingStillImageContext = @"AVCap
     [self.view.layer addSublayer:self.preview];
     
     //设置扫码范围
-    
-    //    self.output.rectOfInterest = CGRectMake((self.view.bounds.size.height * 0.5 - 140-64)/KSCREENHEIGHT,(1-280/KSCREENWIDTH)/2,280/KSCREENHEIGHT,280/KSCREENWIDTH);
     [self.session startRunning];// 启动session
+    
+    [self.view addSubview:self.headImageView];
 }
 
 - (void)takePhoto{
-    //    [self.session stopRunning];
-    //    self.session = nil;
-    //    [self.navigationController popViewControllerAnimated:YES];
-    //    return;
     AVCaptureConnection *stillImageConnection = [stillImageOutput connectionWithMediaType:AVMediaTypeVideo];
     UIDeviceOrientation curDeviceOrientation = [[UIDevice currentDevice] orientation];
-//    AVCaptureVideoOrientation avcaptureOrientation = [self avOrientationForDeviceOrientation:curDeviceOrientation];
+
     [stillImageConnection setVideoOrientation:AVCaptureVideoOrientationPortrait];
     [stillImageConnection setVideoScaleAndCropFactor:effectiveScale];
     
     [stillImageOutput setOutputSettings:[NSDictionary dictionaryWithObject:AVVideoCodecJPEG
                                                                     forKey:AVVideoCodecKey]];
     
-    [stillImageOutput captureStillImageAsynchronouslyFromConnection:stillImageConnection
-                                                  completionHandler:^(CMSampleBufferRef imageDataSampleBuffer, NSError *error) {
-                                                      if (error) {
-                                                          //                                                          [self displayErrorOnMainQueue:error withMessage:@"Take picture failed"];
-                                                      }
-                                                      else {
-                                                          
-                                                          NSData *jpegData = [AVCaptureStillImageOutput jpegStillImageNSDataRepresentation:imageDataSampleBuffer];
-                                                          UIImage *img = [UIImage imageWithData:jpegData];
-                                                          NSLog(@"%@", img);
-                                                          NSLog(@"img.Orientation = %zd", img.imageOrientation);
-                                                          if (self.finishedSnip) {
-                                                              img = [self imageFromImage:img inRect:CGRectMake(0, 0, 0, 0)];
-                                                              img = [img normalizedImage];
-                                                              UIImageWriteToSavedPhotosAlbum(img, nil, nil, nil);
-                                                              self.finishedSnip(img);
-                                                              [self.navigationController popViewControllerAnimated:YES];
-                                                          }
-                                                      }
-                                                  }
+    [stillImageOutput
+     captureStillImageAsynchronouslyFromConnection:stillImageConnection
+     completionHandler:^(CMSampleBufferRef imageDataSampleBuffer, NSError *error) {
+         if (error) {
+         }
+         else {
+              NSData *jpegData = [AVCaptureStillImageOutput jpegStillImageNSDataRepresentation:imageDataSampleBuffer];
+              UIImage *img = [UIImage imageWithData:jpegData];
+              NSLog(@"%@", img);
+              NSLog(@"img.Orientation = %zd", img.imageOrientation);
+              if (self.finishedSnip) {
+                  img = [self imageFromImage:img inRect:CGRectMake(0, 0, 0, 0)];
+                  img = [img normalizedImage];
+                  UIImageWriteToSavedPhotosAlbum(img, nil, nil, nil);
+                  self.finishedSnip(img);
+                  [self.navigationController popViewControllerAnimated:YES];
+              }
+          }
+      }
      ];
 }
 
@@ -212,6 +207,26 @@ static const NSString *AVCaptureStillImageIsCapturingStillImageContext = @"AVCap
     }
 }
 
+- (void)captureOutput:(AVCaptureOutput *)output didOutputMetadataObjects:(NSArray<__kindof AVMetadataObject *> *)metadataObjects fromConnection:(AVCaptureConnection *)connection
+{
+    NSLog(@"检测到了人脸.");
+    if (metadataObjects.count) {
+        AVMetadataMachineReadableCodeObject *metadataObject = metadataObjects.firstObject;
+        AVMetadataObject *transformedMetadataObject = [self.preview transformedMetadataObjectForMetadataObject:metadataObject];
+        CGRect faceRegion = transformedMetadataObject.bounds;
+        if (metadataObject.type == AVMetadataObjectTypeFace) {
+            
+            NSLog(@"faceRegion = %@", NSStringFromCGRect(faceRegion));
+            NSLog(@"headImageFrame = %@", NSStringFromCGRect(self.headImageRect));
+//            NSLog(@": %d, facePathRect: %@, faceRegion: %@", CGRectContainsRect(self.faceDetectionFrame, faceRegion), NSStringFromCGRect(self.faceDetectionFrame), NSStringFromCGRect(faceRegion));
+//            if (CGRectContainsRect(self.faceDetectionFrame, faceRegion)) {
+//                //只有人臉區域的確在小框內時,才再去捕獲此時的這一幀圖像.
+//                NSLog(@"-------------可以捕獲此時的這一幀圖像了-----------");
+//            }
+        }
+    }
+    
+}
 
 - (void)captureOutput:(AVCaptureOutput *)captureOutput didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer fromConnection:(AVCaptureConnection *)connection {
     
@@ -219,12 +234,6 @@ static const NSString *AVCaptureStillImageIsCapturingStillImageContext = @"AVCap
 
 - (void)addShadowLayer {
     
-    self.shadowLayer = [CAShapeLayer layer];
-    shadowMarginY = 100;
-    self.shadowLayer.frame = CGRectMake(5, shadowMarginY, KSCREENWIDTH-10, (KSCREENWIDTH-10)/1.578);
-    self.shadowLayer.borderColor = [UIColor redColor].CGColor;
-    self.shadowLayer.borderWidth = 1.5;
-    self.shadowLayer.cornerRadius = 15;
     [self.view.layer addSublayer:self.shadowLayer];
     
     UIBezierPath *transparentRoundedRectPath = [UIBezierPath bezierPathWithRoundedRect:self.shadowLayer.frame cornerRadius:self.shadowLayer.cornerRadius];
@@ -387,5 +396,60 @@ static const NSString *AVCaptureStillImageIsCapturingStillImageContext = @"AVCap
 //    }
 }
 
+- (CAShapeLayer *)shadowLayer
+{
+    if (!_shadowLayer) {
+        _shadowLayer = [CAShapeLayer layer];
+        shadowMarginY = 100;
+        _shadowLayer.frame = CGRectMake(5, shadowMarginY, KSCREENWIDTH-10, (KSCREENWIDTH-10)/1.578);
+        _shadowLayer.borderColor = [UIColor redColor].CGColor;
+        _shadowLayer.borderWidth = 1.5;
+        _shadowLayer.cornerRadius = 15;
+    }
+    return _shadowLayer;
+}
+
+- (UIImageView *)headImageView
+{
+    if (!_headImageView) {
+        _headImageView = [[UIImageView alloc] init];
+        UIImage *headImage = [UIImage imageNamed:@"idcard_front_head"];
+        _headImageView.image = headImage;
+        
+        
+        _headImageView.frame = self.headImageRect;
+        NSLog(@"%@", NSStringFromCGRect(_headImageView.frame));
+        
+    }
+    return _headImageView;
+}
+
+- (CGRect)headImageRect {
+    CGFloat faceWidth = 200;
+    CGFloat faceHeight = faceWidth * 0.812;
+    CGFloat faceX = CGRectGetMaxX(self.shadowLayer.frame) - faceWidth+10;
+    CGFloat faceY = self.shadowLayer.frame.origin.y + 45;
+    return CGRectMake(faceX, faceY, faceWidth, faceHeight);
+}
+
+- (AVCaptureMetadataOutput *)metaDataOutput
+{
+    if (!_metaDataOutput) {
+        _metaDataOutput = [[AVCaptureMetadataOutput alloc] init];
+        [_metaDataOutput setMetadataObjectsDelegate:self queue:videoDataOutputQueue];
+    }
+    return _metaDataOutput;
+}
+
+- (UIView *)rectangleView
+{
+    if (!_rectangleView) {
+        _rectangleView = [[UIView alloc] init];
+        _rectangleView.layer.borderColor = UIColor.redColor.CGColor;
+        _rectangleView.layer.borderWidth = 2;
+        _rectangleView.backgroundColor = [UIColor clearColor];
+    }
+    return _rectangleView;
+}
 
 @end
