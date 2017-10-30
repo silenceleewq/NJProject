@@ -9,6 +9,11 @@
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
 
+typedef NS_ENUM(NSUInteger, NJIDCardType) {
+    NJIDCardTypeHead,
+    NJIDCardTypeEmblem,
+};
+
 typedef void(^imageBlock)(UIImage *image);
 
 @interface NJCustomPortaitCameraViewController : UIViewController <AVCaptureMetadataOutputObjectsDelegate, AVCaptureVideoDataOutputSampleBufferDelegate>
@@ -23,4 +28,7 @@ typedef void(^imageBlock)(UIImage *image);
 
 @property (strong, nonatomic)AVCaptureVideoPreviewLayer *preview;
 @property (nonatomic, strong)imageBlock finishedSnip;
+
+@property (nonatomic, assign) NJIDCardType idCardType;
+
 @end

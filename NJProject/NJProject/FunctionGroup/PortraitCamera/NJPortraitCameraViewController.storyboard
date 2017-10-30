@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -21,17 +22,31 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eM9-0o-0P2">
-                                <rect key="frame" x="16" y="108" width="54" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eM9-0o-0P2">
+                                <rect key="frame" x="20" y="40" width="54" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="P0s-cv-yJu"/>
+                                    <constraint firstAttribute="width" constant="54" id="rYA-ub-G5T"/>
+                                </constraints>
                                 <state key="normal" title="Camera"/>
                                 <connections>
                                     <action selector="JumpToCamera:" destination="mWu-2h-BiU" eventType="touchUpInside" id="Riw-h8-8Tk"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nUv-64-nGw">
-                                <rect key="frame" x="0.0" y="30" width="375" height="627"/>
+                                <rect key="frame" x="0.0" y="86.5" width="375" height="238"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="nUv-64-nGw" secondAttribute="height" multiplier="1.575:1" id="F0j-Ax-yYl"/>
+                                </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nxP-Ff-bTl">
+                                <rect key="frame" x="0.0" y="576" width="375" height="30"/>
+                                <color key="backgroundColor" red="0.85977323660000005" green="1" blue="0.45141981380000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="检测亮度"/>
+                                <connections>
+                                    <action selector="detectLight" destination="mWu-2h-BiU" eventType="touchUpInside" id="12O-GR-7aw"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BfH-1W-3ES">
                                 <rect key="frame" x="0.0" y="614" width="375" height="53"/>
                                 <constraints>
@@ -42,34 +57,49 @@
                                     <action selector="matchAction:" destination="mWu-2h-BiU" eventType="touchUpInside" id="D1P-AN-GLx"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nxP-Ff-bTl">
-                                <rect key="frame" x="0.0" y="562" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.85977323660000005" green="1" blue="0.45141981380000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="检测亮度"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2AY-eR-Epf">
+                                <rect key="frame" x="0.0" y="332" width="375" height="238"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W7R-tU-qNf">
+                                <rect key="frame" x="124" y="40" width="54" height="30"/>
+                                <state key="normal" title="Back"/>
                                 <connections>
-                                    <action selector="detectLight" destination="mWu-2h-BiU" eventType="touchUpInside" id="12O-GR-7aw"/>
+                                    <action selector="BackCamera:" destination="mWu-2h-BiU" eventType="touchUpInside" id="pru-gO-qfc"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.56574294419040028" blue="0.54994091536057799" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="nUv-64-nGw" firstAttribute="top" secondItem="lH0-Qj-R2a" secondAttribute="bottom" constant="10" id="GtA-kq-PAh"/>
+                            <constraint firstItem="eM9-0o-0P2" firstAttribute="leading" secondItem="dZ5-4x-UEW" secondAttribute="leading" constant="20" id="2G4-oS-VCK"/>
+                            <constraint firstItem="nUv-64-nGw" firstAttribute="top" secondItem="eM9-0o-0P2" secondAttribute="bottom" constant="17" id="2a6-M9-exq"/>
+                            <constraint firstItem="W7R-tU-qNf" firstAttribute="height" secondItem="eM9-0o-0P2" secondAttribute="height" id="3Ka-Lk-WG0"/>
+                            <constraint firstAttribute="trailing" secondItem="nxP-Ff-bTl" secondAttribute="trailing" id="6uZ-rz-KqO"/>
+                            <constraint firstItem="nUv-64-nGw" firstAttribute="leading" secondItem="dZ5-4x-UEW" secondAttribute="leading" id="74j-xK-b6D"/>
+                            <constraint firstItem="2AY-eR-Epf" firstAttribute="leading" secondItem="nUv-64-nGw" secondAttribute="leading" id="7cz-qn-dfQ"/>
+                            <constraint firstAttribute="trailing" secondItem="nUv-64-nGw" secondAttribute="trailing" id="7yD-Rq-pvl"/>
+                            <constraint firstItem="W7R-tU-qNf" firstAttribute="leading" secondItem="eM9-0o-0P2" secondAttribute="trailing" constant="50" id="9XH-o3-g8r"/>
                             <constraint firstAttribute="trailing" secondItem="BfH-1W-3ES" secondAttribute="trailing" id="ITF-y1-5eK"/>
-                            <constraint firstItem="9Ii-el-CJb" firstAttribute="top" secondItem="nUv-64-nGw" secondAttribute="bottom" constant="10" id="RKq-VA-M8o"/>
-                            <constraint firstAttribute="trailing" secondItem="nUv-64-nGw" secondAttribute="trailing" id="RXC-0k-lKc"/>
-                            <constraint firstItem="nUv-64-nGw" firstAttribute="leading" secondItem="dZ5-4x-UEW" secondAttribute="leading" id="etK-rx-92f"/>
+                            <constraint firstItem="2AY-eR-Epf" firstAttribute="trailing" secondItem="nUv-64-nGw" secondAttribute="trailing" id="N26-Hu-KUn"/>
+                            <constraint firstItem="2AY-eR-Epf" firstAttribute="height" secondItem="nUv-64-nGw" secondAttribute="height" id="RUo-32-eqo"/>
+                            <constraint firstItem="BfH-1W-3ES" firstAttribute="top" secondItem="nxP-Ff-bTl" secondAttribute="bottom" constant="8" id="TRF-lW-yPE"/>
+                            <constraint firstItem="W7R-tU-qNf" firstAttribute="top" secondItem="eM9-0o-0P2" secondAttribute="top" id="TvC-SA-ZtP"/>
+                            <constraint firstItem="W7R-tU-qNf" firstAttribute="width" secondItem="eM9-0o-0P2" secondAttribute="width" id="Z1o-NQ-esi"/>
                             <constraint firstItem="9Ii-el-CJb" firstAttribute="top" secondItem="BfH-1W-3ES" secondAttribute="bottom" id="gee-kw-Dc6"/>
+                            <constraint firstItem="2AY-eR-Epf" firstAttribute="top" secondItem="nUv-64-nGw" secondAttribute="bottom" constant="7.5" id="mAb-tJ-bUP"/>
+                            <constraint firstItem="eM9-0o-0P2" firstAttribute="top" secondItem="lH0-Qj-R2a" secondAttribute="bottom" constant="20" id="mXW-hN-ZfV"/>
+                            <constraint firstItem="nUv-64-nGw" firstAttribute="centerX" secondItem="dZ5-4x-UEW" secondAttribute="centerX" id="uac-uO-f2w"/>
                             <constraint firstItem="BfH-1W-3ES" firstAttribute="leading" secondItem="dZ5-4x-UEW" secondAttribute="leading" id="vLv-Rw-Smf"/>
+                            <constraint firstItem="nxP-Ff-bTl" firstAttribute="leading" secondItem="dZ5-4x-UEW" secondAttribute="leading" id="yCd-UW-qp0"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="histImage" destination="2AY-eR-Epf" id="IDx-Np-mff"/>
                         <outlet property="imgView" destination="nUv-64-nGw" id="4Hs-UJ-Zum"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VTP-GY-hzw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-63.200000000000003" y="-158.77061469265368"/>
+            <point key="canvasLocation" x="-118" y="-350"/>
         </scene>
     </scenes>
 </document>

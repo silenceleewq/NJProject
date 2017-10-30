@@ -22,6 +22,9 @@ static const NSString *AVCaptureStillImageIsCapturingStillImageContext = @"AVCap
     UIView *flashView;
     CGFloat effectiveScale;
     dispatch_queue_t videoDataOutputQueue;
+    BOOL _firstSetSampleBufferDelegate;
+    BOOL headInSpecificArea;
+    BOOL captureImageBlur;
 }
 @property (nonatomic, strong) CAShapeLayer *shadowLayer;
 @property (nonatomic, strong) UIButton *snipBtn;
@@ -36,6 +39,15 @@ static const NSString *AVCaptureStillImageIsCapturingStillImageContext = @"AVCap
 @end
 
 @implementation NJCustomPortaitCameraViewController
+
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        self.idCardType = NJIDCardTypeHead;
+    }
+    return self;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -68,8 +80,8 @@ static const NSString *AVCaptureStillImageIsCapturingStillImageContext = @"AVCap
     
     self.openCVUtil = [NJOpenCVUtils sharedManager];
     [self.view addSubview:self.tipLabel];
+    _firstSetSampleBufferDelegate = YES;
 }
-
 
 -(void)viewDidDisappear:(BOOL)animated
 {
@@ -80,7 +92,6 @@ static const NSString *AVCaptureStillImageIsCapturingStillImageContext = @"AVCap
 
 - (void)initUI:(CGRect)previewFrame
 {
-    
     effectiveScale = 1.0;
     // 摄像头设备
     self.device = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
@@ -111,17 +122,13 @@ static const NSString *AVCaptureStillImageIsCapturingStillImageContext = @"AVCap
     [self.output setSampleBufferDelegate:self queue:videoDataOutputQueue];
     //    [self.output setMetadataObjectsDelegate:self queue:dispatch_get_main_queue()];// 使用主线程队列，相应比较同步，使用其他队列，相应不同步，容易让用户产生不好的体验
     
-    
     if ([self.session canAddOutput:self.output])
     {
         [self.session addOutput:self.output];
     }
     
-    //添加人脸识别output
-    if ([self.session canAddOutput:self.metaDataOutput]) {
-        [self.session addOutput:self.metaDataOutput];
-    }
-    self.metaDataOutput.metadataObjectTypes = @[AVMetadataObjectTypeFace];
+    //添加人脸识别
+    [self addFaceTypeRecognize];
     
     //添加still image output
     stillImageOutput = [AVCaptureStillImageOutput new];
@@ -142,6 +149,7 @@ static const NSString *AVCaptureStillImageIsCapturingStillImageContext = @"AVCap
     [self.session startRunning];// 启动session
     
     [self.view addSubview:self.headImageView];
+
 }
 
 - (void)takePhoto{
@@ -216,7 +224,7 @@ static const NSString *AVCaptureStillImageIsCapturingStillImageContext = @"AVCap
 
 - (void)captureOutput:(AVCaptureOutput *)output didOutputMetadataObjects:(NSArray<__kindof AVMetadataObject *> *)metadataObjects fromConnection:(AVCaptureConnection *)connection
 {
-    NSLog(@"检测到了人脸.");
+    [self updateTipText:@"请将头像对准指定区域内..."];
     if (metadataObjects.count) {
         AVMetadataMachineReadableCodeObject *metadataObject = metadataObjects.firstObject;
         AVMetadataObject *transformedMetadataObject = [self.preview transformedMetadataObjectForMetadataObject:metadataObject];
@@ -227,15 +235,21 @@ static const NSString *AVCaptureStillImageIsCapturingStillImageContext = @"AVCap
         });
         
         if (metadataObject.type == AVMetadataObjectTypeFace) {
-            NSLog(@"%d", CGRectContainsRect(self.headImageRect, faceRegion));
-            NSLog(@"faceRegion = %@", NSStringFromCGRect(faceRegion));
-            NSLog(@"headImageFrame = %@", NSStringFromCGRect(self.headImageRect));
+//            NSLog(@"%d", CGRectContainsRect(self.headImageRect, faceRegion));
+//            NSLog(@"faceRegion = %@", NSStringFromCGRect(faceRegion));
+//            NSLog(@"headImageFrame = %@", NSStringFromCGRect(self.headImageRect));
 
             if (CGRectContainsRect(self.headImageRect, faceRegion)) {
+                headInSpecificArea = YES;
                 //只有人臉區域的確在小框內時,才再去捕獲此時的這一幀圖像.
                 if (!self.output.sampleBufferDelegate) {
+                    _firstSetSampleBufferDelegate = NO;
                     [self.output setSampleBufferDelegate:self queue:videoDataOutputQueue];
                 }
+            } else {
+                headInSpecificArea = NO;
+                //人脸没有在指定区域
+                [self updateTipText:@"请将头像对准指定区域内..."];
             }
         }
     }
@@ -243,9 +257,9 @@ static const NSString *AVCaptureStillImageIsCapturingStillImageContext = @"AVCap
 }
 
 - (void)captureOutput:(AVCaptureOutput *)captureOutput didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer fromConnection:(AVCaptureConnection *)connection {
-
-    [self dealWithCMSampleBufferRef:sampleBuffer];
-    
+    if (!_firstSetSampleBufferDelegate) {
+        [self dealWithCMSampleBufferRef:sampleBuffer];
+    }
     
     if (self.output.sampleBufferDelegate) {
         [self.output setSampleBufferDelegate:nil queue:videoDataOutputQueue];
@@ -437,7 +451,7 @@ static const NSString *AVCaptureStillImageIsCapturingStillImageContext = @"AVCap
         _headImageView.image = headImage;
         
         _headImageView.frame = self.headImageRect;
-        NSLog(@"%@", NSStringFromCGRect(_headImageView.frame));
+//        NSLog(@"%@", NSStringFromCGRect(_headImageView.frame));
         
     }
     return _headImageView;
@@ -446,7 +460,7 @@ static const NSString *AVCaptureStillImageIsCapturingStillImageContext = @"AVCap
 - (UILabel *)tipLabel
 {
     if (!_tipLabel) {
-        _tipLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 5, 150, 40)];
+        _tipLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 5, KSCREENWIDTH, 40)];
         _tipLabel.textColor = [UIColor redColor];
         _tipLabel.font = [UIFont systemFontOfSize:17];
     }
@@ -522,9 +536,13 @@ static const NSString *AVCaptureStillImageIsCapturingStillImageContext = @"AVCap
     UIImage *image = [self getImageStream:imageBuffer];
     
     BOOL blur = [self.openCVUtil checkForBurryImage:image];
+    captureImageBlur = blur;
     //模糊检测
     if (blur) {
-        self.tipLabel.text = @"图像模糊,请尝试调整角度";
+        [self updateTipText:@"图像模糊,请尝试调整角度..."];
+        return;
+    } else {
+        [self updateTipText:@""];
         return;
     }
     
@@ -538,4 +556,48 @@ static const NSString *AVCaptureStillImageIsCapturingStillImageContext = @"AVCap
 {
     
 }
+
+- (void)updateTipText:(NSString *)text
+{
+    dispatch_async(dispatch_get_main_queue(), ^{
+        self.tipLabel.text = text;
+    });
+}
+
+#pragma mark - 识别相关代码
+- (void)addFaceTypeRecognize
+{
+    if (self.idCardType != NJIDCardTypeHead) return;
+    
+    //添加人脸识别output
+    if ([self.session canAddOutput:self.metaDataOutput]) {
+        [self.session addOutput:self.metaDataOutput];
+    }
+    self.metaDataOutput.metadataObjectTypes = @[AVMetadataObjectTypeFace];
+    [self updateTipText:@"请将头像对准指定区域内..."];
+}
 @end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -156,7 +156,7 @@ IplImage *DrawHistogram(CvHistogram *hist, float scaleX = 1, float scaleY = 1)
     //画柱条
     double histSum = 0.0;
     double histGreaterThan200 = 0.0;
-    double histLessThan200 = 0.0;
+    double histLessThan20 = 0.0;
     for (int i = 0; i < 255; i++)
     {
         //获取了两个bin的值
@@ -169,11 +169,12 @@ IplImage *DrawHistogram(CvHistogram *hist, float scaleX = 1, float scaleY = 1)
             histGreaterThan200 += histValue;
         }
         if (i < 20) {
-            histLessThan200 += histValue;
+            histLessThan20 += histValue;
         }
     }
-    NSLog(@"histSum = %f, histMoreThan200 = %f ratio = %f", histSum, histGreaterThan200, histGreaterThan200 / histSum);
-    doneBlock(histGreaterThan200 / histSum, histLessThan200 / histSum);
+    NSLog(@"histSum = %f, histMoreThan230 = %f ratio = %f", histSum, histGreaterThan200, histGreaterThan200 / histSum);
+    NSLog(@"histSum = %f, histLessThan20 = %f ratio = %f", histSum, histGreaterThan200, histLessThan20 / histSum);
+    doneBlock(histGreaterThan200 / histSum, histLessThan20 / histSum);
 }
 
 /**

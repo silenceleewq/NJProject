@@ -20,6 +20,7 @@
 @interface NJPortraitCameraViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *imgView;
 @property (nonatomic, strong) NJOpenCVUtils *utilManager;
+@property (weak, nonatomic) IBOutlet UIImageView *histImage;
 @end
 
 @implementation NJPortraitCameraViewController
@@ -29,6 +30,7 @@
     if (self = [super init]) {
         UIStoryboard *sb = [UIStoryboard storyboardWithName:@"NJPortraitCameraViewController" bundle:nil];
         self = [sb instantiateInitialViewController];
+        self.utilManager = [NJOpenCVUtils sharedManager];
     }
     return self;
 }
@@ -48,6 +50,7 @@
     
     NJCustomPortaitCameraViewController *camera = [[NJCustomPortaitCameraViewController alloc] init];
     //    camera.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+    camera.idCardType = NJIDCardTypeHead;
     camera.finishedSnip = ^(UIImage *image) {
         self.imgView.image = image;
     };
@@ -55,17 +58,29 @@
     [self.navigationController pushViewController:camera animated:YES];
 }
 - (IBAction)matchAction:(id)sender {
+    if (!self.imgView.image) {
+        return;
+    }
     NJTemplateMatchingViewController *match = [[NJTemplateMatchingViewController alloc] init];
     match.srcImage = self.imgView.image;
     [self.navigationController pushViewController:match animated:YES];
+}
+- (IBAction)BackCamera:(UIButton *)sender {
+    
 }
 
 - (IBAction)detectLight {
     
     UIImage *srcImage = self.imgView.image;
+    if (!srcImage) {
+        return;
+    }
+    UIImage *histImage = [self.utilManager draw1DHistogram:srcImage];
     
-    
-    
+    [self.utilManager detectImageLight:srcImage done:^(float light, float black) {
+        NSLog(@"light: %f, black: %f", light, black);
+    }];
+    self.histImage.image = histImage;
 }
 
 
