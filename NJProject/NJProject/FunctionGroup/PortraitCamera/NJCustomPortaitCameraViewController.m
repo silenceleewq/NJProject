@@ -224,7 +224,6 @@ static const NSString *AVCaptureStillImageIsCapturingStillImageContext = @"AVCap
 
 - (void)captureOutput:(AVCaptureOutput *)output didOutputMetadataObjects:(NSArray<__kindof AVMetadataObject *> *)metadataObjects fromConnection:(AVCaptureConnection *)connection
 {
-    [self updateTipText:@"请将头像对准指定区域内..."];
     if (metadataObjects.count) {
         AVMetadataMachineReadableCodeObject *metadataObject = metadataObjects.firstObject;
         AVMetadataObject *transformedMetadataObject = [self.preview transformedMetadataObjectForMetadataObject:metadataObject];
@@ -235,10 +234,6 @@ static const NSString *AVCaptureStillImageIsCapturingStillImageContext = @"AVCap
         });
         
         if (metadataObject.type == AVMetadataObjectTypeFace) {
-//            NSLog(@"%d", CGRectContainsRect(self.headImageRect, faceRegion));
-//            NSLog(@"faceRegion = %@", NSStringFromCGRect(faceRegion));
-//            NSLog(@"headImageFrame = %@", NSStringFromCGRect(self.headImageRect));
-
             if (CGRectContainsRect(self.headImageRect, faceRegion)) {
                 headInSpecificArea = YES;
                 //只有人臉區域的確在小框內時,才再去捕獲此時的這一幀圖像.
@@ -539,7 +534,7 @@ static const NSString *AVCaptureStillImageIsCapturingStillImageContext = @"AVCap
     captureImageBlur = blur;
     //模糊检测
     if (blur) {
-        [self updateTipText:@"图像模糊,请尝试调整角度..."];
+        [self updateTipText:@"图像模糊,请尝试点击屏幕或擦拭镜头"];
         return;
     } else {
         [self updateTipText:@""];
