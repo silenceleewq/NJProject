@@ -50,13 +50,8 @@
                      [NJExample exampleWithTitle:@"二维码扫描" controllerName:@"QRCodeScanViewController"],
                      [NJExample exampleWithTitle:@"NJSDWebImageTest" controllerName:@"NJSDWebImageTest"],
                      [NJExample exampleWithTitle:@"消息转发" controllerName:@"NJMessageForwardController"],
-                     [NJExample exampleWithTitle:@"相机模块" controllerName:@"NJCameraController"],
+                     [NJExample exampleWithTitle:@"相机模块" controllerName:@"NJPhotosController"],
                      [NJExample exampleWithTitle:@"工具类测试" controllerName:@"NJUtilityTestViewController"],
-                     [NJExample exampleWithTitle:@"自定义相机" controllerName:@"NJCameraViewController"],
-                     [NJExample exampleWithTitle:@"垂直方向相机" controllerName:@"NJPortraitCameraViewController"]
-                     ,[NJExample exampleWithTitle:@"一維直方圖" controllerName:@"NJHIstogramViewController"],
-                     [NJExample exampleWithTitle:@"图片轮廓提取" controllerName:@"NJFindContoursViewController"],
-                     [NJExample exampleWithTitle:@"模板匹配" controllerName:@"NJTemplateMatchingViewController"],
                      [NJExample exampleWithTitle:@"IQKeyBoard" controllerName:@"NJIQKeyboardViewController"]];
 }
 
