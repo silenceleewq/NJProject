@@ -1,0 +1,9 @@
+主要是用来测试在LRQClassA和LRQClassB中的Load方法里,分别调用LRQClassA和LRQClassB,看看是否有什么异常.
+目前看来没有,但是不要这样做.
+
+输出结果:
+17:22:21 <LRQClassB.m> -> 20 :classB Run
+17:22:21 <LRQClassA.m> -> 17 :classB : <LRQClassB: 0x6040000109d0>
+17:22:21 <LRQClassA.m> -> 21 :classA Run
+17:22:21 <LRQClassB.m> -> 16 :classA : <LRQClassA: 0x600000010ac0>
+--------------------------- 2018-01-09 17:25:05 ---------------------------
