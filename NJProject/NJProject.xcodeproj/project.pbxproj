@@ -118,6 +118,7 @@
 		1F91EB2B1FF1CD7400AC6097 /* NJMsgReplacement.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F91EB2A1FF1CD7400AC6097 /* NJMsgReplacement.m */; };
 		1F91EB2F1FF1DF2A00AC6097 /* NJAutoDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F91EB2E1FF1DF2A00AC6097 /* NJAutoDictionary.m */; };
 		1FACB5191F0FD0D9008A3DFC /* NJCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FACB5181F0FD0D9008A3DFC /* NJCell.m */; };
+		CE14B7A72CFC0737F6DC4EE2 /* libPods-NJProject.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2973D0A07A8A3446E32D3D8B /* libPods-NJProject.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -320,6 +321,9 @@
 		1F91EB2E1FF1DF2A00AC6097 /* NJAutoDictionary.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NJAutoDictionary.m; sourceTree = "<group>"; };
 		1FACB5171F0FD0D9008A3DFC /* NJCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJCell.h; sourceTree = "<group>"; };
 		1FACB5181F0FD0D9008A3DFC /* NJCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJCell.m; sourceTree = "<group>"; };
+		2973D0A07A8A3446E32D3D8B /* libPods-NJProject.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NJProject.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B030FCD5D5A50645A172E7D8 /* Pods-NJProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NJProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-NJProject/Pods-NJProject.release.xcconfig"; sourceTree = "<group>"; };
+		D5D93629E2290059D9BCEFBB /* Pods-NJProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NJProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NJProject/Pods-NJProject.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -338,6 +342,7 @@
 				1F4E64461F7BF9B0007D01EC /* CoreVideo.framework in Frameworks */,
 				1F4E64441F7BF9A9007D01EC /* CoreImage.framework in Frameworks */,
 				1F4E64421F7BF9A4007D01EC /* CoreGraphics.framework in Frameworks */,
+				CE14B7A72CFC0737F6DC4EE2 /* libPods-NJProject.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -428,6 +433,7 @@
 				00F809DF1E81246F002FC6A0 /* NJProject */,
 				00F809DE1E81246F002FC6A0 /* Products */,
 				1F4E64401F7BF9A4007D01EC /* Frameworks */,
+				149C271BDBC1B6DBD1299E54 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -629,6 +635,15 @@
 			path = Header;
 			sourceTree = "<group>";
 		};
+		149C271BDBC1B6DBD1299E54 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D5D93629E2290059D9BCEFBB /* Pods-NJProject.debug.xcconfig */,
+				B030FCD5D5A50645A172E7D8 /* Pods-NJProject.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		1F0BBBF61F9F1BCF00BB688E /* NJImageCache */ = {
 			isa = PBXGroup;
 			children = (
@@ -769,6 +784,7 @@
 				1F4E64451F7BF9B0007D01EC /* CoreVideo.framework */,
 				1F4E64431F7BF9A9007D01EC /* CoreImage.framework */,
 				1F4E64411F7BF9A4007D01EC /* CoreGraphics.framework */,
+				2973D0A07A8A3446E32D3D8B /* libPods-NJProject.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -876,9 +892,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 00F809F41E81246F002FC6A0 /* Build configuration list for PBXNativeTarget "NJProject" */;
 			buildPhases = (
+				F9DD487E0C4FA19DE8E6A639 /* [CP] Check Pods Manifest.lock */,
 				00F809D91E81246F002FC6A0 /* Sources */,
 				00F809DA1E81246F002FC6A0 /* Frameworks */,
 				00F809DB1E81246F002FC6A0 /* Resources */,
+				D7E72FE40C442E8B6F4372E6 /* [CP] Embed Pods Frameworks */,
+				14C1EAC4FB1E6C1FEDD16B03 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -955,6 +974,57 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		14C1EAC4FB1E6C1FEDD16B03 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NJProject/Pods-NJProject-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D7E72FE40C442E8B6F4372E6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NJProject/Pods-NJProject-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F9DD487E0C4FA19DE8E6A639 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-NJProject-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		00F809D91E81246F002FC6A0 /* Sources */ = {
@@ -1155,6 +1225,7 @@
 		};
 		00F809F51E81246F002FC6A0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D5D93629E2290059D9BCEFBB /* Pods-NJProject.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -1185,6 +1256,7 @@
 		};
 		00F809F61E81246F002FC6A0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B030FCD5D5A50645A172E7D8 /* Pods-NJProject.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
