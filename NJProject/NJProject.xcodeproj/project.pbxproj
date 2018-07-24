@@ -100,6 +100,8 @@
 		1F4E64521F7BF9D6007D01EC /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F4E64511F7BF9D6007D01EC /* CoreMedia.framework */; };
 		1F4E64541F7BF9DE007D01EC /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F4E64531F7BF9DE007D01EC /* AssetsLibrary.framework */; };
 		1F4E64561F7BF9E3007D01EC /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F4E64551F7BF9E3007D01EC /* AVFoundation.framework */; };
+		1F7CFDD920A5499300F98E1C /* NJAspectRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F7CFDD820A5499300F98E1C /* NJAspectRootViewController.m */; };
+		1F7CFDDE20A549E100F98E1C /* NJViewControllerIntercepter.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F7CFDDD20A549E100F98E1C /* NJViewControllerIntercepter.m */; };
 		1F82ED8F1F98526F00145FF5 /* NJIQKeyboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F82ED8E1F98526F00145FF5 /* NJIQKeyboardViewController.m */; };
 		1F82ED921F98546F00145FF5 /* IQKeyboardManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F82ED791F98523C00145FF5 /* IQKeyboardManager.m */; };
 		1F82ED931F98546F00145FF5 /* IQKeyboardReturnKeyHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F82ED7B1F98523C00145FF5 /* IQKeyboardReturnKeyHandler.m */; };
@@ -118,8 +120,21 @@
 		1F91EB2B1FF1CD7400AC6097 /* NJMsgReplacement.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F91EB2A1FF1CD7400AC6097 /* NJMsgReplacement.m */; };
 		1F91EB2F1FF1DF2A00AC6097 /* NJAutoDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F91EB2E1FF1DF2A00AC6097 /* NJAutoDictionary.m */; };
 		1FACB5191F0FD0D9008A3DFC /* NJCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FACB5181F0FD0D9008A3DFC /* NJCell.m */; };
+		1FE3AEEF2106BEAB0082DF68 /* NSString+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FE3AEEE2106BEAB0082DF68 /* NSString+Base64.m */; };
+		1FE3AEF72106C2E20082DF68 /* NJProjectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FE3AEF62106C2E20082DF68 /* NJProjectTests.m */; };
+		1FE3AEFF2106C3040082DF68 /* NJEncode&EncryptionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FE3AEFE2106C3040082DF68 /* NJEncode&EncryptionTests.m */; };
 		CE14B7A72CFC0737F6DC4EE2 /* libPods-NJProject.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2973D0A07A8A3446E32D3D8B /* libPods-NJProject.a */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1FE3AEF92106C2E20082DF68 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 00F809D51E81246F002FC6A0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 00F809DC1E81246F002FC6A0;
+			remoteInfo = NJProject;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		003BBC7F1EF7969E00EE2869 /* NJNavigatorController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJNavigatorController.h; sourceTree = "<group>"; };
@@ -282,6 +297,10 @@
 		1F4E64511F7BF9D6007D01EC /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		1F4E64531F7BF9DE007D01EC /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		1F4E64551F7BF9E3007D01EC /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		1F7CFDD720A5499300F98E1C /* NJAspectRootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NJAspectRootViewController.h; sourceTree = "<group>"; };
+		1F7CFDD820A5499300F98E1C /* NJAspectRootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NJAspectRootViewController.m; sourceTree = "<group>"; };
+		1F7CFDDC20A549E100F98E1C /* NJViewControllerIntercepter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NJViewControllerIntercepter.h; sourceTree = "<group>"; };
+		1F7CFDDD20A549E100F98E1C /* NJViewControllerIntercepter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NJViewControllerIntercepter.m; sourceTree = "<group>"; };
 		1F82ED691F98523C00145FF5 /* IQNSArray+Sort.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "IQNSArray+Sort.h"; sourceTree = "<group>"; };
 		1F82ED6A1F98523C00145FF5 /* IQNSArray+Sort.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "IQNSArray+Sort.m"; sourceTree = "<group>"; };
 		1F82ED6B1F98523C00145FF5 /* IQUIScrollView+Additions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "IQUIScrollView+Additions.h"; sourceTree = "<group>"; };
@@ -321,6 +340,12 @@
 		1F91EB2E1FF1DF2A00AC6097 /* NJAutoDictionary.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NJAutoDictionary.m; sourceTree = "<group>"; };
 		1FACB5171F0FD0D9008A3DFC /* NJCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJCell.h; sourceTree = "<group>"; };
 		1FACB5181F0FD0D9008A3DFC /* NJCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJCell.m; sourceTree = "<group>"; };
+		1FE3AEED2106BEAB0082DF68 /* NSString+Base64.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+Base64.h"; sourceTree = "<group>"; };
+		1FE3AEEE2106BEAB0082DF68 /* NSString+Base64.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+Base64.m"; sourceTree = "<group>"; };
+		1FE3AEF42106C2E20082DF68 /* NJProjectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NJProjectTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1FE3AEF62106C2E20082DF68 /* NJProjectTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NJProjectTests.m; sourceTree = "<group>"; };
+		1FE3AEF82106C2E20082DF68 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1FE3AEFE2106C3040082DF68 /* NJEncode&EncryptionTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NJEncode&EncryptionTests.m"; sourceTree = "<group>"; };
 		2973D0A07A8A3446E32D3D8B /* libPods-NJProject.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NJProject.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B030FCD5D5A50645A172E7D8 /* Pods-NJProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NJProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-NJProject/Pods-NJProject.release.xcconfig"; sourceTree = "<group>"; };
 		D5D93629E2290059D9BCEFBB /* Pods-NJProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NJProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NJProject/Pods-NJProject.debug.xcconfig"; sourceTree = "<group>"; };
@@ -343,6 +368,13 @@
 				1F4E64441F7BF9A9007D01EC /* CoreImage.framework in Frameworks */,
 				1F4E64421F7BF9A4007D01EC /* CoreGraphics.framework in Frameworks */,
 				CE14B7A72CFC0737F6DC4EE2 /* libPods-NJProject.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1FE3AEF12106C2E20082DF68 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -431,6 +463,7 @@
 			isa = PBXGroup;
 			children = (
 				00F809DF1E81246F002FC6A0 /* NJProject */,
+				1FE3AEF52106C2E20082DF68 /* NJProjectTests */,
 				00F809DE1E81246F002FC6A0 /* Products */,
 				1F4E64401F7BF9A4007D01EC /* Frameworks */,
 				149C271BDBC1B6DBD1299E54 /* Pods */,
@@ -441,6 +474,7 @@
 			isa = PBXGroup;
 			children = (
 				00F809DD1E81246F002FC6A0 /* NJProject.app */,
+				1FE3AEF42106C2E20082DF68 /* NJProjectTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -479,6 +513,8 @@
 		00F809F81E8124D8002FC6A0 /* FunctionGroup */ = {
 			isa = PBXGroup;
 			children = (
+				1FE3AEEC2106BE430082DF68 /* Encode&Encryption */,
+				1F7CFDD620A5497D00F98E1C /* AspectDemo */,
 				1F1EE6641FF6392700336332 /* EffectiveObjectiveC */,
 				1F82ED8C1F98525700145FF5 /* IQKeyboard */,
 				1F2F95CE1F38029300BAD1E1 /* NJUtilityTest */,
@@ -789,6 +825,33 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		1F7CFDD620A5497D00F98E1C /* AspectDemo */ = {
+			isa = PBXGroup;
+			children = (
+				1F7CFDDB20A549A700F98E1C /* AspectInstance */,
+				1F7CFDDA20A5499F00F98E1C /* ViewController */,
+			);
+			path = AspectDemo;
+			sourceTree = "<group>";
+		};
+		1F7CFDDA20A5499F00F98E1C /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				1F7CFDD720A5499300F98E1C /* NJAspectRootViewController.h */,
+				1F7CFDD820A5499300F98E1C /* NJAspectRootViewController.m */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		1F7CFDDB20A549A700F98E1C /* AspectInstance */ = {
+			isa = PBXGroup;
+			children = (
+				1F7CFDDC20A549E100F98E1C /* NJViewControllerIntercepter.h */,
+				1F7CFDDD20A549E100F98E1C /* NJViewControllerIntercepter.m */,
+			);
+			path = AspectInstance;
+			sourceTree = "<group>";
+		};
 		1F82ED671F98523C00145FF5 /* IQKeyboardManager */ = {
 			isa = PBXGroup;
 			children = (
@@ -885,6 +948,25 @@
 			path = FullExample;
 			sourceTree = "<group>";
 		};
+		1FE3AEEC2106BE430082DF68 /* Encode&Encryption */ = {
+			isa = PBXGroup;
+			children = (
+				1FE3AEED2106BEAB0082DF68 /* NSString+Base64.h */,
+				1FE3AEEE2106BEAB0082DF68 /* NSString+Base64.m */,
+			);
+			path = "Encode&Encryption";
+			sourceTree = "<group>";
+		};
+		1FE3AEF52106C2E20082DF68 /* NJProjectTests */ = {
+			isa = PBXGroup;
+			children = (
+				1FE3AEF62106C2E20082DF68 /* NJProjectTests.m */,
+				1FE3AEFE2106C3040082DF68 /* NJEncode&EncryptionTests.m */,
+				1FE3AEF82106C2E20082DF68 /* Info.plist */,
+			);
+			path = NJProjectTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -908,6 +990,24 @@
 			productReference = 00F809DD1E81246F002FC6A0 /* NJProject.app */;
 			productType = "com.apple.product-type.application";
 		};
+		1FE3AEF32106C2E20082DF68 /* NJProjectTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1FE3AEFB2106C2E20082DF68 /* Build configuration list for PBXNativeTarget "NJProjectTests" */;
+			buildPhases = (
+				1FE3AEF02106C2E20082DF68 /* Sources */,
+				1FE3AEF12106C2E20082DF68 /* Frameworks */,
+				1FE3AEF22106C2E20082DF68 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1FE3AEFA2106C2E20082DF68 /* PBXTargetDependency */,
+			);
+			name = NJProjectTests;
+			productName = NJProjectTests;
+			productReference = 1FE3AEF42106C2E20082DF68 /* NJProjectTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -923,6 +1023,12 @@
 						DevelopmentTeam = B5G9R9WR6W;
 						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
+					};
+					1FE3AEF32106C2E20082DF68 = {
+						CreatedOnToolsVersion = 9.3.1;
+						DevelopmentTeam = B5G9R9WR6W;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 00F809DC1E81246F002FC6A0;
 					};
 				};
 			};
@@ -940,6 +1046,7 @@
 			projectRoot = "";
 			targets = (
 				00F809DC1E81246F002FC6A0 /* NJProject */,
+				1FE3AEF32106C2E20082DF68 /* NJProjectTests */,
 			);
 		};
 /* End PBXProject section */
@@ -970,6 +1077,13 @@
 				1F25C73D1F8F081500D2F9D8 /* target.png in Resources */,
 				1F25C7381F8EFF3000D2F9D8 /* template_src.png in Resources */,
 				00F809EB1E81246F002FC6A0 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1FE3AEF22106C2E20082DF68 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1033,9 +1147,11 @@
 			files = (
 				1F82ED991F98547E00145FF5 /* IQNSArray+Sort.m in Sources */,
 				00CBBFCB1EF9EFDB00D9AEDB /* UIImageView+HighlightedWebCache.m in Sources */,
+				1F7CFDD920A5499300F98E1C /* NJAspectRootViewController.m in Sources */,
 				003BBC911EF7B9E800EE2869 /* NJA.m in Sources */,
 				00CBBFCD1EF9EFDB00D9AEDB /* UIView+WebCache.m in Sources */,
 				1F1EE6631FF60DF900336332 /* NJErrorModel.m in Sources */,
+				1FE3AEEF2106BEAB0082DF68 /* NSString+Base64.m in Sources */,
 				00CBBFDE1EF9F33400D9AEDB /* NJSDWebImageTest.m in Sources */,
 				1F37327F1F0E631D00D01F53 /* NJMessageForwardController.m in Sources */,
 				1F82ED8F1F98526F00145FF5 /* NJIQKeyboardViewController.m in Sources */,
@@ -1057,6 +1173,7 @@
 				1F1ECA721FF489C900D373DA /* NJBaseClass.m in Sources */,
 				1F82ED9A1F98547E00145FF5 /* IQUIScrollView+Additions.m in Sources */,
 				00CBBFC41EF9EFDB00D9AEDB /* SDWebImageDownloader.m in Sources */,
+				1F7CFDDE20A549E100F98E1C /* NJViewControllerIntercepter.m in Sources */,
 				00F80A411E812B0E002FC6A0 /* MJRefreshAutoGifFooter.m in Sources */,
 				1F82ED9D1F98547E00145FF5 /* IQUIViewController+Additions.m in Sources */,
 				1F82ED9F1F98547E00145FF5 /* IQTextView.m in Sources */,
@@ -1113,7 +1230,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		1FE3AEF02106C2E20082DF68 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1FE3AEF72106C2E20082DF68 /* NJProjectTests.m in Sources */,
+				1FE3AEFF2106C3040082DF68 /* NJEncode&EncryptionTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1FE3AEFA2106C2E20082DF68 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 00F809DC1E81246F002FC6A0 /* NJProject */;
+			targetProxy = 1FE3AEF92106C2E20082DF68 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		00F809E91E81246F002FC6A0 /* Main.storyboard */ = {
@@ -1284,6 +1418,68 @@
 			};
 			name = Release;
 		};
+		1FE3AEFC2106C2E20082DF68 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = B5G9R9WR6W;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = NJProjectTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.myOwn.www.NJProjectTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NJProject.app/NJProject";
+			};
+			name = Debug;
+		};
+		1FE3AEFD2106C2E20082DF68 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = B5G9R9WR6W;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = NJProjectTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.myOwn.www.NJProjectTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NJProject.app/NJProject";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1301,6 +1497,15 @@
 			buildConfigurations = (
 				00F809F51E81246F002FC6A0 /* Debug */,
 				00F809F61E81246F002FC6A0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1FE3AEFB2106C2E20082DF68 /* Build configuration list for PBXNativeTarget "NJProjectTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1FE3AEFC2106C2E20082DF68 /* Debug */,
+				1FE3AEFD2106C2E20082DF68 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

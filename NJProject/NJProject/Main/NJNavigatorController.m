@@ -7,7 +7,6 @@
 //
 
 #import "NJNavigatorController.h"
-#import "NJNavigatorHeader.h"
 
 @interface NJExample : NSObject
 
@@ -53,7 +52,8 @@
                      [NJExample exampleWithTitle:@"相机模块" controllerName:@"NJPhotosController"],
                      [NJExample exampleWithTitle:@"工具类测试" controllerName:@"NJUtilityTestViewController"],
                      [NJExample exampleWithTitle:@"IQKeyBoard" controllerName:@"NJIQKeyboardViewController"],
-                     [NJExample exampleWithTitle:@"NJEffectiveController" controllerName:@"NJEffectiveController"]];
+                     [NJExample exampleWithTitle:@"NJEffectiveController" controllerName:@"NJEffectiveController"],
+                     [NJExample exampleWithTitle:@"AspectViewController" controllerName:@"NJAspectRootViewController"]];
 }
 
 - (void)didReceiveMemoryWarning {
