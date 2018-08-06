@@ -36,8 +36,6 @@
 		00CBBFE01EF9F33C00D9AEDB /* NJSDWebImageTest.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00CBBFDF1EF9F33C00D9AEDB /* NJSDWebImageTest.storyboard */; };
 		00F809E21E81246F002FC6A0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F809E11E81246F002FC6A0 /* main.m */; };
 		00F809E51E81246F002FC6A0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F809E41E81246F002FC6A0 /* AppDelegate.m */; };
-		00F809E81E81246F002FC6A0 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F809E71E81246F002FC6A0 /* ViewController.m */; };
-		00F809EB1E81246F002FC6A0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00F809E91E81246F002FC6A0 /* Main.storyboard */; };
 		00F809ED1E81246F002FC6A0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00F809EC1E81246F002FC6A0 /* Assets.xcassets */; };
 		00F809F01E81246F002FC6A0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00F809EE1E81246F002FC6A0 /* LaunchScreen.storyboard */; };
 		00F809FC1E8126BC002FC6A0 /* NJRefreshExampleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F809FB1E8126BC002FC6A0 /* NJRefreshExampleViewController.m */; };
@@ -86,8 +84,9 @@
 		1F25C7571F8F6E1000D2F9D8 /* emblem.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F25C7561F8F6DBE00D2F9D8 /* emblem.png */; };
 		1F28B8A71FF0F76400038F83 /* NJMsgForwarding.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F28B8A61FF0F76400038F83 /* NJMsgForwarding.m */; };
 		1F2A788E1F676B9100728902 /* NJQRCodeScanShadowLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F2A788D1F676B9100728902 /* NJQRCodeScanShadowLayer.m */; };
-		1F2F95CD1F37FCBE00BAD1E1 /* NJUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F2F95CC1F37FCBE00BAD1E1 /* NJUtility.m */; };
+		1F2F95CD1F37FCBE00BAD1E1 /* NJUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F2F95CC1F37FCBE00BAD1E1 /* NJUtilities.m */; };
 		1F2F95D11F3802BE00BAD1E1 /* NJUtilityTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F2F95D01F3802BE00BAD1E1 /* NJUtilityTestViewController.m */; };
+		1F3338E82118208700040094 /* Controllers.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1F3338E72118208700040094 /* Controllers.plist */; };
 		1F37327F1F0E631D00D01F53 /* NJMessageForwardController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F37327E1F0E631D00D01F53 /* NJMessageForwardController.m */; };
 		1F4E64421F7BF9A4007D01EC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F4E64411F7BF9A4007D01EC /* CoreGraphics.framework */; };
 		1F4E64441F7BF9A9007D01EC /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F4E64431F7BF9A9007D01EC /* CoreImage.framework */; };
@@ -194,9 +193,6 @@
 		00F809E11E81246F002FC6A0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		00F809E31E81246F002FC6A0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		00F809E41E81246F002FC6A0 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		00F809E61E81246F002FC6A0 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		00F809E71E81246F002FC6A0 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		00F809EA1E81246F002FC6A0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		00F809EC1E81246F002FC6A0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		00F809EF1E81246F002FC6A0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		00F809F11E81246F002FC6A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -281,10 +277,11 @@
 		1F28B8A61FF0F76400038F83 /* NJMsgForwarding.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NJMsgForwarding.m; sourceTree = "<group>"; };
 		1F2A788C1F676B9100728902 /* NJQRCodeScanShadowLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJQRCodeScanShadowLayer.h; sourceTree = "<group>"; };
 		1F2A788D1F676B9100728902 /* NJQRCodeScanShadowLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJQRCodeScanShadowLayer.m; sourceTree = "<group>"; };
-		1F2F95CB1F37FCBE00BAD1E1 /* NJUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJUtility.h; sourceTree = "<group>"; };
-		1F2F95CC1F37FCBE00BAD1E1 /* NJUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJUtility.m; sourceTree = "<group>"; };
+		1F2F95CB1F37FCBE00BAD1E1 /* NJUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJUtilities.h; sourceTree = "<group>"; };
+		1F2F95CC1F37FCBE00BAD1E1 /* NJUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJUtilities.m; sourceTree = "<group>"; };
 		1F2F95CF1F3802BE00BAD1E1 /* NJUtilityTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJUtilityTestViewController.h; sourceTree = "<group>"; };
 		1F2F95D01F3802BE00BAD1E1 /* NJUtilityTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJUtilityTestViewController.m; sourceTree = "<group>"; };
+		1F3338E72118208700040094 /* Controllers.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Controllers.plist; sourceTree = "<group>"; };
 		1F37327D1F0E631D00D01F53 /* NJMessageForwardController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJMessageForwardController.h; sourceTree = "<group>"; };
 		1F37327E1F0E631D00D01F53 /* NJMessageForwardController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJMessageForwardController.m; sourceTree = "<group>"; };
 		1F4E64411F7BF9A4007D01EC /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -490,14 +487,12 @@
 				00F809F81E8124D8002FC6A0 /* FunctionGroup */,
 				00F809E31E81246F002FC6A0 /* AppDelegate.h */,
 				00F809E41E81246F002FC6A0 /* AppDelegate.m */,
-				00F809E61E81246F002FC6A0 /* ViewController.h */,
-				00F809E71E81246F002FC6A0 /* ViewController.m */,
-				00F809E91E81246F002FC6A0 /* Main.storyboard */,
 				003BBC8F1EF7B9E800EE2869 /* NJA.h */,
 				003BBC901EF7B9E800EE2869 /* NJA.m */,
 				00F809EC1E81246F002FC6A0 /* Assets.xcassets */,
 				00F809EE1E81246F002FC6A0 /* LaunchScreen.storyboard */,
 				00F809F11E81246F002FC6A0 /* Info.plist */,
+				1F3338E72118208700040094 /* Controllers.plist */,
 				00F809E01E81246F002FC6A0 /* Supporting Files */,
 			);
 			path = NJProject;
@@ -516,6 +511,7 @@
 		00F809F81E8124D8002FC6A0 /* FunctionGroup */ = {
 			isa = PBXGroup;
 			children = (
+				1F3338E021181BAE00040094 /* Category */,
 				1FE3AEEC2106BE430082DF68 /* Encode&Encryption */,
 				1F7CFDD620A5497D00F98E1C /* AspectDemo */,
 				1F1EE6641FF6392700336332 /* EffectiveObjectiveC */,
@@ -782,8 +778,8 @@
 		1F2F95CA1F37FC7500BAD1E1 /* NJUtility */ = {
 			isa = PBXGroup;
 			children = (
-				1F2F95CB1F37FCBE00BAD1E1 /* NJUtility.h */,
-				1F2F95CC1F37FCBE00BAD1E1 /* NJUtility.m */,
+				1F2F95CB1F37FCBE00BAD1E1 /* NJUtilities.h */,
+				1F2F95CC1F37FCBE00BAD1E1 /* NJUtilities.m */,
 			);
 			path = NJUtility;
 			sourceTree = "<group>";
@@ -795,6 +791,13 @@
 				1F2F95D01F3802BE00BAD1E1 /* NJUtilityTestViewController.m */,
 			);
 			path = NJUtilityTest;
+			sourceTree = "<group>";
+		};
+		1F3338E021181BAE00040094 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Category;
 			sourceTree = "<group>";
 		};
 		1F37327C1F0E629200D01F53 /* MessageForwarding */ = {
@@ -1073,6 +1076,7 @@
 				00CBBFDA1EF9EFF100D9AEDB /* QRCodeScanViewController.storyboard in Resources */,
 				1F25C74E1F8F4BE400D2F9D8 /* gender.png in Resources */,
 				00CBBFE01EF9F33C00D9AEDB /* NJSDWebImageTest.storyboard in Resources */,
+				1F3338E82118208700040094 /* Controllers.plist in Resources */,
 				1F25C7411F8F098700D2F9D8 /* src1.png in Resources */,
 				1F25C7571F8F6E1000D2F9D8 /* emblem.png in Resources */,
 				003BBC8E1EF7A01900EE2869 /* NJPhotosController.storyboard in Resources */,
@@ -1089,7 +1093,6 @@
 				1F25C7531F8F54FD00D2F9D8 /* src6.png in Resources */,
 				1F25C73D1F8F081500D2F9D8 /* target.png in Resources */,
 				1F25C7381F8EFF3000D2F9D8 /* template_src.png in Resources */,
-				00F809EB1E81246F002FC6A0 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1176,12 +1179,11 @@
 				00CBBFCC1EF9EFDB00D9AEDB /* UIImageView+WebCache.m in Sources */,
 				1F2A788E1F676B9100728902 /* NJQRCodeScanShadowLayer.m in Sources */,
 				00CBBFD81EF9EFF100D9AEDB /* NJQRCodeScanOC.m in Sources */,
-				00F809E81E81246F002FC6A0 /* ViewController.m in Sources */,
 				1F82ED931F98546F00145FF5 /* IQKeyboardReturnKeyHandler.m in Sources */,
 				1F1EE66C1FF639AD00336332 /* NJProtocolModel.m in Sources */,
 				003BBC811EF7969E00EE2869 /* NJNavigatorController.m in Sources */,
 				00CBBFCA1EF9EFDB00D9AEDB /* UIImage+MultiFormat.m in Sources */,
-				1F2F95CD1F37FCBE00BAD1E1 /* NJUtility.m in Sources */,
+				1F2F95CD1F37FCBE00BAD1E1 /* NJUtilities.m in Sources */,
 				00F80A3E1E812B0E002FC6A0 /* MJRefreshComponent.m in Sources */,
 				1F1ECA721FF489C900D373DA /* NJBaseClass.m in Sources */,
 				1F82ED9A1F98547E00145FF5 /* IQUIScrollView+Additions.m in Sources */,
@@ -1264,14 +1266,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		00F809E91E81246F002FC6A0 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				00F809EA1E81246F002FC6A0 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		00F809EE1E81246F002FC6A0 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

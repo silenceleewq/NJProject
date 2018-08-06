@@ -16,7 +16,7 @@
 #import "MJRefresh.h"
 
 //工具类
-#import "NJUtility.h"
+#import "NJUtilities.h"
 
 #define KSCREENWIDTH [UIScreen mainScreen].bounds.size.width
 #define KSCREENHEIGHT [UIScreen mainScreen].bounds.size.height

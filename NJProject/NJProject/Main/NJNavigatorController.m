@@ -43,17 +43,7 @@
     
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"example"];
     
-    self.vcArray = @[
-                     [NJExample exampleWithTitle:@"NJRefreshExample" controllerName:@"NJRefreshExampleViewController"],
-                     [NJExample exampleWithTitle:@"NJPhotos" controllerName:@"NJPhotosController"],
-                     [NJExample exampleWithTitle:@"二维码扫描" controllerName:@"QRCodeScanViewController"],
-                     [NJExample exampleWithTitle:@"NJSDWebImageTest" controllerName:@"NJSDWebImageTest"],
-                     [NJExample exampleWithTitle:@"消息转发" controllerName:@"NJMessageForwardController"],
-                     [NJExample exampleWithTitle:@"相机模块" controllerName:@"NJPhotosController"],
-                     [NJExample exampleWithTitle:@"工具类测试" controllerName:@"NJUtilityTestViewController"],
-                     [NJExample exampleWithTitle:@"IQKeyBoard" controllerName:@"NJIQKeyboardViewController"],
-                     [NJExample exampleWithTitle:@"NJEffectiveController" controllerName:@"NJEffectiveController"],
-                     [NJExample exampleWithTitle:@"AspectViewController" controllerName:@"NJAspectRootViewController"]];
+    [self loadData];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -91,6 +81,19 @@
     UIViewController *vc = (UIViewController *)[[vcClass alloc] init];
     [self.navigationController pushViewController:vc animated:YES];
     
+}
+
+- (void)loadData {
+    
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"Controllers.plist" ofType:nil];
+    NSArray *vcNames = [NSArray arrayWithContentsOfFile:filePath];
+    NSMutableArray *tempArrM = [NSMutableArray array];
+    for (int i = 0; i < vcNames.count; ++i) {
+        NSDictionary *dict = vcNames[i];
+        [tempArrM addObject:[NJExample exampleWithTitle:dict[@"Title"] controllerName:dict[@"Name"]]];
+    }
+    self.vcArray = [tempArrM copy];
+    [self.tableView reloadData];
 }
 
 
