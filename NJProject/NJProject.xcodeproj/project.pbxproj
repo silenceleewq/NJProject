@@ -100,6 +100,7 @@
 		1F4E64521F7BF9D6007D01EC /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F4E64511F7BF9D6007D01EC /* CoreMedia.framework */; };
 		1F4E64541F7BF9DE007D01EC /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F4E64531F7BF9DE007D01EC /* AssetsLibrary.framework */; };
 		1F4E64561F7BF9E3007D01EC /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F4E64551F7BF9E3007D01EC /* AVFoundation.framework */; };
+		1F53B0C72108856F00F40EEE /* NJGradientProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F53B0C62108856F00F40EEE /* NJGradientProgressView.m */; };
 		1F7CFDD920A5499300F98E1C /* NJAspectRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F7CFDD820A5499300F98E1C /* NJAspectRootViewController.m */; };
 		1F7CFDDE20A549E100F98E1C /* NJViewControllerIntercepter.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F7CFDDD20A549E100F98E1C /* NJViewControllerIntercepter.m */; };
 		1F82ED8F1F98526F00145FF5 /* NJIQKeyboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F82ED8E1F98526F00145FF5 /* NJIQKeyboardViewController.m */; };
@@ -297,6 +298,8 @@
 		1F4E64511F7BF9D6007D01EC /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		1F4E64531F7BF9DE007D01EC /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		1F4E64551F7BF9E3007D01EC /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		1F53B0C52108856F00F40EEE /* NJGradientProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJGradientProgressView.h; sourceTree = "<group>"; };
+		1F53B0C62108856F00F40EEE /* NJGradientProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJGradientProgressView.m; sourceTree = "<group>"; };
 		1F7CFDD720A5499300F98E1C /* NJAspectRootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NJAspectRootViewController.h; sourceTree = "<group>"; };
 		1F7CFDD820A5499300F98E1C /* NJAspectRootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NJAspectRootViewController.m; sourceTree = "<group>"; };
 		1F7CFDDC20A549E100F98E1C /* NJViewControllerIntercepter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NJViewControllerIntercepter.h; sourceTree = "<group>"; };
@@ -552,6 +555,7 @@
 		00F80A021E81275D002FC6A0 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				1F53B0C42108848700F40EEE /* GradientView */,
 				1F0BBBF61F9F1BCF00BB688E /* NJImageCache */,
 				1F82ED671F98523C00145FF5 /* IQKeyboardManager */,
 				1F25C7481F8F3F9000D2F9D8 /* UIImageEx */,
@@ -823,6 +827,15 @@
 				2973D0A07A8A3446E32D3D8B /* libPods-NJProject.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1F53B0C42108848700F40EEE /* GradientView */ = {
+			isa = PBXGroup;
+			children = (
+				1F53B0C52108856F00F40EEE /* NJGradientProgressView.h */,
+				1F53B0C62108856F00F40EEE /* NJGradientProgressView.m */,
+			);
+			path = GradientView;
 			sourceTree = "<group>";
 		};
 		1F7CFDD620A5497D00F98E1C /* AspectDemo */ = {
@@ -1173,6 +1186,7 @@
 				1F1ECA721FF489C900D373DA /* NJBaseClass.m in Sources */,
 				1F82ED9A1F98547E00145FF5 /* IQUIScrollView+Additions.m in Sources */,
 				00CBBFC41EF9EFDB00D9AEDB /* SDWebImageDownloader.m in Sources */,
+				1F53B0C72108856F00F40EEE /* NJGradientProgressView.m in Sources */,
 				1F7CFDDE20A549E100F98E1C /* NJViewControllerIntercepter.m in Sources */,
 				00F80A411E812B0E002FC6A0 /* MJRefreshAutoGifFooter.m in Sources */,
 				1F82ED9D1F98547E00145FF5 /* IQUIViewController+Additions.m in Sources */,

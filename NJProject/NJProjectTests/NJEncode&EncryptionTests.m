@@ -38,8 +38,11 @@
 
 - (void)testBase64 {
     NSString *str = @"hello!";
-    NSString *ecode = [str base64EncodedString];
-    NSLog(@"ecode = %@", ecode);
+    NSString *encode = [str base64EncodedString];
+    NSAssert([encode isEqualToString:@"aGVsbG8h"], @"编码错误");
+    NSLog(@"ecode = %@", encode);
+    NSString *decode = [encode base64DecodedString];
+    NSLog(@"decode = %@", decode);
 }
 
 @end
